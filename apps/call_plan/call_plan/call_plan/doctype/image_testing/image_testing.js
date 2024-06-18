@@ -9,6 +9,6 @@ frappe.ui.form.on("image testing", {
 		frm.trigger("showpic");
 	},
 	showpic(frm) {
-		frm.set_df_property("tampilan_foto_2", "options", `<img src=${frm.doc.insert_picture} >`);
+		frm.set_df_property("tampilan_foto_2", "options", `<img src=${frm.doc.insert_picture} width='500'>`);
 	},
 });
