@@ -1,0 +1,2 @@
+2024-06-13 13:51:30,295 WARNING database DDL Query made to DB:
+CREATE USER IF NOT EXISTS 'devfinancedb'@'10.0.0.2' IDENTIFIED BY '7USxOYicnkvH2bWP'

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div>
+			<video id="player" autoplay>update bg</video>
+			<p id="image count">No images</p>
+		</div>
+		<button id="capture" onclick="take_photo()">Take photo</button>
+		<button id="preview" onclick="preview()">Preview</button>
+		<br />
+		<script>
+			const player = document.getElementById("player");
+			const captureButton = document.getElementById("capture");
+			var image_count = 0;
+			var image_list = [];
+			var width = "320",
+				height = "240";
+
+			const constraints = {
+				video: true,
+			};
+
+			// Attach the video stream to the video element and autoplay.
+			navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+				player.srcObject = stream;
+			});
+
+			function take_photo() {
+				//image count + 1, tampilkan image count
+				image_count++;
+				document.getElementById("image count").innerHTML = "Total image:" + image_count;
+				//create canvas
+				var canvas = document.createElement("canvas");
+				canvas.width = width;
+				canvas.height = height;
+				// Draw the video frame to the canvas.
+				var context = canvas.getContext("2d");
+				context.drawImage(player, 0, 0, canvas.width, canvas.height);
+				//tambah URL ke image list
+				image_list.push(canvas.toDataURL("image/png"));
+			}
+
+			function preview() {
+				//utk setiap URL, buat img element dan ditampilkan
+				image_list.forEach((value) => {
+					var img = document.createElement("img");
+					img.src = value;
+					document.body.appendChild(img);
+				});
+			}
+		</script>
+	</body>
+</html>

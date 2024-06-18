@@ -1,0 +1,361 @@
+2024-06-09 22:38:55,297 DEBUG cd frappe-bench && python3 -m venv env
+2024-06-09 22:38:56,753 DEBUG cd frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2024-06-09 22:38:57,018 DEBUG cd frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet wheel
+2024-06-09 22:38:57,341 LOG Getting frappe
+2024-06-09 22:38:57,341 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2024-06-09 22:39:05,100 LOG Installing frappe
+2024-06-09 22:39:05,100 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/frappe 
+2024-06-09 22:39:23,970 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && yarn install --check-files
+2024-06-09 22:39:28,625 WARNING restart failed: Couldn't find supervisorctl in PATH
+2024-06-09 22:39:28,626 DEBUG cd frappe-bench && bench build
+2024-06-09 22:39:28,713 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench build
+2024-06-09 22:39:39,277 LOG setting up backups
+2024-06-09 22:39:39,286 LOG backups were set up
+2024-06-09 22:39:39,286 INFO Bench frappe-bench initialized
+2024-06-09 22:40:46,430 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site admin_system
+2024-06-09 22:43:02,544 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-app admin_system
+2024-06-09 22:43:02,547 LOG creating new app admin_system
+2024-06-09 22:43:28,118 LOG Installing admin_system
+2024-06-09 22:43:28,119 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/admin_system 
+2024-06-09 22:43:29,339 DEBUG bench build --app admin_system
+2024-06-09 22:43:29,399 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench build --app admin_system
+2024-06-09 22:43:30,780 WARNING restart failed: Couldn't find supervisorctl in PATH
+2024-06-09 22:43:38,573 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site administration
+2024-06-09 22:44:22,482 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration add-to-hosts
+2024-06-09 22:44:54,184 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-09 22:44:54,428 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-09 22:44:54,428 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-09 22:44:54,435 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-09 22:44:54,444 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-09 22:45:26,214 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-09 22:45:26,450 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-09 22:45:26,455 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-09 22:45:26,464 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-09 22:45:26,470 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-09 22:46:27,835 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-09 22:46:28,090 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-09 22:46:28,100 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-09 22:46:28,101 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-09 22:46:28,105 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-09 22:55:14,868 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration set-config developer-mode
+2024-06-09 22:55:45,859 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration set-config developer-mode 1
+2024-06-09 22:58:56,216 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-09 22:58:56,468 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-09 22:58:56,469 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-09 22:58:56,469 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-09 22:58:56,478 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-09 22:59:28,901 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-09 22:59:29,147 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-09 22:59:29,154 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-09 22:59:29,155 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-09 22:59:29,171 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-09 23:00:52,127 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-09 23:00:52,374 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-09 23:00:52,382 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-09 23:00:52,384 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-09 23:00:52,409 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-10 00:00:00,908 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-06-10 08:40:42,394 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-10 08:40:42,651 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-10 08:40:42,652 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-10 08:40:42,657 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-10 08:40:42,659 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-10 09:21:02,921 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-app call_plan
+2024-06-10 09:21:02,924 LOG creating new app call_plan
+2024-06-10 09:23:03,305 LOG Installing call_plan
+2024-06-10 09:23:03,306 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/call_plan 
+2024-06-10 09:23:04,553 DEBUG bench build --app call_plan
+2024-06-10 09:23:04,617 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench build --app call_plan
+2024-06-10 09:23:05,869 WARNING restart failed: Couldn't find supervisorctl in PATH
+2024-06-10 09:23:34,416 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration install-app call_plan
+2024-06-10 09:26:05,932 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-10 09:26:06,156 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-10 09:26:06,162 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-10 09:26:06,168 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-10 09:26:06,187 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-10 10:53:01,326 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-10 10:53:01,590 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-10 10:53:01,591 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-10 10:53:01,592 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-10 10:53:01,604 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-11 00:00:00,820 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-06-11 08:55:19,328 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-11 08:55:19,685 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-11 08:55:19,687 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-11 08:55:19,688 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-11 08:55:19,693 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-11 11:33:30,184 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-11 11:33:30,443 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-11 11:33:30,445 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-11 11:33:30,447 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-11 11:33:30,454 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-11 12:00:00,638 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-06-11 13:35:39,805 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-11 13:35:40,057 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-11 13:35:40,061 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-11 13:35:40,071 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-11 13:35:40,073 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 15:25:45,254 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 15:25:45,634 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 15:25:45,640 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 15:25:45,646 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 15:25:45,652 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 15:31:38,566 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 15:31:38,808 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 15:31:38,816 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 15:31:38,817 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 15:31:38,824 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 16:06:09,737 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-user udevfinancedb --db-password 3BZO9R5HEYG6F6652ENKDLDW4HA9JMB --db-host 172.31.188.64 --db-port 31001 accounting.system
+2024-06-12 16:06:46,088 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-user udevfinancedb --db-password 3BZO9R5HEYG6F6652ENKDLDW4HA9JMB --db-host 172.31.188.64 --db-port 31001 accounting.system
+2024-06-12 16:11:31,267 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-user udevfinancedb --db-password 3BZO9R5HEYG6F6652ENKDLDW4HA9JMB --db-host 172.31.188.64 --db-port 31001 accounting.system
+2024-06-12 16:12:56,394 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --version
+2024-06-12 16:16:23,298 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update
+2024-06-12 16:16:24,844 WARNING shallow_clone is set in your bench config.
+However without passing the --reset flag, your repositories will be unshallowed.
+To avoid this, cancel this operation and run `bench update --reset`.
+
+Consider the consequences of `git reset --hard` on your apps before you run that.
+To avoid seeing this warning, set shallow_clone to false in your common_site_config.json
+		
+2024-06-12 16:16:35,133 WARNING /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update executed with exit code 1
+2024-06-12 16:17:50,161 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password 3BZO9R5HEYG6F6652ENKDLDW4HA9JMB --db-host 172.31.188.64 --db-port 31001 accounting.system
+2024-06-12 16:36:53,581 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 16:36:54,016 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 16:36:54,016 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 16:36:54,024 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 16:36:54,025 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 21:43:54,675 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password 4DZ4C0YSO8PLEOTYL7VK8A359GYLIH --db-host 172.31.188.64 --db-port 30086 accounting.system
+2024-06-12 21:45:13,671 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password 4DZ4C0YSO8PLEOTYL7VK8A359GYLIH --db-host 172.31.188.64 --db-port 30086 accounting.system
+2024-06-12 21:46:57,820 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password 4DZ4C0YSO8PLEOTYL7VK8A359GYLIH --db-host 172.31.188.64 --db-port 30086 call.system
+2024-06-12 21:48:05,840 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site call.system add-to-hosts
+2024-06-12 21:48:36,357 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 21:48:36,588 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 21:48:36,593 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 21:48:36,596 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 21:48:36,606 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 21:57:30,567 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 21:57:30,810 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 21:57:30,816 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 21:57:30,821 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 21:57:30,822 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 21:59:37,220 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 21:59:37,458 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 21:59:37,459 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 21:59:37,464 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 21:59:37,467 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 22:00:57,596 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password 4DZ4C0YSO8PLEOTYL7VK8A359GYLIH --db-host 172.31.188.64 --db-port 30086 call.system
+2024-06-12 22:01:21,919 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site call.system add-to-hosts
+2024-06-12 22:01:30,405 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 22:01:30,642 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 22:01:30,649 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 22:01:30,662 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 22:01:30,666 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 22:02:30,616 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 22:02:30,852 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 22:02:30,854 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 22:02:30,855 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 22:02:30,859 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 22:07:38,637 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 22:07:38,878 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 22:07:38,886 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-12 22:07:38,886 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 22:07:38,891 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 22:08:10,680 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-12 22:08:10,981 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-12 22:08:10,988 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-12 22:08:10,992 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-12 22:08:10,993 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 00:00:01,158 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-06-13 08:44:07,560 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 08:44:07,900 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 08:44:07,902 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 08:44:07,912 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 08:44:07,912 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 08:48:25,174 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 08:48:25,404 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 08:48:25,406 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 08:48:25,409 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 08:48:25,422 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 08:52:28,552 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password 4DZ4C0YSO8PLEOTYL7VK8A359GYLIH --db-host 172.31.188.15 --db-port 30086 test.site
+2024-06-13 08:52:41,387 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password 4DZ4C0YSO8PLEOTYL7VK8A359GYLIH --db-host 172.31.188.15 --db-port 30086 test.site --force
+2024-06-13 08:55:55,874 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench trim-database
+2024-06-13 08:56:26,785 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site call.system trim-database
+2024-06-13 09:15:29,824 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site call.system backup --with-files --backup-path /Users/nadineverelia/Documents/work/intern @dexa/frappe backup
+2024-06-13 09:16:51,566 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site call.system backup --with-files --backup-path /Users/nadineverelia/Documents/work/intern @dexa/temporary
+2024-06-13 09:17:31,589 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site call.system backup --with-files --backup-path /Users/nadineverelia/Documents/work/intern@dexa/temporary
+2024-06-13 10:38:27,691 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 10:38:28,058 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 10:38:28,061 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 10:38:28,062 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 10:38:28,064 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 10:40:51,586 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 10:40:51,828 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 10:40:51,829 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 10:40:51,831 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 10:40:51,838 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 10:42:12,749 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update
+2024-06-13 10:42:15,002 WARNING shallow_clone is set in your bench config.
+However without passing the --reset flag, your repositories will be unshallowed.
+To avoid this, cancel this operation and run `bench update --reset`.
+
+Consider the consequences of `git reset --hard` on your apps before you run that.
+To avoid seeing this warning, set shallow_clone to false in your common_site_config.json
+		
+2024-06-13 10:42:28,338 WARNING /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update executed with exit code 1
+2024-06-13 10:46:08,564 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench drop-site call.system
+2024-06-13 10:46:34,353 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench drop-site call.system --force
+2024-06-13 10:50:58,638 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 10:50:58,873 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 10:50:58,873 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 10:50:58,877 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 10:50:58,898 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 10:51:32,356 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update --force
+2024-06-13 10:51:33,722 WARNING shallow_clone is set in your bench config.
+However without passing the --reset flag, your repositories will be unshallowed.
+To avoid this, cancel this operation and run `bench update --reset`.
+
+Consider the consequences of `git reset --hard` on your apps before you run that.
+To avoid seeing this warning, set shallow_clone to false in your common_site_config.json
+		
+2024-06-13 10:51:47,159 WARNING /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update --force executed with exit code 1
+2024-06-13 10:52:28,557 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update
+2024-06-13 10:52:29,997 WARNING shallow_clone is set in your bench config.
+However without passing the --reset flag, your repositories will be unshallowed.
+To avoid this, cancel this operation and run `bench update --reset`.
+
+Consider the consequences of `git reset --hard` on your apps before you run that.
+To avoid seeing this warning, set shallow_clone to false in your common_site_config.json
+		
+2024-06-13 10:52:40,843 WARNING /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update executed with exit code 1
+2024-06-13 10:54:13,634 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update
+2024-06-13 10:54:14,998 WARNING shallow_clone is set in your bench config.
+However without passing the --reset flag, your repositories will be unshallowed.
+To avoid this, cancel this operation and run `bench update --reset`.
+
+Consider the consequences of `git reset --hard` on your apps before you run that.
+To avoid seeing this warning, set shallow_clone to false in your common_site_config.json
+		
+2024-06-13 10:54:26,079 WARNING /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update executed with exit code 1
+2024-06-13 10:56:13,121 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 10:56:13,335 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 10:56:13,336 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 10:56:13,342 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 10:56:13,354 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 10:56:34,895 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update --reset
+2024-06-13 10:56:36,877 LOG pulling frappe
+2024-06-13 10:56:36,878 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && git fetch --depth=1 --no-tags upstream develop
+2024-06-13 10:56:38,661 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && git reset --hard upstream/develop
+2024-06-13 10:56:38,683 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && git reflog expire --all
+2024-06-13 10:56:38,689 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && git gc --prune=all
+2024-06-13 10:56:38,805 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && find . -name "*.pyc" -delete
+2024-06-13 10:56:39,079 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2024-06-13 10:56:39,815 LOG Installing frappe
+2024-06-13 10:56:39,815 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/frappe 
+2024-06-13 10:56:41,727 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && yarn install --check-files
+2024-06-13 10:56:42,331 LOG Installing admin_system
+2024-06-13 10:56:42,331 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/admin_system 
+2024-06-13 10:56:43,446 LOG Installing call_plan
+2024-06-13 10:56:43,446 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/call_plan 
+2024-06-13 10:56:45,244 WARNING /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update --reset executed with exit code 1
+2024-06-13 10:58:01,816 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 10:58:02,041 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 10:58:02,046 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 10:58:02,049 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 10:58:02,054 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 10:58:49,201 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench migrate
+2024-06-13 10:59:39,242 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration migrate
+2024-06-13 10:59:56,974 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 10:59:57,198 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 10:59:57,203 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 10:59:57,208 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 10:59:57,217 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 11:00:14,759 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration migrate
+2024-06-13 11:04:11,277 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration migrate --skip-search-index
+2024-06-13 11:06:52,505 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench clear-cache
+2024-06-13 11:07:04,576 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration clear-cache
+2024-06-13 11:07:12,214 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration migrate --skip-search-index
+2024-06-13 12:37:52,199 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update --reset
+2024-06-13 12:37:54,284 LOG pulling frappe
+2024-06-13 12:37:54,284 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && git fetch --depth=1 --no-tags upstream develop
+2024-06-13 12:37:55,595 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && git reset --hard upstream/develop
+2024-06-13 12:37:55,615 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && git reflog expire --all
+2024-06-13 12:37:55,622 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && git gc --prune=all
+2024-06-13 12:37:55,744 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && find . -name "*.pyc" -delete
+2024-06-13 12:37:55,879 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2024-06-13 12:37:56,466 LOG Installing frappe
+2024-06-13 12:37:56,466 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/frappe 
+2024-06-13 12:37:58,210 DEBUG cd /Users/nadineverelia/frappe/frappe-bench/apps/frappe && yarn install --check-files
+2024-06-13 12:37:58,739 LOG Installing admin_system
+2024-06-13 12:37:58,739 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/admin_system 
+2024-06-13 12:37:59,888 LOG Installing call_plan
+2024-06-13 12:37:59,888 DEBUG cd /Users/nadineverelia/frappe/frappe-bench && /Users/nadineverelia/frappe/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /Users/nadineverelia/frappe/frappe-bench/apps/call_plan 
+2024-06-13 12:38:01,845 WARNING /Library/Frameworks/Python.framework/Versions/3.11/bin/bench update --reset executed with exit code 1
+2024-06-13 12:38:16,462 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 12:38:16,685 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 12:38:16,688 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 12:38:16,706 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 12:38:16,712 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 12:40:21,093 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --version
+2024-06-13 13:02:27,021 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 13:02:27,282 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 13:02:27,284 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 13:02:27,286 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 13:02:27,287 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 13:06:24,882 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 13:06:25,123 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 13:06:25,130 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 13:06:25,130 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 13:06:25,134 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 13:17:26,757 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 13:17:26,996 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 13:17:27,001 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 13:17:27,002 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 13:17:27,019 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 13:25:44,846 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site call.management
+2024-06-13 13:28:58,823 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site call.plan backup --with-files --backup-path /Users/nadineverelia/Documents/work/intern@dexa/temporary
+2024-06-13 13:30:52,956 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration backup --with-files --backup-path /Users/nadineverelia/Documents/work/intern@dexa/temporary
+2024-06-13 13:38:04,743 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site test.site
+2024-06-13 13:51:05,340 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password LNQJOPZ44KO0L2ZD31W3B74GNBLHBT --db-host 172.31.188.15 --db-port 30087 call.management
+2024-06-13 13:51:14,381 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password LNQJOPZ44KO0L2ZD31W3B74GNBLHBT --db-host 172.31.188.15 --db-port 30087 call.management --force
+2024-06-13 13:51:30,083 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench new-site --db-name devfinancedb --db-root-username udevfinancedb --db-root-password LNQJOPZ44KO0L2ZD31W3B74GNBLHBT --db-host 172.31.188.15 --db-port 30087 call.management
+2024-06-13 13:51:52,915 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site call.management add-to-hosts
+2024-06-13 13:52:16,183 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 13:52:16,415 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 13:52:16,424 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 13:52:16,426 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 13:52:16,430 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 15:19:15,034 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 15:19:15,294 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 15:19:15,294 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 15:19:15,294 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 15:19:15,311 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 15:43:28,481 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 15:43:28,829 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 15:43:28,845 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 15:43:28,849 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 15:43:28,852 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 16:08:52,367 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 16:09:26,918 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-13 16:09:27,141 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-13 16:09:27,154 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-13 16:09:27,159 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-13 16:09:27,164 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-13 18:00:01,197 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-06-14 08:49:36,294 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-14 08:49:36,637 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-14 08:49:36,637 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-14 08:49:36,641 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-14 08:49:36,646 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-14 11:56:26,041 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-14 11:56:26,354 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-14 11:56:26,354 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-14 11:56:26,354 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-14 11:56:26,362 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-14 12:00:01,199 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-06-18 12:00:00,472 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-06-18 14:24:05,857 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-18 14:24:06,104 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-18 14:24:06,104 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-18 14:24:06,104 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-18 14:24:06,108 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-18 18:00:01,063 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup

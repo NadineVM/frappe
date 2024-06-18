@@ -1,0 +1,8 @@
+{
+  "db_host": "172.31.188.15",
+  "db_name": "devfinancedb",
+  "db_password": "LNQJOPZ44KO0L2ZD31W3B74GNBLHBT",
+  "db_port": 30087,
+  "db_type": "mariadb",
+  "db_user": "devfinancedb"
+}

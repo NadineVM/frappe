@@ -1,0 +1,96 @@
+2024-06-09 23:32:00,125 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for administration
+2024-06-10 00:24:00,241 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for administration
+2024-06-12 15:28:00,731 ERROR scheduler Exception in Enqueue Events for Site administration
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 106, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 150, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 163, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 846, in get_single_value
+    ).run()
+      ^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 84, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 213, in sql
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 118, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 61] Connection refused)")
+2024-06-12 15:32:00,632 ERROR scheduler Exception in Enqueue Events for Site administration
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/pymysql/connections.py", line 649, in connect
+    sock = socket.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 106, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 150, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 163, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 846, in get_single_value
+    ).run()
+      ^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/query_builder/utils.py", line 84, in execute_query
+    result = frappe.db.sql(query, params, *args, **kwargs)  # nosemgrep
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 213, in sql
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/database.py", line 118, in connect
+    self._conn: "MariadbConnection" | "PostgresConnection" = self.get_connection()
+                                                             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 107, in get_connection
+    conn = self._get_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 113, in _get_connection
+    return self.create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 116, in create_connection
+    return pymysql.connect(**self.get_connection_settings())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/pymysql/connections.py", line 361, in __init__
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/pymysql/connections.py", line 716, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.1' ([Errno 61] Connection refused)")

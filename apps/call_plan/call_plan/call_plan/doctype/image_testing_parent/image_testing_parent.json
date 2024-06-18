@@ -1,0 +1,42 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-06-18 15:47:54.845117",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "child_doc"
+ ],
+ "fields": [
+  {
+   "fieldname": "child_doc",
+   "fieldtype": "Table",
+   "label": "child doc",
+   "options": "image testing"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-18 15:57:31.020619",
+ "modified_by": "Administrator",
+ "module": "Call Plan",
+ "name": "image testing parent",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,118 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:merchant_code",
+ "creation": "2024-06-10 09:32:03.932006",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "merchant_code",
+  "merchant_id",
+  "merchant_name",
+  "merchant_status",
+  "province",
+  "city",
+  "kecamatan",
+  "kelurahan",
+  "postal_code",
+  "pic_spar",
+  "pic_pr",
+  "longitude",
+  "latitude"
+ ],
+ "fields": [
+  {
+   "fieldname": "merchant_id",
+   "fieldtype": "Data",
+   "label": "Merchant ID"
+  },
+  {
+   "fieldname": "merchant_name",
+   "fieldtype": "Data",
+   "label": "Merchant Name"
+  },
+  {
+   "fieldname": "merchant_status",
+   "fieldtype": "Data",
+   "label": "Merchant Status"
+  },
+  {
+   "fieldname": "province",
+   "fieldtype": "Data",
+   "label": "Province"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "kecamatan",
+   "fieldtype": "Data",
+   "label": "Kecamatan"
+  },
+  {
+   "fieldname": "kelurahan",
+   "fieldtype": "Data",
+   "label": "Kelurahan"
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal code"
+  },
+  {
+   "fieldname": "pic_spar",
+   "fieldtype": "Data",
+   "label": "SPAR"
+  },
+  {
+   "fieldname": "pic_pr",
+   "fieldtype": "Data",
+   "label": "PR"
+  },
+  {
+   "fieldname": "longitude",
+   "fieldtype": "Data",
+   "label": "Longitude"
+  },
+  {
+   "fieldname": "latitude",
+   "fieldtype": "Data",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "merchant_code",
+   "fieldtype": "Data",
+   "label": "Merchant Code",
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-10 10:13:15.123838",
+ "modified_by": "Administrator",
+ "module": "Call Plan",
+ "name": "Merchants",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "merchant_name"
+}
