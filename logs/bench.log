@@ -359,3 +359,10 @@ To avoid seeing this warning, set shallow_clone to false in your common_site_con
 2024-06-18 14:24:06,104 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
 2024-06-18 14:24:06,108 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
 2024-06-18 18:00:01,063 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-06-19 09:29:53,220 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-19 09:30:14,029 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-06-19 09:30:14,246 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-06-19 09:30:14,248 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-06-19 09:30:14,248 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-06-19 09:30:14,249 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-06-19 12:00:01,188 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup

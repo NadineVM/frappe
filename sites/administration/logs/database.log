@@ -2733,3 +2733,57 @@ alter table `tabimage testing` add column if not exists parent varchar(140)
 alter table `tabimage testing` add column if not exists parenttype varchar(140)
 2024-06-18 16:01:50,331 WARNING database DDL Query made to DB:
 alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-06-19 10:36:21,178 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSMS Log` MODIFY `no_of_sent_sms` int NOT NULL DEFAULT 0, MODIFY `no_of_requested_sms` int NOT NULL DEFAULT 0
+2024-06-19 10:36:26,199 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSMS Log` MODIFY `no_of_requested_sms` int NOT NULL DEFAULT 0, MODIFY `no_of_sent_sms` int NOT NULL DEFAULT 0
+2024-06-19 11:29:14,243 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDocType` MODIFY `allow_copy` tinyint NOT NULL DEFAULT 0, MODIFY `allow_events_in_timeline` tinyint NOT NULL DEFAULT 0, MODIFY `track_views` tinyint NOT NULL DEFAULT 0, MODIFY `hide_toolbar` tinyint NOT NULL DEFAULT 0, MODIFY `force_re_route_to_default_view` tinyint NOT NULL DEFAULT 0, MODIFY `is_submittable` tinyint NOT NULL DEFAULT 0, MODIFY `email_append_to` tinyint NOT NULL DEFAULT 0, MODIFY `track_seen` tinyint NOT NULL DEFAULT 0, MODIFY `issingle` tinyint NOT NULL DEFAULT 0, MODIFY `max_attachments` int NOT NULL DEFAULT 0, MODIFY `custom` tinyint NOT NULL DEFAULT 0, MODIFY `istable` tinyint NOT NULL DEFAULT 0, MODIFY `allow_import` tinyint NOT NULL DEFAULT 0, MODIFY `in_create` tinyint NOT NULL DEFAULT 0, MODIFY `allow_auto_repeat` tinyint NOT NULL DEFAULT 0, MODIFY `is_virtual` tinyint NOT NULL DEFAULT 0, MODIFY `show_title_field_in_link` tinyint NOT NULL DEFAULT 0, MODIFY `beta` tinyint NOT NULL DEFAULT 0, MODIFY `queue_in_background` tinyint NOT NULL DEFAULT 0, MODIFY `index_web_pages_for_search` tinyint NOT NULL DEFAULT 1, MODIFY `show_name_in_global_search` tinyint NOT NULL DEFAULT 0, MODIFY `read_only` tinyint NOT NULL DEFAULT 0, MODIFY `quick_entry` tinyint NOT NULL DEFAULT 0, MODIFY `has_web_view` tinyint NOT NULL DEFAULT 0, MODIFY `translated_doctype` tinyint NOT NULL DEFAULT 0, MODIFY `show_preview_popup` tinyint NOT NULL DEFAULT 0, MODIFY `track_changes` tinyint NOT NULL DEFAULT 0, MODIFY `make_attachments_public` tinyint NOT NULL DEFAULT 0, MODIFY `allow_guest_to_view` tinyint NOT NULL DEFAULT 0, MODIFY `allow_rename` tinyint NOT NULL DEFAULT 1, MODIFY `is_tree` tinyint NOT NULL DEFAULT 0, MODIFY `is_calendar_and_gantt` tinyint NOT NULL DEFAULT 0, MODIFY `editable_grid` tinyint NOT NULL DEFAULT 1
+2024-06-19 11:34:33,817 WARNING database DDL Query made to DB:
+ALTER TABLE `tabDocType` MODIFY `istable` tinyint NOT NULL DEFAULT 0, MODIFY `force_re_route_to_default_view` tinyint NOT NULL DEFAULT 0, MODIFY `is_submittable` tinyint NOT NULL DEFAULT 0, MODIFY `allow_copy` tinyint NOT NULL DEFAULT 0, MODIFY `max_attachments` int NOT NULL DEFAULT 0, MODIFY `allow_events_in_timeline` tinyint NOT NULL DEFAULT 0, MODIFY `allow_import` tinyint NOT NULL DEFAULT 0, MODIFY `custom` tinyint NOT NULL DEFAULT 0, MODIFY `track_seen` tinyint NOT NULL DEFAULT 0, MODIFY `allow_guest_to_view` tinyint NOT NULL DEFAULT 0, MODIFY `queue_in_background` tinyint NOT NULL DEFAULT 0, MODIFY `translated_doctype` tinyint NOT NULL DEFAULT 0, MODIFY `allow_rename` tinyint NOT NULL DEFAULT 1, MODIFY `editable_grid` tinyint NOT NULL DEFAULT 1, MODIFY `is_calendar_and_gantt` tinyint NOT NULL DEFAULT 0, MODIFY `show_preview_popup` tinyint NOT NULL DEFAULT 0, MODIFY `is_virtual` tinyint NOT NULL DEFAULT 0, MODIFY `hide_toolbar` tinyint NOT NULL DEFAULT 0, MODIFY `quick_entry` tinyint NOT NULL DEFAULT 0, MODIFY `make_attachments_public` tinyint NOT NULL DEFAULT 0, MODIFY `in_create` tinyint NOT NULL DEFAULT 0, MODIFY `beta` tinyint NOT NULL DEFAULT 0, MODIFY `show_title_field_in_link` tinyint NOT NULL DEFAULT 0, MODIFY `show_name_in_global_search` tinyint NOT NULL DEFAULT 0, MODIFY `read_only` tinyint NOT NULL DEFAULT 0, MODIFY `is_tree` tinyint NOT NULL DEFAULT 0, MODIFY `allow_auto_repeat` tinyint NOT NULL DEFAULT 0, MODIFY `track_changes` tinyint NOT NULL DEFAULT 0, MODIFY `track_views` tinyint NOT NULL DEFAULT 0, MODIFY `email_append_to` tinyint NOT NULL DEFAULT 0, MODIFY `issingle` tinyint NOT NULL DEFAULT 0, MODIFY `index_web_pages_for_search` tinyint NOT NULL DEFAULT 1, MODIFY `has_web_view` tinyint NOT NULL DEFAULT 0
+2024-06-19 13:23:57,004 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-06-19 13:23:57,006 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-06-19 13:23:57,006 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-06-19 13:24:53,210 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-06-19 13:24:53,212 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-06-19 13:24:53,213 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-06-19 13:39:01,083 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-06-19 13:39:01,084 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-06-19 13:39:01,084 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-06-19 13:40:01,142 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-06-19 13:40:01,145 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-06-19 13:40:01,145 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-06-19 13:40:01,259 WARNING database DDL Query made to DB:
+ALTER TABLE `tabimage testing` ADD COLUMN `image_name` varchar(140)
+2024-06-19 13:41:00,506 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-06-19 13:41:00,507 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-06-19 13:41:00,507 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-06-19 13:49:58,941 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-06-19 13:49:58,942 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-06-19 13:49:58,943 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-06-19 13:49:59,059 WARNING database DDL Query made to DB:
+ALTER TABLE `tabimage testing` ADD COLUMN `image1` text, ADD COLUMN `image2` text
+2024-06-19 13:57:19,589 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-06-19 13:57:19,591 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-06-19 13:57:19,591 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)

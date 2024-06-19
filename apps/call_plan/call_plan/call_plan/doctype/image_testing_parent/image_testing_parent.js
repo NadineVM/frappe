@@ -5,10 +5,21 @@ frappe.ui.form.on("image testing parent", {
     refresh(frm) {
 		frm.trigger("showpic");
 	},
-	insert_picture(frm) {
+	child_doc(frm) {
 		frm.trigger("showpic");
 	},
 	showpic(frm) {
-		frm.doc.child_doc.set_df_property("tampilan_foto_2", "options", `<img src=${frm.doc.insert_picture} >`);
+		const image_fields = [
+			"image1",
+			"image2",
+		  ];
+		  const display_fields = [
+			"view_image1",
+			"view_image2",
+		  ];
+		frm.doc.child_doc.forEach ( (row) => {
+			frm.set_df_property("child_doc", "options", `<img src=${row.image1} width='300'>`, frm.docname, "view_image1", row.name);
+			frm.set_df_property("child_doc", "options", `<img src=${row.image2} width='300'>`, frm.docname, "view_image2", row.name);
+		})
 	},
  });

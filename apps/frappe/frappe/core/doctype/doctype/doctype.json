@@ -750,7 +750,7 @@
    "link_fieldname": "reference_doctype"
   }
  ],
- "modified": "2024-03-29 16:09:26.114720",
+ "modified": "2024-06-19 11:34:33.626732",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "DocType",

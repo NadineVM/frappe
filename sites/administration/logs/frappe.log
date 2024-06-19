@@ -52,3 +52,6 @@ Form Dict: {}
 2024-06-13 13:02:33,279 ERROR frappe New Exception collected in error log
 Site: administration
 Form Dict: {}
+2024-06-19 09:52:25,091 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'recipients': 'testing@example.com', 'subject': 'testing', 'content': '<div class="ql-editor read-mode"><p><br></p></div>', 'send_email': '1', 'print_html': '', 'send_me_a_copy': '0', 'print_format': '', 'attachments': '[]', 'read_receipt': '0', 'print_letterhead': '1', 'send_after': '', 'print_language': 'en', 'cmd': 'frappe.core.doctype.communication.email.make'}
