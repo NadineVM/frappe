@@ -7710,3 +7710,40 @@ Wrote document file for DocType Call Realisasi at /Users/nadineverelia/frappe/fr
 2024-06-19 14:18:18,663 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
 2024-06-19 14:18:18,663 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
 2024-06-19 14:18:18,664 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 14:31:48,768 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 14:31:48,775 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 14:31:48,777 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 14:45:18,902 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 14:45:18,904 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 14:45:18,906 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 14:58:49,013 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 14:58:49,017 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 14:58:49,020 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 15:12:19,094 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 15:12:19,096 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 15:12:19,097 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 15:22:40,459 Worker 626bca4f7a4c45d0bb8231e99fbdf8ae [PID 87580]: warm shut down requested
+2024-06-19 15:22:40,463 Unsubscribing from channel rq:pubsub:626bca4f7a4c45d0bb8231e99fbdf8ae
+2024-06-19 15:31:25,160 Worker rq:worker:21e4c896fec24046baf9bed2e893853e started with PID 4250, version 1.16.2
+2024-06-19 15:31:25,160 Subscribing to channel rq:pubsub:21e4c896fec24046baf9bed2e893853e
+2024-06-19 15:31:25,160 *** Listening on Users-nadineverelia-frappe-frappe-bench:short, Users-nadineverelia-frappe-frappe-bench:default, Users-nadineverelia-frappe-frappe-bench:long...
+2024-06-19 15:31:25,161 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 15:31:25,161 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 15:31:25,162 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 15:44:55,234 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 15:44:55,238 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 15:44:55,240 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 15:58:25,343 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 15:58:25,346 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 15:58:25,347 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 16:11:55,497 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 16:11:55,498 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 16:11:55,499 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 16:25:25,589 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 16:25:25,594 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 16:25:25,596 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 16:38:55,760 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-06-19 16:38:55,763 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-06-19 16:38:55,764 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-06-19 16:44:14,720 Worker 21e4c896fec24046baf9bed2e893853e [PID 4250]: warm shut down requested
+2024-06-19 16:44:14,734 Unsubscribing from channel rq:pubsub:21e4c896fec24046baf9bed2e893853e

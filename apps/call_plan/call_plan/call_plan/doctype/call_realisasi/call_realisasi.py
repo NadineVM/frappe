@@ -6,6 +6,5 @@ from frappe.model.document import Document
 
 
 class CallRealisasi(Document):
-	print('start python')
 	pass
 

@@ -18,8 +18,10 @@ frappe.ui.form.on("image testing parent", {
 			"view_image2",
 		  ];
 		frm.doc.child_doc.forEach ( (row) => {
-			frm.set_df_property("child_doc", "options", `<img src=${row.image1} width='300'>`, frm.docname, "view_image1", row.name);
-			frm.set_df_property("child_doc", "options", `<img src=${row.image2} width='300'>`, frm.docname, "view_image2", row.name);
+			image_fields.forEach((image_field,i) => {
+				if (row[image_field]){
+				frm.set_df_property('child_doc', "options", `<img src=${row[image_field]} width='300'>`, frm.docname, display_fields[i], row.name);}	
+			})
 		})
 	},
  });
