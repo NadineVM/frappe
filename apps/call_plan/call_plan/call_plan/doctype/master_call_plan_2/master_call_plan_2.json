@@ -1,26 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-06-18 10:53:06.348374",
+ "creation": "2024-06-24 08:52:48.782603",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "what_is_this"
+  "section_break_yyue"
  ],
  "fields": [
   {
-   "fieldname": "what_is_this",
-   "fieldtype": "Autocomplete",
-   "label": "what is this?",
-   "options": "apple\nbanana\norange"
+   "fieldname": "section_break_yyue",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 14:24:58.106664",
+ "modified": "2024-06-24 08:52:48.782603",
  "modified_by": "Administrator",
- "module": "Custom",
- "name": "new-feature",
+ "module": "Call Plan",
+ "name": "Master Call Plan 2",
  "owner": "Administrator",
  "permissions": [
   {

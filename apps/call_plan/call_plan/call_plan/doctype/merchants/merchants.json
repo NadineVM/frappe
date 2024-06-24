@@ -1,20 +1,28 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:merchant_code",
  "creation": "2024-06-10 09:32:03.932006",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "detail_merchant_section",
   "merchant_code",
   "merchant_id",
   "merchant_name",
+  "merchant_date",
   "merchant_status",
+  "column_break_kqpe",
+  "branch",
+  "area",
+  "lokasi_merchant_section",
   "province",
   "city",
   "kecamatan",
   "kelurahan",
   "postal_code",
+  "column_break_qhmx",
   "pic_spar",
   "pic_pr",
   "longitude",
@@ -22,6 +30,7 @@
  ],
  "fields": [
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "merchant_id",
    "fieldtype": "Data",
    "label": "Merchant ID"
@@ -86,30 +95,54 @@
    "fieldtype": "Data",
    "label": "Merchant Code",
    "unique": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "depends_on": "eval:doc.branch",
+   "fieldname": "area",
+   "fieldtype": "Link",
+   "label": "Area",
+   "options": "Area"
+  },
+  {
+   "fieldname": "detail_merchant_section",
+   "fieldtype": "Section Break",
+   "label": "Detail Merchant"
+  },
+  {
+   "fieldname": "column_break_kqpe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lokasi_merchant_section",
+   "fieldtype": "Section Break",
+   "label": "Lokasi Merchant"
+  },
+  {
+   "fieldname": "column_break_qhmx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "merchant_date",
+   "fieldtype": "Date",
+   "label": "Merchant Date",
+   "set_only_once": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-19 11:35:10.206399",
+ "modified": "2024-06-21 22:01:38.881151",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Merchants",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",

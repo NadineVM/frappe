@@ -1,0 +1,53 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nama_kegiatan",
+ "creation": "2024-06-20 16:09:26.723690",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nama_kegiatan",
+  "deskripsi_kegiatan"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama_kegiatan",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama kegiatan",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "deskripsi_kegiatan",
+   "fieldtype": "Small Text",
+   "label": "Deskripsi kegiatan"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-21 08:56:34.220148",
+ "modified_by": "Administrator",
+ "module": "Call Plan",
+ "name": "Kegiatan kunjungan",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

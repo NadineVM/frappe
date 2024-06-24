@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{nama_branch}",
+ "creation": "2024-06-20 15:37:43.460843",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "branch_section",
+  "nama_branch"
+ ],
+ "fields": [
+  {
+   "fieldname": "branch_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "nama_branch",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nama branch",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-21 14:36:00.988604",
+ "modified_by": "Administrator",
+ "module": "Call Plan",
+ "name": "Branch",
+ "naming_rule": "Expression",
+ "nsm_parent_field": "parent_branch_dan_area",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

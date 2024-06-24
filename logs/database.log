@@ -2073,3 +2073,227 @@ alter table `tabimage testing` add column if not exists parent varchar(140)
 alter table `tabimage testing` add column if not exists parenttype varchar(140)
 2024-06-19 13:57:19,591 WARNING database DDL Query made to DB:
 alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-06-20 11:36:56,190 WARNING database DDL Query made to DB:
+create table `tabMaster Call Plan` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-06-20 11:42:42,184 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan` ADD COLUMN `merchant_name` varchar(140)
+2024-06-20 11:47:55,081 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan` ADD COLUMN `merchant_date` date, ADD COLUMN `objectivemisi` text, ADD COLUMN `status` varchar(140), ADD COLUMN `category` varchar(140)
+2024-06-20 11:55:48,264 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMerchants` ADD COLUMN `branch` varchar(140), ADD COLUMN `area` varchar(140)
+2024-06-20 12:02:23,874 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan` ADD COLUMN `branch` varchar(140), ADD COLUMN `area` varchar(140)
+2024-06-20 15:09:38,830 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` ADD COLUMN `tanda_tangan` longtext
+2024-06-20 15:11:48,532 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` ADD COLUMN `tanggal_target` date
+2024-06-20 15:12:39,912 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` ADD COLUMN `call` varchar(140)
+2024-06-20 15:37:43,518 WARNING database DDL Query made to DB:
+create table `tabBranch dan Area` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-06-20 15:44:02,762 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` ADD COLUMN `brancharea` varchar(140), ADD COLUMN `nama` varchar(140), ADD COLUMN `branch` varchar(140), ADD COLUMN `lft` int NOT NULL DEFAULT 0, ADD COLUMN `rgt` int NOT NULL DEFAULT 0, ADD COLUMN `is_group` tinyint NOT NULL DEFAULT 0, ADD COLUMN `old_parent` varchar(140), ADD COLUMN `parent_branch_dan_area` varchar(140)
+2024-06-20 15:46:08,940 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` ADD COLUMN `parent_branch` varchar(140)
+2024-06-20 15:46:08,976 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0
+2024-06-20 15:46:46,324 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0
+2024-06-20 15:46:57,623 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-06-20 15:47:07,437 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-06-20 15:47:10,700 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0
+2024-06-20 15:55:50,654 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-06-20 15:56:46,564 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-06-20 15:57:56,617 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-06-20 15:58:07,649 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-06-20 16:00:56,704 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch dan Area` ADD COLUMN `nama_branch` varchar(140), ADD COLUMN `nama_area` varchar(140)
+2024-06-20 16:02:59,852 WARNING database DDL Query made to DB:
+RENAME TABLE `tabBranch dan Area` TO `tabBranch`
+2024-06-20 16:09:26,787 WARNING database DDL Query made to DB:
+create table `tabKegiatan` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-06-20 16:11:44,204 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch` ADD UNIQUE INDEX IF NOT EXISTS nama_branch (`nama_branch`)
+2024-06-20 16:17:40,211 WARNING database DDL Query made to DB:
+RENAME TABLE `tabKegiatan` TO `tabKegiatan kunjungan`
+2024-06-20 16:22:20,469 WARNING database DDL Query made to DB:
+create table `tabArea` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-06-20 16:22:56,302 WARNING database DDL Query made to DB:
+alter table `tabArea` add column if not exists parent varchar(140)
+2024-06-20 16:22:56,304 WARNING database DDL Query made to DB:
+alter table `tabArea` add column if not exists parenttype varchar(140)
+2024-06-20 16:22:56,305 WARNING database DDL Query made to DB:
+alter table `tabArea` add column if not exists parentfield varchar(140)
+2024-06-20 16:22:56,431 WARNING database DDL Query made to DB:
+ALTER TABLE `tabArea` ADD COLUMN `kode_area` varchar(140), ADD COLUMN `nama_area` varchar(140)
+2024-06-20 16:31:13,011 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan` ADD COLUMN `objective` text
+2024-06-20 16:33:43,377 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMerchants` ADD COLUMN `merchant_date` date
+2024-06-20 16:38:34,480 WARNING database DDL Query made to DB:
+create table `tabRencana tanggal kunjungan` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140),
+index parent(parent))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-06-20 16:39:21,723 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parent varchar(140)
+2024-06-20 16:39:21,725 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parenttype varchar(140)
+2024-06-20 16:39:21,726 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parentfield varchar(140)
+2024-06-20 16:39:21,851 WARNING database DDL Query made to DB:
+ALTER TABLE `tabRencana tanggal kunjungan` ADD COLUMN `tanggal` date, ADD COLUMN `status` varchar(140) DEFAULT 'Belum terealisasi'
+2024-06-20 16:55:41,008 WARNING database DDL Query made to DB:
+ALTER TABLE `tabArea` ADD COLUMN `_user_tags` text, ADD COLUMN `_comments` text, ADD COLUMN `_assign` text, ADD COLUMN `_liked_by` text
+2024-06-20 16:57:43,375 WARNING database DDL Query made to DB:
+ALTER TABLE `tabArea` ADD COLUMN `parent_branch` varchar(140)
+2024-06-20 16:58:41,555 WARNING database DDL Query made to DB:
+ALTER TABLE `tabArea` ADD UNIQUE INDEX IF NOT EXISTS kode_area (`kode_area`)
+2024-06-21 08:47:04,059 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` ADD COLUMN `lampiran_foto` text
+2024-06-21 08:54:21,453 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` MODIFY `tanggal_target` varchar(140)
+2024-06-21 08:55:51,015 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKegiatan kunjungan` ADD COLUMN `nama_kegiatan` varchar(140), ADD COLUMN `deskripsi_kegiatan` text
+2024-06-21 08:56:34,299 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKegiatan kunjungan` ADD UNIQUE INDEX IF NOT EXISTS nama_kegiatan (`nama_kegiatan`)
+2024-06-21 09:00:58,170 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan` ADD COLUMN `frekuensi` varchar(140)
+2024-06-21 09:04:56,130 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan` MODIFY `status` varchar(140) DEFAULT 'Belum terealisasi'
+2024-06-21 14:04:52,017 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parent varchar(140)
+2024-06-21 14:04:52,020 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parenttype varchar(140)
+2024-06-21 14:04:52,020 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parentfield varchar(140)
+2024-06-21 14:08:53,180 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parent varchar(140)
+2024-06-21 14:08:53,183 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parenttype varchar(140)
+2024-06-21 14:08:53,184 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parentfield varchar(140)
+2024-06-21 14:36:01,085 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch` DROP INDEX `nama_branch`
+2024-06-21 15:43:32,159 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parent varchar(140)
+2024-06-21 15:43:32,161 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parenttype varchar(140)
+2024-06-21 15:43:32,161 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parentfield varchar(140)
+2024-06-21 15:49:21,158 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parent varchar(140)
+2024-06-21 15:49:21,159 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parenttype varchar(140)
+2024-06-21 15:49:21,160 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parentfield varchar(140)
+2024-06-21 15:51:34,944 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parent varchar(140)
+2024-06-21 15:51:34,946 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parenttype varchar(140)
+2024-06-21 15:51:34,946 WARNING database DDL Query made to DB:
+alter table `tabRencana tanggal kunjungan` add column if not exists parentfield varchar(140)
+2024-06-21 16:05:01,454 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` MODIFY `tanggal_kunjungan` varchar(140)
+2024-06-21 22:05:51,213 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` MODIFY `tanggal_kunjungan` datetime(6)
+2024-06-24 08:52:48,847 WARNING database DDL Query made to DB:
+create table `tabMaster Call Plan 2` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci

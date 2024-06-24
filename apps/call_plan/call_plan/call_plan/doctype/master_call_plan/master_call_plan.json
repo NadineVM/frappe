@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MCP-{YY}{MM}-{##}",
+ "creation": "2024-06-20 11:36:56.132388",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "merchant_name",
+  "branch",
+  "area",
+  "column_break_mpdm",
+  "frekuensi",
+  "objective",
+  "section_break_kxyv",
+  "rencana_kunjungan"
+ ],
+ "fields": [
+  {
+   "fieldname": "merchant_name",
+   "fieldtype": "Link",
+   "label": "Merchant Name",
+   "options": "Merchants"
+  },
+  {
+   "fieldname": "column_break_mpdm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "merchant_name.branch",
+   "fieldname": "branch",
+   "fieldtype": "Data",
+   "label": "Branch"
+  },
+  {
+   "fetch_from": "merchant_name.area",
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "label": "Area"
+  },
+  {
+   "fieldname": "objective",
+   "fieldtype": "Small Text",
+   "label": "Objective/Misi"
+  },
+  {
+   "fieldname": "section_break_kxyv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rencana_kunjungan",
+   "fieldtype": "Table",
+   "label": "Rencana kunjungan",
+   "options": "Rencana tanggal kunjungan"
+  },
+  {
+   "fieldname": "frekuensi",
+   "fieldtype": "Data",
+   "label": "Frekuensi call"
+  },
+  {
+   "default": "Belum terealisasi",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Belum terealisasi\nSedang direalisasi\nSudah terealisasi",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-21 13:25:27.709095",
+ "modified_by": "Administrator",
+ "module": "Call Plan",
+ "name": "Master Call Plan",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -6,8 +6,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "call",
+  "column_break_xvpp",
   "nama_merchantklinik",
   "section_break_yckd",
+  "tanggal_target",
+  "mulai_realisasi",
   "tanggal_kunjungan",
   "column_break_qidi",
   "jenis_kunjungan",
@@ -15,8 +19,10 @@
   "section_break_qzfl",
   "table_iekr",
   "bukti_kunjungan_section",
-  "signature_ftry",
+  "tanda_tangan",
+  "column_break_wycy",
   "photo",
+  "lampiran_foto",
   "section_break_qfwg",
   "locationcall",
   "call_latitude",
@@ -28,11 +34,11 @@
  ],
  "fields": [
   {
+   "fetch_from": "call.merchant_name",
    "fieldname": "nama_merchantklinik",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Nama Merchant/Klinik",
-   "options": "Merchants",
    "reqd": 1
   },
   {
@@ -42,7 +48,9 @@
   {
    "fieldname": "tanggal_kunjungan",
    "fieldtype": "Datetime",
-   "label": "Tanggal Kunjungan"
+   "in_standard_filter": 1,
+   "label": "Tanggal Kunjungan",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_qidi",
@@ -59,9 +67,9 @@
   },
   {
    "fieldname": "kegiatan_kunjungan",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Kegiatan kunjungan",
-   "options": "Maintenance\nEdukasi\nPresentasi/Pitching"
+   "options": "Kegiatan kunjungan"
   },
   {
    "fieldname": "section_break_qzfl",
@@ -78,15 +86,13 @@
    "label": "Bukti Kunjungan"
   },
   {
-   "fieldname": "signature_ftry",
-   "fieldtype": "Signature"
-  },
-  {
+   "depends_on": "eval:doc.jenis_kunjungan===\"Offline\"",
    "fieldname": "photo",
    "fieldtype": "Button",
    "label": "Photo"
   },
   {
+   "depends_on": "eval:doc.jenis_kunjungan===\"Offline\"",
    "fieldname": "section_break_ejkz",
    "fieldtype": "Section Break"
   },
@@ -127,11 +133,47 @@
    "fieldname": "locationcall",
    "fieldtype": "HTML",
    "label": "Call"
+  },
+  {
+   "fieldname": "tanda_tangan",
+   "fieldtype": "Signature",
+   "label": "Tanda tangan member"
+  },
+  {
+   "fieldname": "tanggal_target",
+   "fieldtype": "Link",
+   "label": "Target Tanggal Kunjungan",
+   "options": "Rencana tanggal kunjungan"
+  },
+  {
+   "fieldname": "call",
+   "fieldtype": "Link",
+   "label": "Call",
+   "options": "Master Call Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xvpp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mulai_realisasi",
+   "fieldtype": "Button",
+   "label": "Mulai realisasi"
+  },
+  {
+   "fieldname": "column_break_wycy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lampiran_foto",
+   "fieldtype": "Attach Image",
+   "label": "Lampirkan foto"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-19 11:35:49.766715",
+ "modified": "2024-06-21 22:05:51.059261",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Call Realisasi",
