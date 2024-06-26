@@ -9,14 +9,15 @@ frappe.ui.form.on("Call Realisasi", {
 		}
 	},
 
+	on_submit(frm){
+		frm.call('set_status_tanggal',{call:frm.doc.call,no_status:frm.tanggal_target})
+	},
+
 	call(frm) {
-		frm.set_query("tanggal_target", (doc) => {
-			return {
-				filters: {
-					parent: doc.call, // whatever branch is selected
-				},
-			};
-		});
+		if(frm.doc.call){
+		frm.call('get_tanggal',{call:frm.doc.call}).then(opsi_tanggal =>{
+			frm.set_df_property('tanggal_target','options',opsi_tanggal.message)
+		})}
 	},
 
 	mulai_realisasi(frm) {

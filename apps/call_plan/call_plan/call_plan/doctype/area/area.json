@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:kode_area",
+ "autoname": "format:{nama_area} ({kode_area})",
  "creation": "2024-06-20 16:22:20.426167",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -43,11 +43,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-20 21:05:14.029872",
+ "modified": "2024-06-26 11:21:35.842269",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Area",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -63,9 +63,7 @@
    "write": 1
   }
  ],
- "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
- "title_field": "nama_area"
+ "states": []
 }

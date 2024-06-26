@@ -1,0 +1,195 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:MCP-{YY}{MM}-{##}",
+ "creation": "2024-06-24 09:03:52.404661",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "merchant_name",
+  "branch",
+  "area",
+  "column_break_mpdm",
+  "frekuensi",
+  "objective",
+  "1",
+  "kunjungan_1",
+  "column_break_bdzb",
+  "status_1",
+  "2",
+  "kunjungan_2",
+  "column_break_wicu",
+  "status_2",
+  "3",
+  "kunjungan_3",
+  "column_break_ihgw",
+  "status_3",
+  "4",
+  "kunjungan_4",
+  "column_break_sxyp",
+  "status_4"
+ ],
+ "fields": [
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status Plan",
+   "options": "Belum direalisasi\nSedang direalisasi\nSudah direalisasi"
+  },
+  {
+   "fieldname": "merchant_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Merchant Name",
+   "options": "Merchants"
+  },
+  {
+   "fetch_from": "merchant_name.branch",
+   "fieldname": "branch",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch"
+  },
+  {
+   "fetch_from": "merchant_name.area",
+   "fieldname": "area",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Area"
+  },
+  {
+   "fieldname": "column_break_mpdm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "frekuensi",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Frekuensi call dalam sebulan",
+   "options": "1\n2\n3\n4"
+  },
+  {
+   "fieldname": "objective",
+   "fieldtype": "Small Text",
+   "label": "Objective/Misi"
+  },
+  {
+   "fieldname": "1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "kunjungan_1",
+   "fieldtype": "Date",
+   "label": "Kunjungan 1"
+  },
+  {
+   "fieldname": "column_break_bdzb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Belum direalisasi",
+   "fieldname": "status_1",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Belum direalisasi\nSudah direalisasi",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.frekuensi===\"2\"||doc.frekuensi===\"3\"||doc.frekuensi===\"4\"",
+   "fieldname": "2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "kunjungan_2",
+   "fieldtype": "Date",
+   "label": "Kunjungan 2"
+  },
+  {
+   "fieldname": "column_break_wicu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Belum direalisasi",
+   "fieldname": "status_2",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Belum direalisasi\nSudah direalisasi",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.frekuensi===\"3\"||doc.frekuensi===\"4\"",
+   "fieldname": "3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "kunjungan_3",
+   "fieldtype": "Date",
+   "label": "Kunjungan 3"
+  },
+  {
+   "fieldname": "column_break_ihgw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Belum direalisasi",
+   "fieldname": "status_3",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Belum direalisasi\nSudah direalisasi",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.frekuensi===\"4\"",
+   "fieldname": "4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "kunjungan_4",
+   "fieldtype": "Date",
+   "label": "Kunjungan 4"
+  },
+  {
+   "fieldname": "column_break_sxyp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Belum direalisasi",
+   "fieldname": "status_4",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Belum direalisasi\nSudah direalisasi",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-06-26 11:15:04.747449",
+ "modified_by": "Administrator",
+ "module": "Call Plan",
+ "name": "Master Call Plan copy",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,20 @@
+2024-06-25 10:52:51,044 INFO ipython === bench console session ===
+2024-06-25 10:52:51,044 INFO ipython print('hello\nhello again')
+2024-06-25 10:52:51,045 INFO ipython === session end ===
+2024-06-26 10:38:30,990 INFO ipython === bench console session ===
+2024-06-26 10:38:30,991 INFO ipython frappe.db.get_all('Master Call Plan copy',fields=["merchant_name.merchant_name","kunjungan_1 AS tanggal_kunjungan","name"])
+2024-06-26 10:38:30,991 INFO ipython 'potato'+1
+2024-06-26 10:38:30,991 INFO ipython 'potato'+str(1)
+2024-06-26 10:38:30,991 INFO ipython x=1
+2024-06-26 10:38:30,991 INFO ipython f'potato{x}'
+2024-06-26 10:38:30,991 INFO ipython x=frappe.db.get_all('Master Call Plan copy',fields=["merchant_name.merchant_name","kunjungan_1 AS tanggal_kunjungan","name"])
+2024-06-26 10:38:30,992 INFO ipython for i in x:
+ pass
+ print(i)
+ 
+2024-06-26 10:38:30,992 INFO ipython for i in x:
+    i[merchant_name]=i[merchant_name]+'-1'
+    print(i)
+    
+2024-06-26 10:38:30,992 INFO ipython x[0]['merchant_name']+'-1'
+2024-06-26 10:38:30,992 INFO ipython === session end ===

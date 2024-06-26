@@ -70,3 +70,81 @@ index creation(creation))
 			ROW_FORMAT=DYNAMIC
 			CHARACTER SET=utf8mb4
 			COLLATE=utf8mb4_unicode_ci
+2024-06-24 08:59:27,064 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan 2` ADD COLUMN `test` varchar(140)
+2024-06-24 09:02:02,553 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan 2` ADD COLUMN `test2` varchar(140)
+2024-06-24 09:03:52,465 WARNING database DDL Query made to DB:
+create table `tabMaster Call Plan copy` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`status` varchar(140) DEFAULT 'Belum terealisasi',
+`merchant_name` varchar(140),
+`branch` varchar(140),
+`area` varchar(140),
+`frekuensi` varchar(140),
+`objective` text,
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-06-24 09:05:13,285 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` ADD COLUMN `starts_on` datetime(6), ADD COLUMN `ends_on` datetime(6)
+2024-06-24 09:47:13,850 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` ADD COLUMN `all_day` varchar(140)
+2024-06-24 09:48:06,181 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-24 14:39:05,696 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` ADD COLUMN `kunjungan_1` date, ADD COLUMN `status_1` varchar(140), ADD COLUMN `kunjungan_2` date, ADD COLUMN `status_2` varchar(140), ADD COLUMN `kunjungan_3` date, ADD COLUMN `status_3` varchar(140), ADD COLUMN `kunjungan_4` date, ADD COLUMN `status_4` varchar(140)
+2024-06-24 14:39:05,731 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-24 14:45:48,486 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-24 14:46:42,658 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-24 14:47:25,642 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-24 14:56:14,829 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-24 14:56:33,292 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-24 21:48:02,506 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-24 21:48:41,280 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `all_day` tinyint NOT NULL DEFAULT 0, MODIFY `status` varchar(140) DEFAULT 'Belum direalisasi'
+2024-06-24 21:49:17,417 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status_4` varchar(140) DEFAULT 'Belum direalisasi', MODIFY `status_2` varchar(140) DEFAULT 'Belum direalisasi', MODIFY `status_1` varchar(140) DEFAULT 'Belum direalisasi', MODIFY `status_3` varchar(140) DEFAULT 'Belum direalisasi', MODIFY `all_day` tinyint NOT NULL DEFAULT 0
+2024-06-25 10:56:12,580 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` ADD COLUMN `amended_from` varchar(140)
+2024-06-25 10:56:12,617 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` ADD INDEX `amended_from_index`(`amended_from`)
+2024-06-25 14:32:16,558 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` ADD COLUMN `workflow_state` varchar(140)
+2024-06-25 14:40:18,681 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` ADD COLUMN `status_plan` varchar(140)
+2024-06-25 14:43:05,222 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-06-26 11:10:09,411 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-06-26 11:10:16,506 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-06-26 11:10:40,558 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-06-26 11:15:04,899 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-06-26 13:27:19,203 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-06-26 13:27:19,205 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-06-26 13:27:19,205 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)

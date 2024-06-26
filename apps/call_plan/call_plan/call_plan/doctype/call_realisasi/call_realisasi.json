@@ -30,15 +30,18 @@
   "section_break_ejkz",
   "locationmerchant",
   "merch_longitude",
-  "merch_latitude"
+  "merch_latitude",
+  "amended_from"
  ],
  "fields": [
   {
    "fetch_from": "call.merchant_name",
    "fieldname": "nama_merchantklinik",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Nama Merchant/Klinik",
+   "options": "Merchants",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -141,15 +144,14 @@
   },
   {
    "fieldname": "tanggal_target",
-   "fieldtype": "Link",
-   "label": "Target Tanggal Kunjungan",
-   "options": "Rencana tanggal kunjungan"
+   "fieldtype": "Select",
+   "label": "Target Tanggal Kunjungan"
   },
   {
    "fieldname": "call",
    "fieldtype": "Link",
    "label": "Call",
-   "options": "Master Call Plan",
+   "options": "Master Call Plan copy",
    "reqd": 1
   },
   {
@@ -169,11 +171,22 @@
    "fieldname": "lampiran_foto",
    "fieldtype": "Attach Image",
    "label": "Lampirkan foto"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Call Realisasi",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-06-21 22:05:51.059261",
+ "modified": "2024-06-25 16:00:32.507824",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Call Realisasi",

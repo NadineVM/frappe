@@ -43,6 +43,8 @@
   {
    "fieldname": "merchant_status",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Merchant Status"
   },
   {
@@ -99,6 +101,8 @@
   {
    "fieldname": "branch",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Branch",
    "options": "Branch"
   },
@@ -106,6 +110,8 @@
    "depends_on": "eval:doc.branch",
    "fieldname": "area",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Area",
    "options": "Area"
   },
@@ -136,7 +142,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 22:01:38.881151",
+ "modified": "2024-06-26 11:11:57.237316",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Merchants",
