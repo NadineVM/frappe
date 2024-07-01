@@ -340,3 +340,54 @@ Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-05-27 00:00:00', 
 2024-06-26 10:05:32,948 ERROR frappe New Exception collected in error log
 Site: administration
 Form Dict: {'doctype': 'Master Call Plan copy', 'fields': '["`tabMaster Call Plan copy`.`name`","`tabMaster Call Plan copy`.`owner`","`tabMaster Call Plan copy`.`creation`","`tabMaster Call Plan copy`.`modified`","`tabMaster Call Plan copy`.`modified_by`","`tabMaster Call Plan copy`.`_user_tags`","`tabMaster Call Plan copy`.`_comments`","`tabMaster Call Plan copy`.`_assign`","`tabMaster Call Plan copy`.`_liked_by`","`tabMaster Call Plan copy`.`docstatus`","`tabMaster Call Plan copy`.`idx`","`tabMaster Call Plan copy`.`status`"]', 'filters': '[]', 'order_by': '`tabMaster Call Plan copy`.tanggal_kunjungan asc, `tabMaster Call Plan copy`.name asc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2024-06-26 16:22:20,966 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Call Realisasi","name":"new-call-realisasi-ttzpaeglgk","__islocal":1,"__unsaved":1,"owner":"Administrator","jenis_kunjungan":"Online","table_iekr":[],"nama_merchantklinik":"MERCHANT-17735","call":"MCP-2406-12","idx":0,"tanggal_target":"2024-06-23","tanggal_kunjungan":"2024-06-26T09:22:17.894Z"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-06-26 16:22:37,669 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doc': '{"name":"CR-240626-0015","owner":"Administrator","creation":"2024-06-26 13:18:45.362209","modified":"2024-06-26 13:18:45.362209","modified_by":"Administrator","docstatus":0,"idx":0,"call":"MCP-2406-11","nama_merchantklinik":"MERCHANT - 176434","tanggal_target":"2024-06-04","jenis_kunjungan":"Online","kegiatan_kunjungan":"Edukasi","doctype":"Call Realisasi","table_iekr":[],"__last_sync_on":"2024-06-26T09:22:31.880Z","tanggal_kunjungan":"2024-06-26T09:22:35.725Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-06-26 16:36:25,997 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doc': '{"name":"CR-240626-0015","owner":"Administrator","creation":"2024-06-26 13:18:45.362209","modified":"2024-06-26 13:18:45.362209","modified_by":"Administrator","docstatus":0,"idx":0,"call":"MCP-2406-11","nama_merchantklinik":"MERCHANT - 176434","tanggal_target":"2024-06-04","jenis_kunjungan":"Online","kegiatan_kunjungan":"Edukasi","doctype":"Call Realisasi","table_iekr":[],"__last_sync_on":"2024-06-26T09:36:09.079Z","tanggal_kunjungan":"2024-06-26T09:36:09.988Z","__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2024-06-27 13:38:04,428 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Call Realisasi', 'name': 'CR-240626-0016', 'cmd': 'frappe.desk.form.linked_with.get_submitted_linked_docs'}
+2024-06-27 13:38:08,342 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Call Realisasi', 'name': 'CR-240626-0016', 'cmd': 'frappe.desk.form.linked_with.get_submitted_linked_docs'}
+2024-06-27 13:38:14,473 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Call Realisasi', 'name': 'CR-240626-0016', 'cmd': 'frappe.desk.form.linked_with.get_submitted_linked_docs'}
+2024-06-27 13:44:15,337 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Call Realisasi', 'name': 'CR-240626-0016', 'cmd': 'frappe.desk.form.linked_with.get_submitted_linked_docs'}
+2024-07-01 11:10:01,373 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-07-01 00:00:00', 'end': '2024-07-08 00:00:00', 'filters': '[]', 'field_map': '{"start":"tanggal_kunjungan","end":"tanggal_kunjungan","title":"merchant_name","id":"name","allDay":true}', 'cmd': 'call_plan.call_plan.doctype.master_call_plan_copy.master_call_plan_copy.get_call'}
+2024-07-01 11:10:14,804 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-07-01 00:00:00', 'end': '2024-07-08 00:00:00', 'filters': '[]', 'field_map': '{"start":"tanggal_kunjungan","end":"tanggal_kunjungan","title":"merchant_name","id":"name","allDay":true}', 'cmd': 'call_plan.call_plan.doctype.master_call_plan_copy.master_call_plan_copy.get_call'}
+2024-07-01 11:11:26,254 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-07-01 00:00:00', 'end': '2024-07-08 00:00:00', 'filters': '[]', 'field_map': '{"start":"tanggal_kunjungan","end":"tanggal_kunjungan","title":"merchant_name","id":"name","allDay":true}', 'cmd': 'call_plan.call_plan.doctype.master_call_plan_copy.master_call_plan_copy.get_call'}
+2024-07-01 11:12:18,170 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-07-01 00:00:00', 'end': '2024-07-08 00:00:00', 'filters': '[]', 'field_map': '{"start":"tanggal_kunjungan","end":"tanggal_kunjungan","title":"merchant_name","id":"name","allDay":true}', 'cmd': 'call_plan.call_plan.doctype.master_call_plan_copy.master_call_plan_copy.get_call'}
+2024-07-01 11:12:25,538 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-07-01 00:00:00', 'end': '2024-07-08 00:00:00', 'filters': '[]', 'field_map': '{"start":"tanggal_kunjungan","end":"tanggal_kunjungan","title":"merchant_name","id":"name","allDay":true}', 'cmd': 'call_plan.call_plan.doctype.master_call_plan_copy.master_call_plan_copy.get_call'}
+2024-07-01 11:14:50,716 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-07-01 00:00:00', 'end': '2024-07-08 00:00:00', 'filters': '[]', 'field_map': '{"start":"tanggal_kunjungan","end":"tanggal_kunjungan","title":"merchant_name","id":"name","allDay":true}', 'cmd': 'call_plan.call_plan.doctype.master_call_plan_copy.master_call_plan_copy.get_call'}
+2024-07-01 11:15:50,138 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'fields': '["`tabMaster Call Plan copy`.`name`","`tabMaster Call Plan copy`.`owner`","`tabMaster Call Plan copy`.`creation`","`tabMaster Call Plan copy`.`modified`","`tabMaster Call Plan copy`.`modified_by`","`tabMaster Call Plan copy`.`_user_tags`","`tabMaster Call Plan copy`.`_comments`","`tabMaster Call Plan copy`.`_assign`","`tabMaster Call Plan copy`.`_liked_by`","`tabMaster Call Plan copy`.`docstatus`","`tabMaster Call Plan copy`.`idx`","`tabMaster Call Plan copy`.`status`","`tabMaster Call Plan copy`.`merchant_name`","`tabMaster Call Plan copy`.`branch`","`tabMaster Call Plan copy`.`area`","`tabMaster Call Plan copy`.`frekuensi`","merchant_name.merchant_name as merchant_name_merchant_name"]', 'filters': '[]', 'order_by': '`tabMaster Call Plan copy`.tanggal_kunjungan asc, `tabMaster Call Plan copy`.name asc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2024-07-01 11:15:52,906 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-07-01 00:00:00', 'end': '2024-07-08 00:00:00', 'filters': '[]', 'field_map': '{"start":"tanggal_kunjungan","end":"tanggal_kunjungan","title":"merchant_name","id":"name","allDay":true}', 'cmd': 'call_plan.call_plan.doctype.master_call_plan_copy.master_call_plan_copy.get_call'}
+2024-07-01 13:50:23,131 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Call Realisasi', 'name': 'CR-240627-0021', 'cmd': 'frappe.desk.form.linked_with.get_submitted_linked_docs'}
+2024-07-01 17:00:08,292 ERROR frappe New Exception collected in error log
+Site: administration
+Form Dict: {'doctype': 'Master Call Plan copy', 'start': '2024-07-01 00:00:00', 'end': '2024-08-12 00:00:00', 'filters': '[]', 'field_map': '{"start":"tanggal_kunjungan","end":"tanggal_kunjungan","title":"merchant_name","id":"name","allDay":true}', 'cmd': 'call_plan.call_plan.doctype.master_call_plan_copy.master_call_plan_copy.get_call'}

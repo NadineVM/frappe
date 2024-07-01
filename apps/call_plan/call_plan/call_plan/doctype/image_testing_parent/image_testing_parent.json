@@ -5,7 +5,8 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "child_doc"
+  "child_doc",
+  "datetime_popk"
  ],
  "fields": [
   {
@@ -13,11 +14,15 @@
    "fieldtype": "Table",
    "label": "child doc",
    "options": "image testing"
+  },
+  {
+   "fieldname": "datetime_popk",
+   "fieldtype": "Datetime"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-18 15:57:31.020619",
+ "modified": "2024-06-26 16:21:10.581908",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "image testing parent",

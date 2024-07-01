@@ -15,6 +15,6 @@ class CallRealisasi(Document):
 			tanggal=str(frappe.db.get_value('Master Call Plan copy',call,f'kunjungan_{i+1}'))
 			opsi_tanggal=opsi_tanggal+tanggal+'\n'
 		return opsi_tanggal
-	def set_status_tanggal(self, call, no_status):
-		frappe.db.set_value('Master Call Plan copy',call,no_status,'Sudah direalisasi')
+	""" def set_status_tanggal(self, call, no_status):
+		frappe.db.set_value('Master Call Plan copy',call,no_status,'Sudah direalisasi') """
 

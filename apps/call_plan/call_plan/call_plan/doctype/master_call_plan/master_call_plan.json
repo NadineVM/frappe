@@ -14,7 +14,8 @@
   "frekuensi",
   "objective",
   "section_break_kxyv",
-  "rencana_kunjungan"
+  "rencana_kunjungan",
+  "amended_from"
  ],
  "fields": [
   {
@@ -66,11 +67,21 @@
    "label": "Status",
    "options": "Belum terealisasi\nSedang direalisasi\nSudah terealisasi",
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Master Call Plan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-21 13:25:27.709095",
+ "modified": "2024-06-27 13:48:40.016203",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Master Call Plan",

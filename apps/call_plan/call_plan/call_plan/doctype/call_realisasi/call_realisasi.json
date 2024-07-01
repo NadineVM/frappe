@@ -6,9 +6,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "call",
-  "column_break_xvpp",
   "nama_merchantklinik",
+  "column_break_xvpp",
+  "call",
   "section_break_yckd",
   "tanggal_target",
   "mulai_realisasi",
@@ -35,13 +35,11 @@
  ],
  "fields": [
   {
-   "fetch_from": "call.merchant_name",
    "fieldname": "nama_merchantklinik",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Nama Merchant/Klinik",
    "options": "Merchants",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -168,6 +166,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.jenis_kunjungan===\"Online\"",
    "fieldname": "lampiran_foto",
    "fieldtype": "Attach Image",
    "label": "Lampirkan foto"
@@ -184,9 +183,8 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2024-06-25 16:00:32.507824",
+ "modified": "2024-07-01 17:03:39.559198",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Call Realisasi",

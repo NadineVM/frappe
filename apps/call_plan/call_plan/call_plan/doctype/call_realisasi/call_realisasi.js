@@ -2,16 +2,21 @@
 // For license information, please see license.txt
 frappe.ui.form.on("Call Realisasi", {
 	refresh(frm) {
-		console.log(navigator.mediaDevices);
-		frm.trigger("get_call_location");
+		//console.log(navigator.mediaDevices);
+		//frm.trigger("get_call_location");
 		if (frm.doc.tanggal_kunjungan) {
 			frm.fields_dict.mulai_realisasi.toggle(false);
 		}
+		frm.trigger('call')
 	},
 
-	on_submit(frm){
+	//mekanisme status
+
+	
+
+	/* on_submit(frm){
 		frm.call('set_status_tanggal',{call:frm.doc.call,no_status:frm.tanggal_target})
-	},
+	}, */
 
 	call(frm) {
 		if(frm.doc.call){
@@ -22,10 +27,20 @@ frappe.ui.form.on("Call Realisasi", {
 
 	mulai_realisasi(frm) {
 		frm.fields_dict.mulai_realisasi.toggle(false);
+		function format(num, len = 2) {
+			return `${num}`.padStart(len, '0');
+		  }
 		let currentTime = new Date();
-		frm.set_value("tanggal_kunjungan", currentTime);
+		let hours=format(currentTime.getHours())
+        let minutes=format(currentTime.getMinutes())
+		let seconds=format(currentTime.getSeconds())
+        let month=format(currentTime.getMonth()+1)
+		let date=format(currentTime.getDate())
+        let year=format(currentTime.getFullYear())
+		frm.set_value("tanggal_kunjungan", `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`);
+		console.log(currentTime)
 	},
-	//tambah 1 baris convert dari datetime computer ke format frappe pake string
+	
 	nama_merchantklinik(frm) {
 		frm.trigger("set_map");
 	},
@@ -69,7 +84,7 @@ frappe.ui.form.on("Call Realisasi", {
 		});
 	},
 
-	get_call_location(frm) {
+	/* get_call_location(frm) {
 		if ("geolocation" in navigator) {
 			navigator.geolocation.getCurrentPosition((position) => {
 				console.log(position.coords.latitude, position.coords.longitude);
@@ -77,5 +92,5 @@ frappe.ui.form.on("Call Realisasi", {
 		} else {
 			console.log("geolocation unavailable");
 		}
-	},
+	}, */
 });

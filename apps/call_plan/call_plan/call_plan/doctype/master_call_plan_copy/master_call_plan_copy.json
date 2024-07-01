@@ -44,7 +44,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Merchant Name",
-   "options": "Merchants"
+   "options": "Merchants",
+   "set_only_once": 1
   },
   {
    "fetch_from": "merchant_name.branch",
@@ -71,7 +72,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Frekuensi call dalam sebulan",
+   "label": "Frekuensi call bulan ini",
    "options": "1\n2\n3\n4"
   },
   {
@@ -168,27 +169,15 @@
   }
  ],
  "index_web_pages_for_search": 1,
+ "istable": 1,
  "links": [],
- "modified": "2024-06-26 11:15:04.747449",
+ "modified": "2024-07-01 22:22:44.768650",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Master Call Plan copy",
  "naming_rule": "Expression",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
+ "permissions": [],
  "sort_field": "creation",
  "sort_order": "DESC",
  "states": []
