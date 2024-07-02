@@ -484,3 +484,15 @@ To avoid seeing this warning, set shallow_clone to false in your common_site_con
 2024-07-01 22:41:15,012 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
 2024-07-01 22:41:15,023 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
 2024-07-01 22:41:15,057 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-02 00:00:00,731 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-07-02 08:48:45,047 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-02 08:48:45,396 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-02 08:48:45,404 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-02 08:48:45,408 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-02 08:48:45,419 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-02 15:26:18,783 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration console
+2024-07-02 15:56:59,853 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-02 15:57:00,121 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-02 15:57:00,121 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-02 15:57:00,123 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-02 15:57:00,128 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000

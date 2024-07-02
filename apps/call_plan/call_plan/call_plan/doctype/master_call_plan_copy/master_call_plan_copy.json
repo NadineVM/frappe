@@ -44,8 +44,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Merchant Name",
-   "options": "Merchants",
-   "set_only_once": 1
+   "options": "Merchants"
   },
   {
    "fetch_from": "merchant_name.branch",
@@ -87,7 +86,8 @@
   {
    "fieldname": "kunjungan_1",
    "fieldtype": "Date",
-   "label": "Kunjungan 1"
+   "label": "Kunjungan 1",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_bdzb",
@@ -109,7 +109,8 @@
   {
    "fieldname": "kunjungan_2",
    "fieldtype": "Date",
-   "label": "Kunjungan 2"
+   "label": "Kunjungan 2",
+   "mandatory_depends_on": "eval:doc.frekuensi===\"2\"||doc.frekuensi===\"3\"||doc.frekuensi===\"4\""
   },
   {
    "fieldname": "column_break_wicu",
@@ -131,7 +132,8 @@
   {
    "fieldname": "kunjungan_3",
    "fieldtype": "Date",
-   "label": "Kunjungan 3"
+   "label": "Kunjungan 3",
+   "mandatory_depends_on": "eval:doc.frekuensi===\"3\"||doc.frekuensi===\"4\""
   },
   {
    "fieldname": "column_break_ihgw",
@@ -153,7 +155,8 @@
   {
    "fieldname": "kunjungan_4",
    "fieldtype": "Date",
-   "label": "Kunjungan 4"
+   "label": "Kunjungan 4",
+   "mandatory_depends_on": "eval:doc.frekuensi===\"4\""
   },
   {
    "fieldname": "column_break_sxyp",
@@ -171,7 +174,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-01 22:22:44.768650",
+ "modified": "2024-07-02 10:14:19.683308",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Master Call Plan copy",

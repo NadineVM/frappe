@@ -18,3 +18,14 @@
     
 2024-06-26 10:38:30,992 INFO ipython x[0]['merchant_name']+'-1'
 2024-06-26 10:38:30,992 INFO ipython === session end ===
+2024-07-02 16:43:09,565 INFO ipython === bench console session ===
+2024-07-02 16:43:09,567 INFO ipython frappe.get_list('Merchant',fields=['merchant_name'],filters={'merchant_name': ['not in', planned_merchant]})
+2024-07-02 16:43:09,567 INFO ipython frappe.get_list('Merchant',fields=['merchant_name'],filters={'merchant_name': ['not in', ['MERCHANT-17735'
+]]})
+2024-07-02 16:43:09,567 INFO ipython frappe.get_list('Merchants',fields=['merchant_name'],filters={'merchant_name': ['not in', ['MERCHANT-17735'
+]]})
+2024-07-02 16:43:09,567 INFO ipython frappe.get_list('Merchants',fields=['merchant_name'],filters={'merchant_code': ['not in', ['MERCHANT-17735'
+]]})
+2024-07-02 16:43:09,567 INFO ipython frappe.get_list('Merchants',fields=['merchant_name'],filters={'merchant_code': ['not in', ['MERCHANT-17735'
+]]},pluck='merchant_name')
+2024-07-02 16:43:09,567 INFO ipython === session end ===

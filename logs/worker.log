@@ -9512,3 +9512,134 @@ Wrote document file for DocType Call Realisasi at /Users/nadineverelia/frappe/fr
 2024-07-01 22:54:45,392 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
 2024-07-01 23:00:05,087 Worker 7910a56642214ce0b0db511920c1f062 [PID 6959]: warm shut down requested
 2024-07-01 23:00:05,105 Unsubscribing from channel rq:pubsub:7910a56642214ce0b0db511920c1f062
+2024-07-02 08:48:45,924 Worker rq:worker:f7b9290cca764cbcbcc7780ea287dcfe started with PID 1999, version 1.16.2
+2024-07-02 08:48:45,924 Subscribing to channel rq:pubsub:f7b9290cca764cbcbcc7780ea287dcfe
+2024-07-02 08:48:45,924 *** Listening on Users-nadineverelia-frappe-frappe-bench:short, Users-nadineverelia-frappe-frappe-bench:default, Users-nadineverelia-frappe-frappe-bench:long...
+2024-07-02 08:48:45,924 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 08:48:45,925 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 08:48:45,925 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 09:02:15,989 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 09:02:15,994 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 09:02:15,996 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 09:15:46,032 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 09:15:46,035 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 09:15:46,038 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 09:29:16,141 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 09:29:16,146 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 09:29:16,149 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 09:42:46,289 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 09:42:46,293 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 09:42:46,296 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 09:56:16,416 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 09:56:16,419 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 09:56:16,421 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 10:09:46,471 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 10:09:46,473 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 10:09:46,473 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 10:23:16,558 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 10:23:16,563 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 10:23:16,566 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 10:36:46,659 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 10:36:46,663 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 10:36:46,665 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 10:50:16,703 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 10:50:16,706 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 10:50:16,708 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 11:03:46,763 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 11:03:46,768 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 11:03:46,769 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 11:17:16,793 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 11:17:16,796 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 11:17:16,797 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 11:30:46,899 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 11:30:46,906 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 11:30:46,908 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 11:44:17,056 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 11:44:17,058 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 11:44:17,059 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 11:47:37,642 Users-nadineverelia-frappe-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'status testing', 'name': '6cu2g6unhv'}, method='frappe.model.delete_doc.delete_dynamic_links', site='administration', user='Administrator') (administration::bca163cb-e234-4ddc-8f0e-efa43f0a4cc0)
+2024-07-02 11:47:37,710 Users-nadineverelia-frappe-frappe-bench:default: Job OK (administration::bca163cb-e234-4ddc-8f0e-efa43f0a4cc0)
+2024-07-02 11:47:37,710 Result is kept for 600 seconds
+2024-07-02 11:47:37,741 Users-nadineverelia-frappe-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'status testing', 'name': '6ccgm3ga9u'}, method='frappe.model.delete_doc.delete_dynamic_links', site='administration', user='Administrator') (administration::91e38696-126b-492b-a5ec-6ce641041681)
+2024-07-02 11:47:37,774 Users-nadineverelia-frappe-frappe-bench:default: Job OK (administration::91e38696-126b-492b-a5ec-6ce641041681)
+2024-07-02 11:47:37,774 Result is kept for 600 seconds
+2024-07-02 11:54:22,788 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 11:54:22,794 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 11:54:22,797 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 12:13:18,042 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 12:13:18,145 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 12:13:18,145 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 12:24:17,378 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 12:24:17,379 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 12:24:17,379 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 12:35:16,831 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 12:35:16,832 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 12:35:16,833 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 12:45:37,072 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 12:45:37,073 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 12:45:37,074 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 12:56:00,207 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 12:56:00,208 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 12:56:00,208 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 13:06:23,223 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 13:06:23,224 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 13:06:23,225 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 13:16:46,143 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 13:16:46,144 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 13:16:46,145 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 13:27:08,466 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 13:27:08,559 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 13:27:08,559 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 13:37:26,940 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 13:37:26,941 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 13:37:26,943 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 13:47:45,329 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 13:47:45,330 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 13:47:45,330 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 14:02:40,835 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 14:02:40,840 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 14:02:40,842 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 14:16:11,012 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 14:16:11,017 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 14:16:11,020 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 14:29:41,131 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 14:29:41,134 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 14:29:41,137 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 14:43:11,280 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 14:43:11,283 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 14:43:11,285 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 14:56:41,386 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 14:56:41,391 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 14:56:41,392 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 14:58:42,547 Users-nadineverelia-frappe-frappe-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.model.delete_doc.delete_dynamic_links', kwargs={'doctype': 'Merchants', 'name': 'MERCHANT-186T2'}, method='frappe.model.delete_doc.delete_dynamic_links', site='administration', user='Administrator') (administration::095d6e76-28cd-43b4-aeae-cb125a807020)
+2024-07-02 14:58:42,637 Users-nadineverelia-frappe-frappe-bench:default: Job OK (administration::095d6e76-28cd-43b4-aeae-cb125a807020)
+2024-07-02 14:58:42,637 Result is kept for 600 seconds
+2024-07-02 15:12:12,748 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 15:12:12,754 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 15:12:12,756 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 15:25:42,950 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 15:25:42,956 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 15:25:42,958 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 15:39:13,012 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 15:39:13,018 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 15:39:13,020 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 15:52:43,059 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 15:52:43,064 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 15:52:43,065 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 15:56:55,693 Worker f7b9290cca764cbcbcc7780ea287dcfe [PID 1999]: warm shut down requested
+2024-07-02 15:56:55,702 Unsubscribing from channel rq:pubsub:f7b9290cca764cbcbcc7780ea287dcfe
+2024-07-02 15:57:00,387 Worker rq:worker:d656a73e9557448d98e6aae706edb0d5 started with PID 78265, version 1.16.2
+2024-07-02 15:57:00,387 Subscribing to channel rq:pubsub:d656a73e9557448d98e6aae706edb0d5
+2024-07-02 15:57:00,388 *** Listening on Users-nadineverelia-frappe-frappe-bench:short, Users-nadineverelia-frappe-frappe-bench:default, Users-nadineverelia-frappe-frappe-bench:long...
+2024-07-02 15:57:00,388 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 15:57:00,388 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 15:57:00,389 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 16:10:30,503 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 16:10:30,508 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 16:10:30,511 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 16:24:00,636 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 16:24:00,642 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 16:24:00,643 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long
+2024-07-02 16:37:30,782 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:short
+2024-07-02 16:37:30,783 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:default
+2024-07-02 16:37:30,784 Cleaning registries for queue: Users-nadineverelia-frappe-frappe-bench:long

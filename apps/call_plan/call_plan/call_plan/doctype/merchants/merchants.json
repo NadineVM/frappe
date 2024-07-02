@@ -8,11 +8,11 @@
  "engine": "InnoDB",
  "field_order": [
   "detail_merchant_section",
+  "status",
   "merchant_code",
   "merchant_id",
   "merchant_name",
   "merchant_date",
-  "merchant_status",
   "column_break_kqpe",
   "branch",
   "area",
@@ -39,13 +39,6 @@
    "fieldname": "merchant_name",
    "fieldtype": "Data",
    "label": "Merchant Name"
-  },
-  {
-   "fieldname": "merchant_status",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Merchant Status"
   },
   {
    "fieldname": "province",
@@ -138,11 +131,20 @@
    "fieldtype": "Date",
    "label": "Merchant Date",
    "set_only_once": 1
+  },
+  {
+   "default": "Aktif",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Aktif\nTidak aktif"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 11:11:57.237316",
+ "modified": "2024-07-02 16:15:03.245635",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Merchants",

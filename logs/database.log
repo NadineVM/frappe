@@ -2461,3 +2461,81 @@ alter table `tabMaster Call Plan copy` add column if not exists parenttype varch
 alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
 2024-07-01 22:22:44,931 WARNING database DDL Query made to DB:
 ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-07-02 08:55:44,241 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-02 08:55:44,242 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-02 08:55:44,243 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-02 08:55:44,381 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-07-02 08:57:26,465 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-02 08:57:26,467 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-02 08:57:26,468 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-02 08:57:26,594 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-07-02 08:59:22,545 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-02 08:59:22,547 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-02 08:59:22,548 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-02 08:59:22,671 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-07-02 10:14:19,710 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-02 10:14:19,712 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-02 10:14:19,712 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-02 10:14:19,843 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan copy` MODIFY `status` varchar(140)
+2024-07-02 11:32:53,490 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMerchants` ADD COLUMN `status` varchar(140)
+2024-07-02 11:39:40,487 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMerchants` ADD COLUMN `aktif` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:41:09,632 WARNING database DDL Query made to DB:
+create table `tabstatus testing` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-02 11:41:19,152 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` ADD COLUMN `enabled` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:41:37,633 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` MODIFY `enabled` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:41:53,892 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` MODIFY `enabled` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:42:13,619 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` ADD COLUMN `enable` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:42:30,239 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` MODIFY `enabled` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:43:14,954 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` ADD COLUMN `is_active` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:44:14,948 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` MODIFY `is_active` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:44:51,315 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` ADD COLUMN `workflow_state` varchar(140)
+2024-07-02 11:44:51,353 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` MODIFY `is_active` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:48:20,474 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` MODIFY `enabled` tinyint NOT NULL DEFAULT 0
+2024-07-02 11:52:12,007 WARNING database DDL Query made to DB:
+ALTER TABLE `tabstatus testing` ADD COLUMN `status` varchar(140) DEFAULT 'Aktif'
+2024-07-02 11:52:46,566 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMerchants` MODIFY `status` varchar(140) DEFAULT 'Aktif'

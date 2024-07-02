@@ -6,9 +6,9 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "nama_merchantklinik",
-  "column_break_xvpp",
   "call",
+  "column_break_xvpp",
+  "nama_merchantklinik",
   "section_break_yckd",
   "tanggal_target",
   "mulai_realisasi",
@@ -148,8 +148,8 @@
   {
    "fieldname": "call",
    "fieldtype": "Link",
-   "label": "Call",
-   "options": "Master Call Plan copy",
+   "label": "Master Call Plan",
+   "options": "Master Call Plan bulanan",
    "reqd": 1
   },
   {
@@ -183,8 +183,9 @@
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-07-01 17:03:39.559198",
+ "modified": "2024-07-02 16:42:15.399642",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Call Realisasi",
