@@ -13,20 +13,42 @@ function set_opsi_tahun(frm){
     date= currentTime.getDate();
     month=currentTime.getMonth();
     year=currentTime.getFullYear();
-    frm.set_df_property('tahun','options',String(year)+'\n'+String(year+1))
+    frm.set_df_property('tahun','options',[String(year),String(year+1)])
 
 }
 
-function cek_tanggal(frm,cdt,cdn,no_kunjungan,selected_month,selected_year,){
-    let field_kunjungan='kunjungan_'+String(no_kunjungan)
+function cek_duplicate_tanggal(frm,cdt,cdn,field_tanggal,field_tanggal_lain){
     child=locals[cdt][cdn]
-    //dapatkan index bulan
-    let selected_month_number=String(months.indexOf(selected_month)+1).padStart(2,'0')
-    //gagalkan set tanggal jika tanggal yang dipilih di luar bulan yang dipilih
-    if (child[field_kunjungan]<`${selected_year}-${selected_month_number}-01`||child[field_kunjungan]>`${selected_year}-${selected_month_number}-31`){
-        frappe.msgprint(__(`You can only select dates in ${selected_month} ${selected_year} in kunjungan ${String(no_kunjungan)}`));
-        frappe.model.set_value(cdt,cdn,field_kunjungan, undefined)
+    let tanggal=child[field_tanggal]
+    field_tanggal_lain.forEach((field)=>{
+        if (child[field]&&child[field]==tanggal){
+            no_field=field.split('_')[1]
+            frappe.msgprint(__(`Duplicate date in kunjungan ${no_field}`));
+            frappe.model.set_value(cdt,cdn,field_tanggal, "")
+        }
+    })
 }
+
+//js jalan dulu sebelum python selesai & return value
+function cek_tanggal(frm){
+    var selected_month_number=String(months.indexOf(frm.doc.bulan)+1).padStart(2,'0')
+    let list_error=[]
+    frm.doc.call_plan.forEach((row)=>{
+        let frekuensi=row.frekuensi
+        for (let i = 0; i < frekuensi; i++){
+            let field_kunjungan='kunjungan_'+String(i+1)
+            if (row[field_kunjungan]<`${frm.doc.tahun}-${selected_month_number}-01`||row[field_kunjungan]>`${frm.doc.tahun}-${selected_month_number}-31`){
+                //list_error.push(`kunjungan ${String(i+1)} of ${row.fetched_merchant_name}`)
+                list_error.push(`${row.fetched_merchant_name}`)
+                break
+            }
+        }        
+    })
+    if (list_error.length>0){
+        console.log(`${list_error},length=${list_error.length} validasi false tertriger karena ini`)
+        frappe.msgprint(__(`You can only select dates in ${frm.doc.bulan} ${frm.doc.tahun} in ${list_error.join(', ')}`));
+        frappe.validated=false}
+    
 }
 
 function set_filter_merchant(frm){
@@ -65,20 +87,32 @@ function cek_unplanned_merchant(frm){
 
 }
 
-frappe.ui.form.on("Master Call Plan bulanan", {
+function set_route_realisasi(frm,cdt,cdn){
+    child=locals[cdt][cdn]
+    let realisasi_baru=`<button class="btn btn-primary" onclick="window.location.href='/app/call-realisasi/new?master_plan=${frm.docname}&nama_merchantklinik=${child.merchant_name}'">Mulai Realisasi</button>`
+    frm.set_df_property('call_plan', "options", realisasi_baru, frm.docname, `start_realisasi`, child.name)
+    for (let i = 0; i < child.frekuensi; i++){
+        /* if (child[`status_${i+1}`]=='Belum realisasi'){
+            frm.set_df_property('call_plan', "options", realisasi_baru, frm.docname, `realisasi_route_${i+1}`, child.name);} */
+        if (child[`status_${i+1}`]!='Belum realisasi'){
+            let tanggal_kunjungan=frappe.format(child[`kunjungan_${i+1}`],{ fieldtype: 'Date' })
+            let realisasi_route=`<a href="/app/call-realisasi/CR-${child.merchant_name}(${tanggal_kunjungan})">Go to realisasi</a>`
+            frm.set_df_property('call_plan', "options", realisasi_route, frm.docname, `realisasi_route_${i+1}`, child.name);}
+    
+    }
+}
 
-//set opsi tahun ketika dokumen pertama dibuat
-setup(frm){
-    set_opsi_tahun(frm)
-},
+frappe.ui.form.on("Master Call Plan bulanan", {
 
 //set informasi merchant yang sudah diplan sebelum save
     validate(frm){
         cek_unplanned_merchant(frm)
+        //cek tanggal kunjungan untuk semua row
+        cek_tanggal(frm)
     },
 
 //set filter, cek unplanned merchant, dan set opsi tahun (jika belum diset) saat form di load
-    onload(frm){
+    refresh(frm){
         set_filter_merchant(frm)
         cek_unplanned_merchant(frm)
         if (!frm.doc.tahun){
@@ -106,18 +140,21 @@ setup(frm){
                 avail_months=months
             }
         }
-        let month_choice = ''
-        avail_months.forEach((month) => {
-            month_choice+=month+'\n'
-        })
-        frm.set_df_property('bulan','options',month_choice)
+        frm.set_df_property('bulan','options',avail_months)
     },
+
+    //validasi panggil lg sblm save
     bulan(frm){
-        frm.save();
+        //frm.save();
     }
  });
 
 frappe.ui.form.on("Master Call Plan copy", {
+    form_render(frm,cdt,cdn){
+        //kalau form sudah approve, tampilkan tombol-tombol realisasi
+        if (frm.doc.workflow_state=='Approved'){
+            set_route_realisasi(frm,cdt,cdn)}
+    },
     merchant_name(frm,cdt,cdn){
         set_filter_merchant(frm)
         cek_unplanned_merchant(frm)
@@ -138,16 +175,16 @@ frappe.ui.form.on("Master Call Plan copy", {
         }
     },
     kunjungan_1(frm,cdt,cdn){
-        cek_tanggal(frm,cdt,cdn,1,frm.doc.bulan,frm.doc.tahun)
+        cek_duplicate_tanggal(frm,cdt,cdn,'kunjungan_1',['kunjungan_2','kunjungan_3','kunjungan_4'])
     },
     kunjungan_2(frm,cdt,cdn){
-        cek_tanggal(frm,cdt,cdn,2,frm.doc.bulan,frm.doc.tahun)
+        cek_duplicate_tanggal(frm,cdt,cdn,'kunjungan_2',['kunjungan_1','kunjungan_3','kunjungan_4'])
     },
     kunjungan_3(frm,cdt,cdn){
-        cek_tanggal(frm,cdt,cdn,3,frm.doc.bulan,frm.doc.tahun)
+        cek_duplicate_tanggal(frm,cdt,cdn,'kunjungan_3',['kunjungan_1','kunjungan_2','kunjungan_4'])
     },
     kunjungan_4(frm,cdt,cdn){
-        cek_tanggal(frm,cdt,cdn,4,frm.doc.bulan,frm.doc.tahun)
+        cek_duplicate_tanggal(frm,cdt,cdn,'kunjungan_4',['kunjungan_1','kunjungan_2','kunjungan_3'])
     },
 });
 

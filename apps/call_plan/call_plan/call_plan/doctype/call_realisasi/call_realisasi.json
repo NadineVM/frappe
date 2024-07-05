@@ -1,12 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:CR-{YY}{MM}{DD}-{####}",
+ "autoname": "format:CR-{nama_merchantklinik}({tanggal_target})",
  "creation": "2024-06-10 09:28:27.461638",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "call",
+  "section_break_tzwf",
+  "master_plan",
   "column_break_xvpp",
   "nama_merchantklinik",
   "section_break_yckd",
@@ -16,6 +17,12 @@
   "column_break_qidi",
   "jenis_kunjungan",
   "kegiatan_kunjungan",
+  "section_break_fbxc",
+  "kesesuaian_tanggal",
+  "keterangan_tanggal",
+  "column_break_uule",
+  "kesesuaian_lokasi",
+  "keterangan_lokasi",
   "section_break_qzfl",
   "table_iekr",
   "bukti_kunjungan_section",
@@ -35,16 +42,9 @@
  ],
  "fields": [
   {
-   "fieldname": "nama_merchantklinik",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Nama Merchant/Klinik",
-   "options": "Merchants",
-   "reqd": 1
-  },
-  {
    "fieldname": "section_break_yckd",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "hide_border": 1
   },
   {
    "fieldname": "tanggal_kunjungan",
@@ -58,6 +58,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "Offline",
    "fieldname": "jenis_kunjungan",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -146,17 +147,11 @@
    "label": "Target Tanggal Kunjungan"
   },
   {
-   "fieldname": "call",
-   "fieldtype": "Link",
-   "label": "Master Call Plan",
-   "options": "Master Call Plan bulanan",
-   "reqd": 1
-  },
-  {
    "fieldname": "column_break_xvpp",
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.tanggal_target",
    "fieldname": "mulai_realisasi",
    "fieldtype": "Button",
    "label": "Mulai realisasi"
@@ -180,12 +175,70 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "master_plan",
+   "fieldtype": "Link",
+   "label": "Master Call Plan",
+   "options": "Master Call Plan bulanan",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.master_plan",
+   "fieldname": "nama_merchantklinik",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nama Merchant/Klinik",
+   "options": "Merchants",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_tzwf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "kesesuaian_tanggal",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tanggal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_uule",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "kesesuaian_lokasi",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Lokasi",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.kesesuaian_tanggal=='Tidak Sesuai'",
+   "fieldname": "keterangan_tanggal",
+   "fieldtype": "Small Text",
+   "label": "Keterangan",
+   "mandatory_depends_on": "eval:doc.kesesuaian_tanggal=='Tidak Sesuai'"
+  },
+  {
+   "depends_on": "eval:doc.kesesuaian_lokasi=='Tidak Sesuai'",
+   "fieldname": "keterangan_lokasi",
+   "fieldtype": "Small Text",
+   "label": "Keterangan",
+   "mandatory_depends_on": "eval:doc.kesesuaian_lokasi=='Tidak Sesuai'"
+  },
+  {
+   "fieldname": "section_break_fbxc",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-02 16:42:15.399642",
+ "modified": "2024-07-04 15:04:41.435002",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Call Realisasi",

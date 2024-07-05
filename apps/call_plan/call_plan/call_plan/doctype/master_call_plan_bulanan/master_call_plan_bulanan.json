@@ -7,10 +7,13 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "amended_from",
+  "section_break_hdmr",
   "tahun",
   "bulan",
   "column_break_uauy",
   "kelengkapan",
+  "section_break_slif",
   "keterangan",
   "section_break_ficp",
   "call_plan"
@@ -29,6 +32,7 @@
   },
   {
    "default": "Belum lengkap",
+   "depends_on": "eval:doc.tahun&&doc.bulan",
    "fieldname": "kelengkapan",
    "fieldtype": "Select",
    "label": "Kelengkapan",
@@ -36,6 +40,7 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.tahun&&doc.bulan",
    "fieldname": "keterangan",
    "fieldtype": "HTML",
    "label": "Keterangan"
@@ -56,12 +61,32 @@
    "fieldtype": "Select",
    "label": "Tahun",
    "set_only_once": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Master Call Plan bulanan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_hdmr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_slif",
+   "fieldtype": "Section Break",
+   "hide_border": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-07-02 16:26:48.900109",
+ "modified": "2024-07-03 14:48:55.620863",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Master Call Plan bulanan",

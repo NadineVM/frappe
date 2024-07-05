@@ -29,3 +29,26 @@
 2024-07-02 16:43:09,567 INFO ipython frappe.get_list('Merchants',fields=['merchant_name'],filters={'merchant_code': ['not in', ['MERCHANT-17735'
 ]]},pluck='merchant_name')
 2024-07-02 16:43:09,567 INFO ipython === session end ===
+2024-07-02 17:29:01,298 INFO ipython === bench console session ===
+2024-07-02 17:29:01,300 INFO ipython === session end ===
+2024-07-02 22:30:33,143 INFO ipython === bench console session ===
+2024-07-02 22:30:33,145 INFO ipython frappe.get_list('Master Call Plan copy',fields=['merchant_name'], filters={'parent':'MCP-September-2024'},pluck='merchant_name')
+2024-07-02 22:30:33,145 INFO ipython frappe.get_list('Master Call Plan copy',fields=['merchant_name'])
+2024-07-02 22:30:33,145 INFO ipython frappe.get_list('Master Call Plan copy')
+2024-07-02 22:30:33,145 INFO ipython frappe.get_list('Master Call Plan copy',fields=['frekuensi'])
+2024-07-02 22:30:33,145 INFO ipython frappe.get_list('Master Call Plan copy',fields=['name'])
+2024-07-02 22:30:33,145 INFO ipython frappe.get_list('Master Call Plan bulanan',fields=['tahun'])
+2024-07-02 22:30:33,145 INFO ipython frappe.get_all("Master Call Plan copy", fields=['merchant_name'], filters={'parent': master_plan},pluck='merchant_name',order_by='merchant_name')
+2024-07-02 22:30:33,146 INFO ipython frappe.get_all("Master Call Plan copy", fields=['merchant_name'], filters={'parent': 'MCP-September-2024'},pluck='merchant_name',order_by='merchant_name')
+2024-07-02 22:30:33,146 INFO ipython frappe.db.get_value('Master Call Plan copy',{'parent':'MCP-August-2024','merchant_name':'MERCHANT - 176434
+'},['name'])
+2024-07-02 22:30:33,146 INFO ipython frappe.db.get_value('Master Call Plan copy',{'parent':'MCP-August-2024','merchant_name':'MERCHANT - 176434'},['name'])
+2024-07-02 22:30:33,146 INFO ipython frappe.db.get_value('Master Call Plan copy',{'parent':'MCP-August-2024','merchant_name':'MERCHANT-17352'},['name'])
+2024-07-02 22:30:33,146 INFO ipython frappe.db.get_value('Master Call Plan copy',{'parent':'MCP-August-2024','merchant_name':'MERCHANT-17352'},['frekuensi'])
+2024-07-02 22:30:33,146 INFO ipython frappe.db.get_value('Master Call Plan copy',{'merchant_name':'MERCHANT-17352'},['frekuensi'])
+2024-07-02 22:30:33,146 INFO ipython frappe.db.get_value('Master Call Plan copy',{'merchant_name':'MERCHANT-17352'},['kunjungan_1'])
+2024-07-02 22:30:33,146 INFO ipython === session end ===
+2024-07-04 17:00:46,415 INFO ipython === bench console session ===
+2024-07-04 17:00:46,417 INFO ipython frappe.get_doc('Master Call Plan copy',filters={"parent": "MCP-August-2024","merchant_name":"MERCHANT - 176434"})
+2024-07-04 17:00:46,417 INFO ipython frappe.get_doc('Master Call Plan copy',"new-master-call-plan-bulanan-gsecpdppgq-MERCHANT - 176434")
+2024-07-04 17:00:46,417 INFO ipython === session end ===
