@@ -19,14 +19,29 @@ function set_opsi_tahun(frm){
 
 function cek_duplicate_tanggal(frm,cdt,cdn,field_tanggal,field_tanggal_lain){
     child=locals[cdt][cdn]
-    let tanggal=child[field_tanggal]
-    field_tanggal_lain.forEach((field)=>{
-        if (child[field]&&child[field]==tanggal){
-            no_field=field.split('_')[1]
-            frappe.msgprint(__(`Duplicate date in kunjungan ${no_field}`));
+    if (child[field_tanggal]){
+        let tanggal=child[field_tanggal]
+        field_tanggal_lain.forEach((field)=>{
+            if (child[field]&&child[field]==tanggal){
+                no_field=field.split('_')[1]
+                //frappe.msgprint(__(`Duplicate date in kunjungan ${no_field}`));
+                frappe.show_alert(`Duplicate date in kunjungan ${no_field}`, 7);
+                frappe.model.set_value(cdt,cdn,field_tanggal, "")
+            }
+         })
+    }
+}
+
+function validasi_tanggal_weekday(frm,cdt,cdn,field_tanggal){
+    child=locals[cdt][cdn]
+    if (child[field_tanggal]){
+        let tanggal_objek=new Date(child[field_tanggal])
+        let hari=tanggal_objek.getDay()
+        if (hari==0){
+            //frappe.msgprint(__(`Tidak bisa plan kunjungan di hari minggu`));
+            frappe.show_alert('Tidak bisa plan kunjungan di hari minggu', 7);
             frappe.model.set_value(cdt,cdn,field_tanggal, "")
-        }
-    })
+        }}
 }
 
 //js jalan dulu sebelum python selesai & return value
@@ -176,15 +191,19 @@ frappe.ui.form.on("Master Call Plan copy", {
     },
     kunjungan_1(frm,cdt,cdn){
         cek_duplicate_tanggal(frm,cdt,cdn,'kunjungan_1',['kunjungan_2','kunjungan_3','kunjungan_4'])
+        validasi_tanggal_weekday(frm,cdt,cdn,'kunjungan_1')
     },
     kunjungan_2(frm,cdt,cdn){
         cek_duplicate_tanggal(frm,cdt,cdn,'kunjungan_2',['kunjungan_1','kunjungan_3','kunjungan_4'])
+        validasi_tanggal_weekday(frm,cdt,cdn,'kunjungan_2')
     },
     kunjungan_3(frm,cdt,cdn){
         cek_duplicate_tanggal(frm,cdt,cdn,'kunjungan_3',['kunjungan_1','kunjungan_2','kunjungan_4'])
+        validasi_tanggal_weekday(frm,cdt,cdn,'kunjungan_3')
     },
     kunjungan_4(frm,cdt,cdn){
         cek_duplicate_tanggal(frm,cdt,cdn,'kunjungan_4',['kunjungan_1','kunjungan_2','kunjungan_3'])
+        validasi_tanggal_weekday(frm,cdt,cdn,'kunjungan_4')
     },
 });
 

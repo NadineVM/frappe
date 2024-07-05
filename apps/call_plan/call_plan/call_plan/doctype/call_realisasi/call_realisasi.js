@@ -1,5 +1,6 @@
 // Copyright (c) 2024, Nadine Verelia and contributors
 // For license information, please see license.txt
+var toleransi_dalam_meter=1000
 
 frappe.ui.form.on("Call Realisasi", {
 	refresh(frm) {
@@ -9,8 +10,6 @@ frappe.ui.form.on("Call Realisasi", {
 			}
 		//frm.trigger("get_call_location");
 		if (frm.doc.docstatus==0){
-			frm.trigger('master_plan')
-			frm.trigger('get_opsi_tanggal')
 			frm.set_query('master_plan',()=>{
 				return{
 				'filters':{
@@ -18,6 +17,8 @@ frappe.ui.form.on("Call Realisasi", {
 					}
 				}
 			})
+			frm.trigger('set_filter_merchant')
+			frm.trigger('get_opsi_tanggal')
 		}
 	},
 
@@ -34,6 +35,9 @@ frappe.ui.form.on("Call Realisasi", {
 	before_cancel(frm){
 		frm.call('set_status_tanggal',{master_plan:frm.doc.master_plan,merchant_name:frm.doc.nama_merchantklinik,tanggal_target:frm.doc.tanggal_target,status_completion:'Belum realisasi'})
 	},
+	before_discard(frm){
+		frm.call('set_status_tanggal',{master_plan:frm.doc.master_plan,merchant_name:frm.doc.nama_merchantklinik,tanggal_target:frm.doc.tanggal_target,status_completion:'Belum realisasi'})
+	},
 
 	get_opsi_tanggal(frm){
 		if(frm.doc.nama_merchantklinik&&frm.doc.master_plan){
@@ -43,7 +47,7 @@ frappe.ui.form.on("Call Realisasi", {
 	},
 
 	//apakah perlu?
-	master_plan(frm) {
+	set_filter_merchant(frm){
 		if(frm.doc.master_plan){
 			frm.call('get_merchant',{master_plan:frm.doc.master_plan}).then(merchants =>{
 				frm.set_query('nama_merchantklinik',()=>{
@@ -57,10 +61,24 @@ frappe.ui.form.on("Call Realisasi", {
 			frm.trigger('get_opsi_tanggal')
 		}
 	},
+	master_plan(frm) {
+		frm.trigger('set_filter_merchant')
+		if (frm.doc.tanggal_target){
+			frm.fields_dict.mulai_realisasi.toggle(true);
+			frm.set_value('tanggal_kunjungan','')
+			frm.set_value('kesesuaian_tanggal','');
+		}
+		frm.set_value('nama_merchantklinik','')
+	},
 
 	nama_merchantklinik(frm){
 		frm.trigger('get_opsi_tanggal')
 		frm.trigger('set_map')
+		if (frm.doc.tanggal_target){
+			frm.fields_dict.mulai_realisasi.toggle(true);
+			frm.set_value('tanggal_kunjungan','')
+			frm.set_value('kesesuaian_tanggal','');
+		}
 	},
 
 	//lock tanggal dan waktu kunjungan
@@ -84,7 +102,8 @@ frappe.ui.form.on("Call Realisasi", {
 		}
 		else{
 			frm.fields_dict.mulai_realisasi.toggle(false);
-			frm.set_value("tanggal_kunjungan", `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`);
+			frm.set_value("tanggal_kunjungan", `${year}-${month}-${date} ${hours}:${minutes}:${seconds}`)
+			frm.set_value('kesesuaian_tanggal','Sesuai');
 		}
 	},
 
@@ -101,6 +120,46 @@ frappe.ui.form.on("Call Realisasi", {
 			frm.set_df_property("locationmerchant", "options", html);}
 	},
 
+	//sesuaikan dgn code di development, masukan di ketika photo diambil (hanya untuk offline)
+	cek_lokasi(frm){
+		let merch_latitude=Number(frm.doc.merch_latitude)
+		let merch_longitude=Number(frm.doc.merch_longitude)
+		let call_latitude=Number(frm.doc.call_latitude)
+		let call_longitude=Number(frm.doc.call_longitude)
+		let toleransi_latitude=(toleransi_dalam_meter / 6378000) * (180 / Math.PI)
+		let toleransi_longitude=(toleransi_dalam_meter / 6378000) * (180 / Math.PI)/Math.cos(Number(merch_latitude)*Math.PI/180)
+		console.log(toleransi_latitude,toleransi_longitude)
+		console.log(call_latitude> merch_latitude+ toleransi_latitude)
+		console.log(call_latitude< merch_latitude-toleransi_latitude)
+		console.log(call_longitude> merch_longitude+ toleransi_longitude)
+		console.log(call_longitude<merch_longitude-toleransi_longitude)
+		console.log(call_longitude)
+		console.log(merch_longitude-toleransi_longitude)
+
+		if (call_latitude> merch_latitude+ toleransi_latitude || call_latitude< merch_latitude-toleransi_latitude||
+			call_longitude> merch_longitude+ toleransi_longitude || call_longitude<merch_longitude-toleransi_longitude
+		){
+			frappe.msgprint(__('Lokasi anda tidak sesuai dengan lokasi merchant'));
+			frm.set_value('kesesuaian_lokasi','Tidak Sesuai')
+		}
+		else{
+			frm.set_value('kesesuaian_lokasi','Sesuai')
+		}
+	},
+
+	photo(frm){
+		//delete saat transfer//
+		frm.set_value('call_longitude','106.7126565')
+		frm.set_value('call_latitude','-6.2725422')
+		//delete saat transfer//
+		if(frm.doc.jenis_kunjungan=='Offline'){
+			frm.trigger('cek_lokasi')}
+	}
+
+	//toleransi longitude latitude
+	/* new_latitude  = latitude  + (dy / r_earth) * (180 / pi);  0.00017966691
+	new_longitude = longitude + (dx / r_earth) * (180 / pi) / cos(latitude * pi/180);  0.00017966691/cos(latitude * pi/180)
+ */
 	//semua di bawah sudah ada di call_plan.js, tdk ada perubahan
 	/* photo(frm) {
 		const capture = new frappe.ui.Capture({

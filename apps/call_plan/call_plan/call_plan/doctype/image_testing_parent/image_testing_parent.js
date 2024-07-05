@@ -49,6 +49,8 @@ function showpic(frm) {
 
 function clearImageField(frm, cdt,cdn, imageField) {
 	frappe.confirm(`Are you sure you want to clear ${imageField}?`, function() {
-	  frappe.model.set_value(cdt,cdn,imageField, "");
+	  frappe.model.set_value(cdt,cdn,imageField, "")
+	  frappe.show_alert(`Image terhapus`, 7)
+	  ;
 	});
   }

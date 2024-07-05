@@ -296,3 +296,35 @@ alter table `tabMaster Call Plan copy` add column if not exists parent varchar(1
 alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
 2024-07-05 10:46:15,535 WARNING database DDL Query made to DB:
 alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-05 11:15:04,427 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-05 11:15:04,429 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-05 11:15:04,430 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-05 11:28:49,230 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-05 11:28:49,232 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-05 11:28:49,232 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-05 11:31:41,001 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-05 11:31:41,003 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-05 11:31:41,003 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-05 12:57:42,077 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-05 12:57:42,079 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-05 12:57:42,079 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-05 13:27:35,973 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-05 13:27:35,975 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-05 13:27:35,975 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-05 15:04:02,108 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` MODIFY `kesesuaian_tanggal` varchar(140), MODIFY `kesesuaian_lokasi` varchar(140)

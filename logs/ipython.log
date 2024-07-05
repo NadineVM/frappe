@@ -52,3 +52,27 @@
 2024-07-04 17:00:46,417 INFO ipython frappe.get_doc('Master Call Plan copy',filters={"parent": "MCP-August-2024","merchant_name":"MERCHANT - 176434"})
 2024-07-04 17:00:46,417 INFO ipython frappe.get_doc('Master Call Plan copy',"new-master-call-plan-bulanan-gsecpdppgq-MERCHANT - 176434")
 2024-07-04 17:00:46,417 INFO ipython === session end ===
+2024-07-05 16:38:26,194 INFO ipython === bench console session ===
+2024-07-05 16:38:26,195 INFO ipython frappe.db.get_all('Master Call Plan copy',filters={
+        'frekuensi': ['>', '2']
+    },fields=["merchant_name.merchant_name","kunjungan_3 AS tanggal_kunjungan","name"])
+2024-07-05 16:38:26,195 INFO ipython frappe.db.get_all('Master Call Plan copy',filters={
+        'frekuensi': ['>', '3']
+    },fields=["merchant_name.merchant_name","kunjungan_4 AS tanggal_kunjungan","name"])
+2024-07-05 16:38:26,195 INFO ipython frappe.db.get_all('Master Call Plan copy',fields=["merchant_name.merchant_name","kunjungan_4 AS tanggal_kunjungan","name"])
+2024-07-05 16:38:26,195 INFO ipython frappe.db.get_all('Master Call Plan copy',fields=["merchant_name.merchant_name","kunjungan_4 AS tanggal_kunjungan","parent"])
+2024-07-05 16:38:26,195 INFO ipython frappe.db.get_all('Master Call Plan copy',fields=["merchant_name.merchant_name","kunjungan_1 AS tanggal_kunjungan","parent"])+frappe.db.get_all('Master Call Plan copy',filters={
+        'frekuensi': ['>', '1']
+    },fields=["merchant_name.merchant_name","kunjungan_2 AS tanggal_kunjungan","name"])+frappe.db.get_all('Master Call Plan copy',filters={
+        'frekuensi': ['>', '2']
+    },fields=["merchant_name.merchant_name","kunjungan_3 AS tanggal_kunjungan","name"])+frappe.db.get_all('Master Call Plan copy',filters={
+        'frekuensi': ['>', '3']
+    },fields=["merchant_name.merchant_name","kunjungan_4 AS tanggal_kunjungan","name"])
+2024-07-05 16:38:26,195 INFO ipython len(frappe.db.get_all('Master Call Plan copy',fields=["merchant_name.merchant_name","kunjungan_1 AS tanggal_kunjungan","parent"])+frappe.db.get_all('Master Call Plan copy',filters={
+        'frekuensi': ['>', '1']
+    },fields=["merchant_name.merchant_name","kunjungan_2 AS tanggal_kunjungan","name"])+frappe.db.get_all('Master Call Plan copy',filters={
+        'frekuensi': ['>', '2']
+    },fields=["merchant_name.merchant_name","kunjungan_3 AS tanggal_kunjungan","name"])+frappe.db.get_all('Master Call Plan copy',filters={
+        'frekuensi': ['>', '3']
+    },fields=["merchant_name.merchant_name","kunjungan_4 AS tanggal_kunjungan","name"]))
+2024-07-05 16:38:26,195 INFO ipython === session end ===
