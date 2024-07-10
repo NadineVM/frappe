@@ -76,3 +76,10 @@
         'frekuensi': ['>', '3']
     },fields=["merchant_name.merchant_name","kunjungan_4 AS tanggal_kunjungan","name"]))
 2024-07-05 16:38:26,195 INFO ipython === session end ===
+2024-07-09 21:15:42,994 INFO ipython === bench console session ===
+2024-07-09 21:15:42,995 INFO ipython === session end ===
+2024-07-10 15:59:29,030 INFO ipython === bench console session ===
+2024-07-10 15:59:29,032 INFO ipython frappe.get_list("Klasifikasi PIC Merchant", filters={'parent_klasifikasi_pic_merchant': '03-ASMWEST'})
+2024-07-10 15:59:29,032 INFO ipython frappe.get_list("Klasifikasi PIC Merchant", filters={'parent_klasifikasi_pic_merchant': '03-ASMWEST'},order_by=)
+2024-07-10 15:59:29,032 INFO ipython frappe.get_list("Klasifikasi PIC Merchant", filters={'parent_klasifikasi_pic_merchant': '03-ASMWEST'},order_by='name')
+2024-07-10 15:59:29,032 INFO ipython === session end ===

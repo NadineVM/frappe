@@ -548,3 +548,63 @@ To avoid seeing this warning, set shallow_clone to false in your common_site_con
 2024-07-05 12:58:34,053 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
 2024-07-05 12:58:34,055 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
 2024-07-05 12:58:34,055 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-08 08:41:31,542 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-08 08:41:31,876 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-08 08:41:31,881 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-08 08:41:31,891 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-08 08:41:31,894 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-08 14:04:30,995 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-08 14:04:31,223 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-08 14:04:31,229 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-08 14:04:31,232 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-08 14:04:31,233 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-08 21:30:30,344 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-08 21:30:30,582 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-08 21:30:30,589 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-08 21:30:30,589 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-08 21:30:30,589 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-09 00:00:00,997 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-07-09 09:21:30,336 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-09 09:21:30,581 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-09 09:21:30,582 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-09 09:21:30,585 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-09 09:21:30,594 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-09 12:00:00,479 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-07-09 18:00:23,286 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-07-09 21:15:19,040 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration
+2024-07-09 21:15:39,379 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration console
+2024-07-09 21:41:39,942 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-09 21:41:40,208 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-09 21:41:40,210 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-09 21:41:40,211 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-09 21:41:40,212 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-10 00:00:00,989 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --verbose --site all backup
+2024-07-10 08:45:05,598 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-10 08:45:05,956 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-10 08:45:05,957 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-10 08:45:05,958 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-10 08:45:05,963 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-10 08:55:35,678 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-10 08:55:35,913 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-10 08:55:35,914 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-10 08:55:35,920 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-10 08:55:35,921 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-10 08:56:50,938 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench pip3 install pika
+2024-07-10 08:56:55,623 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench pip install pika
+2024-07-10 10:30:44,956 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-10 10:30:45,184 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-10 10:30:45,191 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-10 10:30:45,192 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-10 10:30:45,194 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-10 11:04:24,967 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-10 11:04:25,194 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-10 11:04:25,198 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-10 11:04:25,205 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-10 11:04:25,206 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-10 11:15:41,424 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench pip install pika
+2024-07-10 11:31:59,172 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench start
+2024-07-10 11:31:59,401 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench serve --port 8000
+2024-07-10 11:31:59,413 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench worker
+2024-07-10 11:31:59,413 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench schedule
+2024-07-10 11:31:59,416 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench watch
+2024-07-10 14:22:54,309 INFO /Library/Frameworks/Python.framework/Versions/3.11/bin/bench --site administration console

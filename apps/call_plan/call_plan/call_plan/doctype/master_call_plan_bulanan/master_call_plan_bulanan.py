@@ -7,10 +7,14 @@ import frappe
 
 class MasterCallPlanbulanan(Document):
 	@frappe.whitelist()
-	def get_merchant_list(self,planned_merchant):
-		unplanned_merchant = frappe.get_list("Merchants", fields=['merchant_name'], filters={'merchant_code': ['not in', planned_merchant]},pluck='merchant_name',order_by='merchant_name')
+	def get_merchant_list(self,planned_merchant,pr):
+		unplanned_merchant = frappe.get_list("Merchants", fields=['merchant_name'], filters={'merchant_code': ['not in', planned_merchant],'pic_pr':pr},pluck='merchant_name',order_by='merchant_name')
 		return unplanned_merchant
-
+	@frappe.whitelist()
+	def get_pr_of_asm(self,asm):
+		spar_list=frappe.get_list("Klasifikasi PIC Merchant", filters={'parent_klasifikasi_pic_merchant': asm},pluck='name')
+		pr_list=frappe.get_list("Klasifikasi PIC Merchant", filters={'parent_klasifikasi_pic_merchant': ['in', spar_list]},pluck='name',order_by='kode_pic')
+		return pr_list
 @frappe.whitelist()
 def get_call():
 	#data = frappe.db.sql("""

@@ -5825,3 +5825,1019 @@ Traceback with variables (most recent call last):
       out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '1a1d66c88b1ac57e75dbe4d3dcd2cafcd82326d4533221cbfc25adff'}
       raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
 frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.
+Backup failed for Site administration. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 837, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['administration', 'call.management'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x109d7a020>
+      exit_code = 0
+      rollback_callback = None
+      site = 'administration'
+  File "apps/frappe/frappe/utils/backups.py", line 577, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x10ac23d60>
+  File "apps/frappe/frappe/utils/backups.py", line 635, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x10ac23d60>
+      odb = <frappe.utils.backups.BackupGenerator object at 0x109d74f10>
+  File "apps/frappe/frappe/utils/backups.py", line 191, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0x109d74f10>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 516, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0x109d74f10>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x109d74f10>>
+      paths = ('./administration/private/backups/20240709_000002-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_000002-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 511, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0x109d74f10>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x109d74f10>>
+      paths = ('./administration/private/backups/20240709_000002-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_000002-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 453, in take_dump
+    frappe.throw(
+      self = <frappe.utils.backups.BackupGenerator object at 0x109d74f10>
+      shlex = <module 'shlex' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0x10b81afc0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 16.0.0-dev', 'branch = main', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 16.0.0-dev\n-- branch = main\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./administration/private/backups/20240709_000002-administration-database.sql.gz' encoding='UTF-8'>
+      cmd = []
+      extra = []
+      get_command = <function get_command at 0x10a93c900>
+      bin = None
+      args = ['--user=_f7af3b4f18112ad3', '--host=127.0.0.1', '--port=3306', '--password=phn0EfR7OD6BZKxm', '--single-transaction', '--quick', '--lock-tables=false', '_f7af3b4f18112ad3']
+      bin_name = 'mariadb-dump'
+  File "apps/frappe/frappe/__init__.py", line 681, in throw
+    msgprint(
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      exc = <class 'frappe.exceptions.ExecutableNotFound'>
+      title = None
+      is_minimizable = False
+      wide = False
+      as_list = False
+      primary_action = None
+  File "apps/frappe/frappe/__init__.py", line 646, in msgprint
+    _raise_exception()
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      title = None
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+      as_table = False
+      as_list = False
+      indicator = 'red'
+      alert = False
+      primary_action = None
+      is_minimizable = False
+      wide = False
+      realtime = False
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x10b9456c0>
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '6c1cf1fd1acf1351ff2e862731dc9c52fb2924d2030509b2e6019469'}
+  File "apps/frappe/frappe/__init__.py", line 597, in _raise_exception
+    raise exc
+      exc = ExecutableNotFound('mariadb-dump not found in PATH! This is required to take a backup.')
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '6c1cf1fd1acf1351ff2e862731dc9c52fb2924d2030509b2e6019469'}
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.
+Backup failed for Site call.management. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 837, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['administration', 'call.management'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x109d7a020>
+      exit_code = 1
+      rollback_callback = None
+      site = 'call.management'
+  File "apps/frappe/frappe/utils/backups.py", line 577, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x10b9238b0>
+  File "apps/frappe/frappe/utils/backups.py", line 635, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x10b9238b0>
+      odb = <frappe.utils.backups.BackupGenerator object at 0x10ac48590>
+  File "apps/frappe/frappe/utils/backups.py", line 191, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0x10ac48590>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 516, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0x10ac48590>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x10ac48590>>
+      paths = ('./administration/private/backups/20240709_000002-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_000002-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 511, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0x10ac48590>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x10ac48590>>
+      paths = ('./administration/private/backups/20240709_000002-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_000002-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 453, in take_dump
+    frappe.throw(
+      self = <frappe.utils.backups.BackupGenerator object at 0x10ac48590>
+      shlex = <module 'shlex' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0x10b81afc0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 16.0.0-dev', 'branch = main', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 16.0.0-dev\n-- branch = main\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./administration/private/backups/20240709_000002-administration-database.sql.gz' encoding='UTF-8'>
+      cmd = []
+      extra = []
+      get_command = <function get_command at 0x10a93c900>
+      bin = None
+      args = ['--user=_f7af3b4f18112ad3', '--host=127.0.0.1', '--port=3306', '--password=phn0EfR7OD6BZKxm', '--single-transaction', '--quick', '--lock-tables=false', '_f7af3b4f18112ad3']
+      bin_name = 'mariadb-dump'
+  File "apps/frappe/frappe/__init__.py", line 681, in throw
+    msgprint(
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      exc = <class 'frappe.exceptions.ExecutableNotFound'>
+      title = None
+      is_minimizable = False
+      wide = False
+      as_list = False
+      primary_action = None
+  File "apps/frappe/frappe/__init__.py", line 646, in msgprint
+    _raise_exception()
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      title = None
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+      as_table = False
+      as_list = False
+      indicator = 'red'
+      alert = False
+      primary_action = None
+      is_minimizable = False
+      wide = False
+      realtime = False
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x10bcd8f40>
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '9cc7fc00682fa47e2aa9bf9597015b2a0801ea84dc4d2c6673b64e20'}
+  File "apps/frappe/frappe/__init__.py", line 597, in _raise_exception
+    raise exc
+      exc = ExecutableNotFound('mariadb-dump not found in PATH! This is required to take a backup.')
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '9cc7fc00682fa47e2aa9bf9597015b2a0801ea84dc4d2c6673b64e20'}
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.
+Backup failed for Site administration. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 837, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['administration', 'call.management'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x106736020>
+      exit_code = 0
+      rollback_callback = None
+      site = 'administration'
+  File "apps/frappe/frappe/utils/backups.py", line 577, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x106a23a60>
+  File "apps/frappe/frappe/utils/backups.py", line 635, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x106a23a60>
+      odb = <frappe.utils.backups.BackupGenerator object at 0x10328b490>
+  File "apps/frappe/frappe/utils/backups.py", line 191, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0x10328b490>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 516, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0x10328b490>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x10328b490>>
+      paths = ('./administration/private/backups/20240709_120001-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_120001-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 511, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0x10328b490>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x10328b490>>
+      paths = ('./administration/private/backups/20240709_120001-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_120001-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 453, in take_dump
+    frappe.throw(
+      self = <frappe.utils.backups.BackupGenerator object at 0x10328b490>
+      shlex = <module 'shlex' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0x10266c040>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 16.0.0-dev', 'branch = main', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 16.0.0-dev\n-- branch = main\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./administration/private/backups/20240709_120001-administration-database.sql.gz' encoding='UTF-8'>
+      cmd = []
+      extra = []
+      get_command = <function get_command at 0x106900900>
+      bin = None
+      args = ['--user=_f7af3b4f18112ad3', '--host=127.0.0.1', '--port=3306', '--password=phn0EfR7OD6BZKxm', '--single-transaction', '--quick', '--lock-tables=false', '_f7af3b4f18112ad3']
+      bin_name = 'mariadb-dump'
+  File "apps/frappe/frappe/__init__.py", line 681, in throw
+    msgprint(
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      exc = <class 'frappe.exceptions.ExecutableNotFound'>
+      title = None
+      is_minimizable = False
+      wide = False
+      as_list = False
+      primary_action = None
+  File "apps/frappe/frappe/__init__.py", line 646, in msgprint
+    _raise_exception()
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      title = None
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+      as_table = False
+      as_list = False
+      indicator = 'red'
+      alert = False
+      primary_action = None
+      is_minimizable = False
+      wide = False
+      realtime = False
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x10266d120>
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '8b93408339f659ce07bbf7c7110b3fe6e521e6213422251d235e9cd4'}
+  File "apps/frappe/frappe/__init__.py", line 597, in _raise_exception
+    raise exc
+      exc = ExecutableNotFound('mariadb-dump not found in PATH! This is required to take a backup.')
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '8b93408339f659ce07bbf7c7110b3fe6e521e6213422251d235e9cd4'}
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.
+Backup failed for Site call.management. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 837, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['administration', 'call.management'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x106736020>
+      exit_code = 1
+      rollback_callback = None
+      site = 'call.management'
+  File "apps/frappe/frappe/utils/backups.py", line 577, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x106a23a30>
+  File "apps/frappe/frappe/utils/backups.py", line 635, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x106a23a30>
+      odb = <frappe.utils.backups.BackupGenerator object at 0x106731150>
+  File "apps/frappe/frappe/utils/backups.py", line 191, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0x106731150>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 516, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0x106731150>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x106731150>>
+      paths = ('./administration/private/backups/20240709_120001-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_120001-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 511, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0x106731150>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x106731150>>
+      paths = ('./administration/private/backups/20240709_120001-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_120001-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 453, in take_dump
+    frappe.throw(
+      self = <frappe.utils.backups.BackupGenerator object at 0x106731150>
+      shlex = <module 'shlex' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0x10266c040>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 16.0.0-dev', 'branch = main', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 16.0.0-dev\n-- branch = main\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./administration/private/backups/20240709_120001-administration-database.sql.gz' encoding='UTF-8'>
+      cmd = []
+      extra = []
+      get_command = <function get_command at 0x106900900>
+      bin = None
+      args = ['--user=_f7af3b4f18112ad3', '--host=127.0.0.1', '--port=3306', '--password=phn0EfR7OD6BZKxm', '--single-transaction', '--quick', '--lock-tables=false', '_f7af3b4f18112ad3']
+      bin_name = 'mariadb-dump'
+  File "apps/frappe/frappe/__init__.py", line 681, in throw
+    msgprint(
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      exc = <class 'frappe.exceptions.ExecutableNotFound'>
+      title = None
+      is_minimizable = False
+      wide = False
+      as_list = False
+      primary_action = None
+  File "apps/frappe/frappe/__init__.py", line 646, in msgprint
+    _raise_exception()
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      title = None
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+      as_table = False
+      as_list = False
+      indicator = 'red'
+      alert = False
+      primary_action = None
+      is_minimizable = False
+      wide = False
+      realtime = False
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x106c1ca40>
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '5fb5c1636b00c9169aaaaaf2765cd4e75d146f8e54a03f1f274efd7e'}
+  File "apps/frappe/frappe/__init__.py", line 597, in _raise_exception
+    raise exc
+      exc = ExecutableNotFound('mariadb-dump not found in PATH! This is required to take a backup.')
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '5fb5c1636b00c9169aaaaaf2765cd4e75d146f8e54a03f1f274efd7e'}
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.
+Backup failed for Site administration. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 837, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['administration', 'call.management'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x105642020>
+      exit_code = 0
+      rollback_callback = None
+      site = 'administration'
+  File "apps/frappe/frappe/utils/backups.py", line 577, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x105923a60>
+  File "apps/frappe/frappe/utils/backups.py", line 635, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x105923a60>
+      odb = <frappe.utils.backups.BackupGenerator object at 0x10563c910>
+  File "apps/frappe/frappe/utils/backups.py", line 191, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0x10563c910>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 516, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0x10563c910>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x10563c910>>
+      paths = ('./administration/private/backups/20240709_180023-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_180023-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 511, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0x10563c910>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x10563c910>>
+      paths = ('./administration/private/backups/20240709_180023-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_180023-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 453, in take_dump
+    frappe.throw(
+      self = <frappe.utils.backups.BackupGenerator object at 0x10563c910>
+      shlex = <module 'shlex' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0x101b40040>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 16.0.0-dev', 'branch = main', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 16.0.0-dev\n-- branch = main\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./administration/private/backups/20240709_180023-administration-database.sql.gz' encoding='UTF-8'>
+      cmd = []
+      extra = []
+      get_command = <function get_command at 0x1056c8900>
+      bin = None
+      args = ['--user=_f7af3b4f18112ad3', '--host=127.0.0.1', '--port=3306', '--password=phn0EfR7OD6BZKxm', '--single-transaction', '--quick', '--lock-tables=false', '_f7af3b4f18112ad3']
+      bin_name = 'mariadb-dump'
+  File "apps/frappe/frappe/__init__.py", line 681, in throw
+    msgprint(
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      exc = <class 'frappe.exceptions.ExecutableNotFound'>
+      title = None
+      is_minimizable = False
+      wide = False
+      as_list = False
+      primary_action = None
+  File "apps/frappe/frappe/__init__.py", line 646, in msgprint
+    _raise_exception()
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      title = None
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+      as_table = False
+      as_list = False
+      indicator = 'red'
+      alert = False
+      primary_action = None
+      is_minimizable = False
+      wide = False
+      realtime = False
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x101b41120>
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': 'aeb582411726b502bc16c92594a8fe74ad46c5d9a3bb269d15b336d4'}
+  File "apps/frappe/frappe/__init__.py", line 597, in _raise_exception
+    raise exc
+      exc = ExecutableNotFound('mariadb-dump not found in PATH! This is required to take a backup.')
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': 'aeb582411726b502bc16c92594a8fe74ad46c5d9a3bb269d15b336d4'}
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.
+Backup failed for Site call.management. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 837, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['administration', 'call.management'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x105642020>
+      exit_code = 1
+      rollback_callback = None
+      site = 'call.management'
+  File "apps/frappe/frappe/utils/backups.py", line 577, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x105923a30>
+  File "apps/frappe/frappe/utils/backups.py", line 635, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x105923a30>
+      odb = <frappe.utils.backups.BackupGenerator object at 0x10592b250>
+  File "apps/frappe/frappe/utils/backups.py", line 191, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0x10592b250>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 516, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0x10592b250>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x10592b250>>
+      paths = ('./administration/private/backups/20240709_180024-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_180024-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 511, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0x10592b250>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x10592b250>>
+      paths = ('./administration/private/backups/20240709_180024-administration-database.sql.gz',)
+      path = './administration/private/backups/20240709_180024-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 453, in take_dump
+    frappe.throw(
+      self = <frappe.utils.backups.BackupGenerator object at 0x10592b250>
+      shlex = <module 'shlex' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0x101b40040>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 16.0.0-dev', 'branch = main', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 16.0.0-dev\n-- branch = main\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./administration/private/backups/20240709_180024-administration-database.sql.gz' encoding='UTF-8'>
+      cmd = []
+      extra = []
+      get_command = <function get_command at 0x1056c8900>
+      bin = None
+      args = ['--user=_f7af3b4f18112ad3', '--host=127.0.0.1', '--port=3306', '--password=phn0EfR7OD6BZKxm', '--single-transaction', '--quick', '--lock-tables=false', '_f7af3b4f18112ad3']
+      bin_name = 'mariadb-dump'
+  File "apps/frappe/frappe/__init__.py", line 681, in throw
+    msgprint(
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      exc = <class 'frappe.exceptions.ExecutableNotFound'>
+      title = None
+      is_minimizable = False
+      wide = False
+      as_list = False
+      primary_action = None
+  File "apps/frappe/frappe/__init__.py", line 646, in msgprint
+    _raise_exception()
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      title = None
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+      as_table = False
+      as_list = False
+      indicator = 'red'
+      alert = False
+      primary_action = None
+      is_minimizable = False
+      wide = False
+      realtime = False
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x105c1ca40>
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '1c78c92260284c8fbe88baf32964826ae9c75e34c723c15140b04faa'}
+  File "apps/frappe/frappe/__init__.py", line 597, in _raise_exception
+    raise exc
+      exc = ExecutableNotFound('mariadb-dump not found in PATH! This is required to take a backup.')
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '1c78c92260284c8fbe88baf32964826ae9c75e34c723c15140b04faa'}
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.
+Backup failed for Site administration. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 837, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['administration', 'call.management'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x1180b6020>
+      exit_code = 0
+      rollback_callback = None
+      site = 'administration'
+  File "apps/frappe/frappe/utils/backups.py", line 577, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x118223d60>
+  File "apps/frappe/frappe/utils/backups.py", line 635, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x118223d60>
+      odb = <frappe.utils.backups.BackupGenerator object at 0x118237f90>
+  File "apps/frappe/frappe/utils/backups.py", line 191, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0x118237f90>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 516, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0x118237f90>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x118237f90>>
+      paths = ('./administration/private/backups/20240710_000002-administration-database.sql.gz',)
+      path = './administration/private/backups/20240710_000002-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 511, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0x118237f90>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x118237f90>>
+      paths = ('./administration/private/backups/20240710_000002-administration-database.sql.gz',)
+      path = './administration/private/backups/20240710_000002-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 453, in take_dump
+    frappe.throw(
+      self = <frappe.utils.backups.BackupGenerator object at 0x118237f90>
+      shlex = <module 'shlex' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0x1194f6fc0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 16.0.0-dev', 'branch = main', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 16.0.0-dev\n-- branch = main\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./administration/private/backups/20240710_000002-administration-database.sql.gz' encoding='UTF-8'>
+      cmd = []
+      extra = []
+      get_command = <function get_command at 0x118100900>
+      bin = None
+      args = ['--user=_f7af3b4f18112ad3', '--host=127.0.0.1', '--port=3306', '--password=phn0EfR7OD6BZKxm', '--single-transaction', '--quick', '--lock-tables=false', '_f7af3b4f18112ad3']
+      bin_name = 'mariadb-dump'
+  File "apps/frappe/frappe/__init__.py", line 681, in throw
+    msgprint(
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      exc = <class 'frappe.exceptions.ExecutableNotFound'>
+      title = None
+      is_minimizable = False
+      wide = False
+      as_list = False
+      primary_action = None
+  File "apps/frappe/frappe/__init__.py", line 646, in msgprint
+    _raise_exception()
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      title = None
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+      as_table = False
+      as_list = False
+      indicator = 'red'
+      alert = False
+      primary_action = None
+      is_minimizable = False
+      wide = False
+      realtime = False
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x1196216c0>
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': 'b601ff8f9effec6cb4ba57255d93c54e5a8a2e9d1b6e620867447277'}
+  File "apps/frappe/frappe/__init__.py", line 597, in _raise_exception
+    raise exc
+      exc = ExecutableNotFound('mariadb-dump not found in PATH! This is required to take a backup.')
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': 'b601ff8f9effec6cb4ba57255d93c54e5a8a2e9d1b6e620867447277'}
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.
+Backup failed for Site call.management. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 837, in backup
+    odb = scheduled_backup(
+      context = {'sites': ['administration', 'call.management'], 'force': False, 'verbose': True, 'profile': False}
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x1180b6020>
+      exit_code = 1
+      rollback_callback = None
+      site = 'call.management'
+  File "apps/frappe/frappe/utils/backups.py", line 577, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x1195ff8e0>
+  File "apps/frappe/frappe/utils/backups.py", line 635, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = <frappe.utils.CallbackManager object at 0x1195ff8e0>
+      odb = <frappe.utils.backups.BackupGenerator object at 0x118181c90>
+  File "apps/frappe/frappe/utils/backups.py", line 191, in get_backup
+    self.delete_if_step_fails(self.take_dump, self.backup_path_db)
+      self = <frappe.utils.backups.BackupGenerator object at 0x118181c90>
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 516, in delete_if_step_fails
+    raise e
+      self = <frappe.utils.backups.BackupGenerator object at 0x118181c90>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x118181c90>>
+      paths = ('./administration/private/backups/20240710_000002-administration-database.sql.gz',)
+      path = './administration/private/backups/20240710_000002-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 511, in delete_if_step_fails
+    step()
+      self = <frappe.utils.backups.BackupGenerator object at 0x118181c90>
+      step = <bound method BackupGenerator.take_dump of <frappe.utils.backups.BackupGenerator object at 0x118181c90>>
+      paths = ('./administration/private/backups/20240710_000002-administration-database.sql.gz',)
+      path = './administration/private/backups/20240710_000002-administration-database.sql.gz'
+  File "apps/frappe/frappe/utils/backups.py", line 453, in take_dump
+    frappe.throw(
+      self = <frappe.utils.backups.BackupGenerator object at 0x118181c90>
+      shlex = <module 'shlex' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shlex.py'>
+      frappe = <module 'frappe' from 'apps/frappe/frappe/__init__.py'>
+      get_app_branch = <function get_app_branch at 0x1194f6fc0>
+      gzip_exc = '/usr/bin/gzip'
+      database_header_content = ['begin frappe metadata', '[frappe]', 'version = 16.0.0-dev', 'branch = main', 'end frappe metadata', '']
+      generated_header = '-- begin frappe metadata\n-- [frappe]\n-- version = 16.0.0-dev\n-- branch = main\n-- end frappe metadata\n-- \n'
+      f = <_io.TextIOWrapper name='./administration/private/backups/20240710_000002-administration-database.sql.gz' encoding='UTF-8'>
+      cmd = []
+      extra = []
+      get_command = <function get_command at 0x118100900>
+      bin = None
+      args = ['--user=_f7af3b4f18112ad3', '--host=127.0.0.1', '--port=3306', '--password=phn0EfR7OD6BZKxm', '--single-transaction', '--quick', '--lock-tables=false', '_f7af3b4f18112ad3']
+      bin_name = 'mariadb-dump'
+  File "apps/frappe/frappe/__init__.py", line 681, in throw
+    msgprint(
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      exc = <class 'frappe.exceptions.ExecutableNotFound'>
+      title = None
+      is_minimizable = False
+      wide = False
+      as_list = False
+      primary_action = None
+  File "apps/frappe/frappe/__init__.py", line 646, in msgprint
+    _raise_exception()
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      title = None
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+      as_table = False
+      as_list = False
+      indicator = 'red'
+      alert = False
+      primary_action = None
+      is_minimizable = False
+      wide = False
+      realtime = False
+      _raise_exception = <function msgprint.<locals>._raise_exception at 0x1199b4f40>
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '6dce4375cf40d4c7bb6b93a347bf2a565fd0878de5cff1bb706d1eca'}
+  File "apps/frappe/frappe/__init__.py", line 597, in _raise_exception
+    raise exc
+      exc = ExecutableNotFound('mariadb-dump not found in PATH! This is required to take a backup.')
+      inspect = <module 'inspect' from '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/inspect.py'>
+      msg = 'mariadb-dump not found in PATH! This is required to take a backup.'
+      out = {'message': 'mariadb-dump not found in PATH! This is required to take a backup.', 'title': 'Message', 'indicator': 'red', 'raise_exception': 1, '__frappe_exc_id': '6dce4375cf40d4c7bb6b93a347bf2a565fd0878de5cff1bb706d1eca'}
+      raise_exception = <class 'frappe.exceptions.ExecutableNotFound'>
+frappe.exceptions.ExecutableNotFound: mariadb-dump not found in PATH! This is required to take a backup.

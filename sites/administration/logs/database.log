@@ -646,3 +646,377 @@ alter table `tabMaster Call Plan copy` add column if not exists parenttype varch
 alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
 2024-07-05 15:04:02,108 WARNING database DDL Query made to DB:
 ALTER TABLE `tabCall Realisasi` MODIFY `kesesuaian_tanggal` varchar(140), MODIFY `kesesuaian_lokasi` varchar(140)
+2024-07-08 13:46:00,106 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan bulanan` ADD COLUMN `area` varchar(140)
+2024-07-08 14:11:21,516 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan bulanan` ADD COLUMN `link_iwcv` varchar(140)
+2024-07-08 14:11:58,496 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` ADD COLUMN `area` varchar(140)
+2024-07-08 14:11:58,530 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` MODIFY `send_welcome_email` tinyint NOT NULL DEFAULT 1, MODIFY `mute_sounds` tinyint NOT NULL DEFAULT 0, MODIFY `follow_commented_documents` tinyint NOT NULL DEFAULT 0, MODIFY `send_me_a_copy` tinyint NOT NULL DEFAULT 0, MODIFY `logout_all_sessions` tinyint NOT NULL DEFAULT 1, MODIFY `follow_liked_documents` tinyint NOT NULL DEFAULT 0, MODIFY `follow_shared_documents` tinyint NOT NULL DEFAULT 0, MODIFY `thread_notify` tinyint NOT NULL DEFAULT 1, MODIFY `simultaneous_sessions` int NOT NULL DEFAULT 2, MODIFY `enabled` tinyint NOT NULL DEFAULT 1, MODIFY `follow_created_documents` tinyint NOT NULL DEFAULT 0, MODIFY `allowed_in_mentions` tinyint NOT NULL DEFAULT 1, MODIFY `follow_assigned_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_after` int NOT NULL DEFAULT 0, MODIFY `login_before` int NOT NULL DEFAULT 0, MODIFY `bypass_restrict_ip_check_if_2fa_enabled` tinyint NOT NULL DEFAULT 0, MODIFY `document_follow_notify` tinyint NOT NULL DEFAULT 0, MODIFY `unsubscribed` tinyint NOT NULL DEFAULT 0
+2024-07-08 14:18:01,185 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan bulanan` ADD COLUMN `user` varchar(140)
+2024-07-08 14:22:44,235 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` MODIFY `send_welcome_email` tinyint NOT NULL DEFAULT 1, MODIFY `login_after` int NOT NULL DEFAULT 0, MODIFY `thread_notify` tinyint NOT NULL DEFAULT 1, MODIFY `login_before` int NOT NULL DEFAULT 0, MODIFY `logout_all_sessions` tinyint NOT NULL DEFAULT 1, MODIFY `bypass_restrict_ip_check_if_2fa_enabled` tinyint NOT NULL DEFAULT 0, MODIFY `document_follow_notify` tinyint NOT NULL DEFAULT 0, MODIFY `follow_created_documents` tinyint NOT NULL DEFAULT 0, MODIFY `follow_assigned_documents` tinyint NOT NULL DEFAULT 0, MODIFY `send_me_a_copy` tinyint NOT NULL DEFAULT 0, MODIFY `unsubscribed` tinyint NOT NULL DEFAULT 0, MODIFY `mute_sounds` tinyint NOT NULL DEFAULT 0, MODIFY `allowed_in_mentions` tinyint NOT NULL DEFAULT 1, MODIFY `simultaneous_sessions` int NOT NULL DEFAULT 2, MODIFY `follow_liked_documents` tinyint NOT NULL DEFAULT 0, MODIFY `follow_shared_documents` tinyint NOT NULL DEFAULT 0, MODIFY `enabled` tinyint NOT NULL DEFAULT 1, MODIFY `follow_commented_documents` tinyint NOT NULL DEFAULT 0
+2024-07-08 16:59:59,042 WARNING database DDL Query made to DB:
+ALTER TABLE `tabArea` ADD COLUMN `pic_area` varchar(140) UNIQUE
+2024-07-08 16:59:59,045 WARNING database DDL Query made to DB:
+ALTER TABLE `tabArea` ADD UNIQUE INDEX IF NOT EXISTS pic_area (`pic_area`)
+2024-07-08 17:00:29,839 WARNING database DDL Query made to DB:
+create table `tabASM` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`lft` int NOT NULL DEFAULT 0,
+`rgt` int NOT NULL DEFAULT 0,
+`is_group` tinyint NOT NULL DEFAULT 0,
+`old_parent` varchar(140),
+`parent_asm` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-08 17:05:08,021 WARNING database DDL Query made to DB:
+create table `tabPIC Area` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-08 17:09:15,860 WARNING database DDL Query made to DB:
+ALTER TABLE `tabPIC Area` ADD COLUMN `pic_area` varchar(140)
+2024-07-08 17:11:55,713 WARNING database DDL Query made to DB:
+ALTER TABLE `tabBranch` ADD COLUMN `parent_area` varchar(140)
+2024-07-08 17:12:10,147 WARNING database DDL Query made to DB:
+create table `tabSPAR` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-08 17:12:29,179 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSPAR` ADD COLUMN `pic_area` varchar(140)
+2024-07-08 17:13:32,489 WARNING database DDL Query made to DB:
+ALTER TABLE `tabSPAR` ADD COLUMN `kode_spar` varchar(140)
+2024-07-08 17:13:46,383 WARNING database DDL Query made to DB:
+create table `tabPR` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-08 20:25:18,137 WARNING database DDL Query made to DB:
+create table `tabKlasifikasi PIC Merchant` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`lft` int NOT NULL DEFAULT 0,
+`rgt` int NOT NULL DEFAULT 0,
+`is_group` tinyint NOT NULL DEFAULT 0,
+`old_parent` varchar(140),
+`parent_klasifikasi_pic_merchant` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-08 20:31:22,020 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` ADD COLUMN `kode_pic` varchar(140)
+2024-07-08 20:31:22,056 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 20:32:47,213 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 20:33:02,939 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0
+2024-07-08 20:37:49,209 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0
+2024-07-08 21:05:04,774 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0
+2024-07-08 21:05:19,537 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0
+2024-07-08 21:14:17,473 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMerchants` ADD COLUMN `pic_asm` varchar(140)
+2024-07-08 21:23:33,843 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` ADD COLUMN `is_asm` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:23:33,878 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:24:45,940 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` ADD COLUMN `area_asm` varchar(140)
+2024-07-08 21:24:45,974 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0
+2024-07-08 21:25:22,709 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` MODIFY `simultaneous_sessions` int NOT NULL DEFAULT 2, MODIFY `unsubscribed` tinyint NOT NULL DEFAULT 0, MODIFY `enabled` tinyint NOT NULL DEFAULT 1, MODIFY `follow_liked_documents` tinyint NOT NULL DEFAULT 0, MODIFY `allowed_in_mentions` tinyint NOT NULL DEFAULT 1, MODIFY `logout_all_sessions` tinyint NOT NULL DEFAULT 1, MODIFY `thread_notify` tinyint NOT NULL DEFAULT 1, MODIFY `bypass_restrict_ip_check_if_2fa_enabled` tinyint NOT NULL DEFAULT 0, MODIFY `follow_assigned_documents` tinyint NOT NULL DEFAULT 0, MODIFY `follow_shared_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_after` int NOT NULL DEFAULT 0, MODIFY `document_follow_notify` tinyint NOT NULL DEFAULT 0, MODIFY `follow_created_documents` tinyint NOT NULL DEFAULT 0, MODIFY `follow_commented_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_before` int NOT NULL DEFAULT 0, MODIFY `mute_sounds` tinyint NOT NULL DEFAULT 0, MODIFY `send_welcome_email` tinyint NOT NULL DEFAULT 1, MODIFY `send_me_a_copy` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:32:46,027 WARNING database DDL Query made to DB:
+create table `tabArea ASM` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-08 21:32:46,027 WARNING database DDL Query made to DB:
+create table `tabArea ASM` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-08 21:33:29,136 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` MODIFY `follow_shared_documents` tinyint NOT NULL DEFAULT 0, MODIFY `document_follow_notify` tinyint NOT NULL DEFAULT 0, MODIFY `logout_all_sessions` tinyint NOT NULL DEFAULT 1, MODIFY `send_me_a_copy` tinyint NOT NULL DEFAULT 0, MODIFY `allowed_in_mentions` tinyint NOT NULL DEFAULT 1, MODIFY `thread_notify` tinyint NOT NULL DEFAULT 1, MODIFY `mute_sounds` tinyint NOT NULL DEFAULT 0, MODIFY `follow_liked_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_after` int NOT NULL DEFAULT 0, MODIFY `send_welcome_email` tinyint NOT NULL DEFAULT 1, MODIFY `follow_commented_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_before` int NOT NULL DEFAULT 0, MODIFY `follow_assigned_documents` tinyint NOT NULL DEFAULT 0, MODIFY `follow_created_documents` tinyint NOT NULL DEFAULT 0, MODIFY `simultaneous_sessions` int NOT NULL DEFAULT 2, MODIFY `bypass_restrict_ip_check_if_2fa_enabled` tinyint NOT NULL DEFAULT 0, MODIFY `enabled` tinyint NOT NULL DEFAULT 1, MODIFY `unsubscribed` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:33:29,136 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` MODIFY `follow_shared_documents` tinyint NOT NULL DEFAULT 0, MODIFY `document_follow_notify` tinyint NOT NULL DEFAULT 0, MODIFY `logout_all_sessions` tinyint NOT NULL DEFAULT 1, MODIFY `send_me_a_copy` tinyint NOT NULL DEFAULT 0, MODIFY `allowed_in_mentions` tinyint NOT NULL DEFAULT 1, MODIFY `thread_notify` tinyint NOT NULL DEFAULT 1, MODIFY `mute_sounds` tinyint NOT NULL DEFAULT 0, MODIFY `follow_liked_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_after` int NOT NULL DEFAULT 0, MODIFY `send_welcome_email` tinyint NOT NULL DEFAULT 1, MODIFY `follow_commented_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_before` int NOT NULL DEFAULT 0, MODIFY `follow_assigned_documents` tinyint NOT NULL DEFAULT 0, MODIFY `follow_created_documents` tinyint NOT NULL DEFAULT 0, MODIFY `simultaneous_sessions` int NOT NULL DEFAULT 2, MODIFY `bypass_restrict_ip_check_if_2fa_enabled` tinyint NOT NULL DEFAULT 0, MODIFY `enabled` tinyint NOT NULL DEFAULT 1, MODIFY `unsubscribed` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:33:29,282 WARNING database DDL Query made to DB:
+RENAME TABLE `tabArea ASM` TO `tabKlasifikasi Wilayah Merchant`
+2024-07-08 21:33:29,282 WARNING database DDL Query made to DB:
+RENAME TABLE `tabArea ASM` TO `tabKlasifikasi Wilayah Merchant`
+2024-07-08 21:33:36,769 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` ADD COLUMN `lft` int NOT NULL DEFAULT 0, ADD COLUMN `rgt` int NOT NULL DEFAULT 0, ADD COLUMN `is_group` tinyint NOT NULL DEFAULT 0, ADD COLUMN `old_parent` varchar(140), ADD COLUMN `parent_klasifikasi_wilayah_merchant` varchar(140)
+2024-07-08 21:35:45,841 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` ADD COLUMN `pic_asm` varchar(140)
+2024-07-08 21:35:45,877 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:36:42,152 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:37:22,214 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:38:26,687 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:39:12,680 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` ADD COLUMN `nama_areabranch` varchar(140)
+2024-07-08 21:39:12,712 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0
+2024-07-08 21:39:33,063 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:40:01,554 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0
+2024-07-08 21:40:51,793 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:41:32,485 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0
+2024-07-08 21:44:01,279 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0
+2024-07-08 21:48:30,730 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:49:42,516 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-08 21:49:50,648 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0
+2024-07-08 21:50:16,389 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0
+2024-07-08 21:57:18,124 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-09 09:33:49,829 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` ADD COLUMN `pic_role` varchar(140)
+2024-07-09 09:33:49,863 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` MODIFY `login_after` int NOT NULL DEFAULT 0, MODIFY `follow_liked_documents` tinyint NOT NULL DEFAULT 0, MODIFY `enabled` tinyint NOT NULL DEFAULT 1, MODIFY `unsubscribed` tinyint NOT NULL DEFAULT 0, MODIFY `follow_shared_documents` tinyint NOT NULL DEFAULT 0, MODIFY `send_me_a_copy` tinyint NOT NULL DEFAULT 0, MODIFY `logout_all_sessions` tinyint NOT NULL DEFAULT 1, MODIFY `document_follow_notify` tinyint NOT NULL DEFAULT 0, MODIFY `follow_created_documents` tinyint NOT NULL DEFAULT 0, MODIFY `bypass_restrict_ip_check_if_2fa_enabled` tinyint NOT NULL DEFAULT 0, MODIFY `follow_assigned_documents` tinyint NOT NULL DEFAULT 0, MODIFY `thread_notify` tinyint NOT NULL DEFAULT 1, MODIFY `allowed_in_mentions` tinyint NOT NULL DEFAULT 1, MODIFY `mute_sounds` tinyint NOT NULL DEFAULT 0, MODIFY `login_before` int NOT NULL DEFAULT 0, MODIFY `follow_commented_documents` tinyint NOT NULL DEFAULT 0, MODIFY `simultaneous_sessions` int NOT NULL DEFAULT 2, MODIFY `send_welcome_email` tinyint NOT NULL DEFAULT 1
+2024-07-09 09:50:12,166 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` ADD COLUMN `pic_code` varchar(140)
+2024-07-09 09:50:12,166 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` ADD COLUMN `pic_code` varchar(140)
+2024-07-09 09:50:12,202 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` MODIFY `logout_all_sessions` tinyint NOT NULL DEFAULT 1, MODIFY `follow_shared_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_before` int NOT NULL DEFAULT 0, MODIFY `bypass_restrict_ip_check_if_2fa_enabled` tinyint NOT NULL DEFAULT 0, MODIFY `login_after` int NOT NULL DEFAULT 0, MODIFY `unsubscribed` tinyint NOT NULL DEFAULT 0, MODIFY `follow_commented_documents` tinyint NOT NULL DEFAULT 0, MODIFY `mute_sounds` tinyint NOT NULL DEFAULT 0, MODIFY `document_follow_notify` tinyint NOT NULL DEFAULT 0, MODIFY `follow_created_documents` tinyint NOT NULL DEFAULT 0, MODIFY `thread_notify` tinyint NOT NULL DEFAULT 1, MODIFY `send_me_a_copy` tinyint NOT NULL DEFAULT 0, MODIFY `allowed_in_mentions` tinyint NOT NULL DEFAULT 1, MODIFY `simultaneous_sessions` int NOT NULL DEFAULT 2, MODIFY `send_welcome_email` tinyint NOT NULL DEFAULT 1, MODIFY `follow_liked_documents` tinyint NOT NULL DEFAULT 0, MODIFY `enabled` tinyint NOT NULL DEFAULT 1, MODIFY `follow_assigned_documents` tinyint NOT NULL DEFAULT 0
+2024-07-09 09:50:12,202 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUser` MODIFY `logout_all_sessions` tinyint NOT NULL DEFAULT 1, MODIFY `follow_shared_documents` tinyint NOT NULL DEFAULT 0, MODIFY `login_before` int NOT NULL DEFAULT 0, MODIFY `bypass_restrict_ip_check_if_2fa_enabled` tinyint NOT NULL DEFAULT 0, MODIFY `login_after` int NOT NULL DEFAULT 0, MODIFY `unsubscribed` tinyint NOT NULL DEFAULT 0, MODIFY `follow_commented_documents` tinyint NOT NULL DEFAULT 0, MODIFY `mute_sounds` tinyint NOT NULL DEFAULT 0, MODIFY `document_follow_notify` tinyint NOT NULL DEFAULT 0, MODIFY `follow_created_documents` tinyint NOT NULL DEFAULT 0, MODIFY `thread_notify` tinyint NOT NULL DEFAULT 1, MODIFY `send_me_a_copy` tinyint NOT NULL DEFAULT 0, MODIFY `allowed_in_mentions` tinyint NOT NULL DEFAULT 1, MODIFY `simultaneous_sessions` int NOT NULL DEFAULT 2, MODIFY `send_welcome_email` tinyint NOT NULL DEFAULT 1, MODIFY `follow_liked_documents` tinyint NOT NULL DEFAULT 0, MODIFY `enabled` tinyint NOT NULL DEFAULT 1, MODIFY `follow_assigned_documents` tinyint NOT NULL DEFAULT 0
+2024-07-09 10:15:45,373 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan bulanan` ADD COLUMN `pic_role` varchar(140), ADD COLUMN `pic_code` varchar(140)
+2024-07-09 10:34:00,055 WARNING database DDL Query made to DB:
+create table `tabUnplanned Call Realisasi` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`master_plan` varchar(140),
+`nama_merchantklinik` varchar(140),
+`tanggal_target` varchar(140),
+`tanggal_kunjungan` datetime(6),
+`jenis_kunjungan` varchar(140) DEFAULT 'Offline',
+`kegiatan_kunjungan` varchar(140),
+`kesesuaian_tanggal` varchar(140),
+`keterangan_tanggal` text,
+`kesesuaian_lokasi` varchar(140),
+`keterangan_lokasi` text,
+`tanda_tangan` longtext,
+`lampiran_foto` text,
+`call_latitude` varchar(140),
+`call_longitude` varchar(140),
+`merch_longitude` varchar(140),
+`merch_latitude` varchar(140),
+`amended_from` varchar(140),
+`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index `amended_from`(`amended_from`),
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-09 10:38:35,350 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUnplanned Call Realisasi` MODIFY `kesesuaian_lokasi` varchar(140)
+2024-07-09 10:39:08,175 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUnplanned Call Realisasi` MODIFY `kesesuaian_lokasi` varchar(140)
+2024-07-09 10:39:29,245 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUnplanned Call Realisasi` MODIFY `kesesuaian_lokasi` varchar(140)
+2024-07-09 10:52:10,823 WARNING database DDL Query made to DB:
+ALTER TABLE `tabUnplanned Call Realisasi` MODIFY `kesesuaian_lokasi` varchar(140)
+2024-07-09 11:10:09,600 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan bulanan` ADD COLUMN `pr` varchar(140)
+2024-07-09 11:11:17,460 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan bulanan` ADD COLUMN `user_pic_role` varchar(140)
+2024-07-09 11:45:43,078 WARNING database DDL Query made to DB:
+ALTER TABLE `tabimage testing parent` ADD COLUMN `test` varchar(140)
+2024-07-09 11:45:49,759 WARNING database DDL Query made to DB:
+ALTER TABLE `tabimage testing parent` ADD COLUMN `amended_from` varchar(140)
+2024-07-09 11:45:49,801 WARNING database DDL Query made to DB:
+ALTER TABLE `tabimage testing parent` ADD INDEX `amended_from_index`(`amended_from`)
+2024-07-09 13:20:52,594 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan bulanan` ADD COLUMN `user_pic_code` varchar(140)
+2024-07-09 13:29:57,488 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` ADD COLUMN `testing` varchar(140)
+2024-07-09 13:29:57,526 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-09 13:30:20,333 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-09 13:32:18,112 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` ADD COLUMN `asm` varchar(140)
+2024-07-09 13:32:18,151 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-09 13:33:00,500 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-09 13:33:32,892 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0
+2024-07-09 16:42:03,604 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parent varchar(140)
+2024-07-09 16:42:03,606 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parenttype varchar(140)
+2024-07-09 16:42:03,607 WARNING database DDL Query made to DB:
+alter table `tabimage testing` add column if not exists parentfield varchar(140)
+2024-07-09 16:42:03,703 WARNING database DDL Query made to DB:
+ALTER TABLE `tabimage testing` ADD COLUMN `testing_multiselect` varchar(140)
+2024-07-09 17:13:29,541 WARNING database DDL Query made to DB:
+create table `tabKegiatan Kunjungan Options` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-09 17:14:16,991 WARNING database DDL Query made to DB:
+alter table `tabKegiatan Kunjungan Options` add column if not exists parent varchar(140)
+2024-07-09 17:14:17,026 WARNING database DDL Query made to DB:
+alter table `tabKegiatan Kunjungan Options` add column if not exists parenttype varchar(140)
+2024-07-09 17:14:17,060 WARNING database DDL Query made to DB:
+alter table `tabKegiatan Kunjungan Options` add column if not exists parentfield varchar(140)
+2024-07-09 17:14:17,166 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKegiatan Kunjungan Options` ADD COLUMN `kegiatan_kunjungan` varchar(140)
+2024-07-09 17:14:50,344 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` MODIFY `kesesuaian_lokasi` varchar(140), MODIFY `kesesuaian_tanggal` varchar(140)
+2024-07-10 14:46:24,076 WARNING database DDL Query made to DB:
+ALTER TABLE `tabMaster Call Plan bulanan` ADD COLUMN `keterangan` varchar(140)
+2024-07-10 16:01:47,164 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-10 16:02:51,736 WARNING database DDL Query made to DB:
+create table `tabcustom tes` (
+			name varchar(140) primary key,
+			creation datetime(6),
+			modified datetime(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus tinyint not null default '0',
+			idx int not null default '0',
+			`_user_tags` text,
+`_comments` text,
+`_assign` text,
+`_liked_by` text,
+index creation(creation))
+			ENGINE=InnoDB
+			ROW_FORMAT=DYNAMIC
+			CHARACTER SET=utf8mb4
+			COLLATE=utf8mb4_unicode_ci
+2024-07-10 16:03:38,423 WARNING database DDL Query made to DB:
+ALTER TABLE `tabcustom tes` ADD COLUMN `halo` varchar(140)

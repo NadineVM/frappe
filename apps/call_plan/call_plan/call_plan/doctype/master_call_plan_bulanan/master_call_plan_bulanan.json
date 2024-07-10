@@ -8,12 +8,20 @@
  "engine": "InnoDB",
  "field_order": [
   "amended_from",
+  "section_break_ktuh",
+  "user",
+  "column_break_azra",
+  "user_pic_role",
+  "column_break_xhbw",
+  "user_pic_code",
   "section_break_hdmr",
+  "pr",
+  "column_break_uauy",
   "tahun",
   "bulan",
-  "column_break_uauy",
-  "kelengkapan",
   "section_break_slif",
+  "kelengkapan",
+  "column_break_uacu",
   "keterangan",
   "section_break_ficp",
   "call_plan"
@@ -42,8 +50,9 @@
   {
    "depends_on": "eval:doc.tahun&&doc.bulan",
    "fieldname": "keterangan",
-   "fieldtype": "HTML",
-   "label": "Keterangan"
+   "fieldtype": "Data",
+   "label": "Jumlah unplanned merchant",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_ficp",
@@ -80,13 +89,57 @@
    "fieldname": "section_break_slif",
    "fieldtype": "Section Break",
    "hide_border": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "read_only": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_uacu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pr",
+   "fieldtype": "Link",
+   "label": "PR",
+   "options": "Klasifikasi PIC Merchant",
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "user.pic_role",
+   "fieldname": "user_pic_role",
+   "fieldtype": "Data",
+   "label": "User PIC Role"
+  },
+  {
+   "fetch_from": "user.pic_code",
+   "fieldname": "user_pic_code",
+   "fieldtype": "Link",
+   "label": "User PIC Code",
+   "options": "Klasifikasi PIC Merchant"
+  },
+  {
+   "fieldname": "section_break_ktuh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_azra",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xhbw",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-03 14:48:55.620863",
+ "modified": "2024-07-10 14:46:23.955430",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Master Call Plan bulanan",

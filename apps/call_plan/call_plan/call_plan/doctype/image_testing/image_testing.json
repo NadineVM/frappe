@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "testing_multiselect",
   "image1",
   "view_image1",
   "clear_image1",
@@ -51,12 +52,18 @@
    "fieldname": "tes",
    "fieldtype": "Data",
    "label": "tes"
+  },
+  {
+   "fieldname": "testing_multiselect",
+   "fieldtype": "Link",
+   "label": "testing multiselect",
+   "options": "Kegiatan kunjungan"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-06-26 18:53:16.721143",
+ "modified": "2024-07-09 16:42:03.576082",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "image testing",

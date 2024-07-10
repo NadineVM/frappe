@@ -31,14 +31,14 @@ class CallRealisasi(Document):
 				frappe.db.set_value('Master Call Plan copy', plan, f'status_{i+1}', status_completion)
 				frappe.db.commit()
 				break
-		self.cek_overall_status(plan,frekuensi)
+		self.cek_overall_status(plan,int(frekuensi))
 
 	def cek_overall_status(self,plan,frekuensi):
 		current_status=frappe.db.get_value('Master Call Plan copy',plan,'status_plan')
 		#jika status plan belum realisasi, jika salah satu kunjungan sudah realisasi, ganti status menjadi sedang realisasi
 		if current_status=='Belum realisasi':
 			if frekuensi>1:
-				for i in range(int(frekuensi)):
+				for i in range(frekuensi):
 					if frappe.db.get_value('Master Call Plan copy',plan,f'status_{i+1}')!='Belum realisasi':
 						frappe.db.set_value('Master Call Plan copy', plan, 'status_plan', 'Sedang realisasi')
 						frappe.db.commit()

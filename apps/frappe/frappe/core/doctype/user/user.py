@@ -101,6 +101,8 @@ class User(Document):
 		new_password: DF.Password | None
 		onboarding_status: DF.SmallText | None
 		phone: DF.Data | None
+		pic_code: DF.Link | None
+		pic_role: DF.Literal["ASM", "SPAR", "PR"]
 		redirect_url: DF.SmallText | None
 		reset_password_key: DF.Data | None
 		restrict_ip: DF.SmallText | None

@@ -6,4 +6,7 @@ from frappe.model.document import Document
 
 
 class imagetestingparent(Document):
-	pass
+	def on_update(self):
+		self.test='on_update'
+	""" def before_save(self):
+		self.test='before save 1' """

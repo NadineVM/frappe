@@ -5,24 +5,30 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "test",
   "child_doc",
   "datetime_popk"
  ],
  "fields": [
   {
    "fieldname": "child_doc",
-   "fieldtype": "Table",
+   "fieldtype": "Table MultiSelect",
    "label": "child doc",
    "options": "image testing"
   },
   {
    "fieldname": "datetime_popk",
    "fieldtype": "Datetime"
+  },
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "label": "testing webhook"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-26 16:21:10.581908",
+ "modified": "2024-07-10 16:02:29.526391",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "image testing parent",

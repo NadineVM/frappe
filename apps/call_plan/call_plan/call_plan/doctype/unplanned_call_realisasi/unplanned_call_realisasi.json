@@ -1,0 +1,217 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CR-{nama_merchantklinik}({tanggal_target})",
+ "creation": "2024-07-09 10:33:59.957835",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nama_merchantklinik",
+  "section_break_yckd",
+  "mulai_realisasi",
+  "tanggal_kunjungan",
+  "column_break_qidi",
+  "jenis_kunjungan",
+  "kegiatan_kunjungan",
+  "section_break_fbxc",
+  "kesesuaian_lokasi",
+  "keterangan_lokasi",
+  "section_break_qzfl",
+  "table_iekr",
+  "bukti_kunjungan_section",
+  "tanda_tangan",
+  "column_break_wycy",
+  "photo",
+  "lampiran_foto",
+  "section_break_qfwg",
+  "locationcall",
+  "call_latitude",
+  "call_longitude",
+  "section_break_ejkz",
+  "locationmerchant",
+  "merch_longitude",
+  "merch_latitude",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama_merchantklinik",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nama Merchant/Klinik",
+   "options": "Merchants",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_yckd",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  },
+  {
+   "fieldname": "mulai_realisasi",
+   "fieldtype": "Button",
+   "label": "Mulai realisasi"
+  },
+  {
+   "fieldname": "tanggal_kunjungan",
+   "fieldtype": "Datetime",
+   "in_standard_filter": 1,
+   "label": "Tanggal Kunjungan",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qidi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Offline",
+   "fieldname": "jenis_kunjungan",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Jenis kunjungan",
+   "options": "Online\nOffline",
+   "reqd": 1
+  },
+  {
+   "fieldname": "kegiatan_kunjungan",
+   "fieldtype": "Link",
+   "label": "Kegiatan kunjungan",
+   "options": "Kegiatan kunjungan"
+  },
+  {
+   "fieldname": "section_break_fbxc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "kesesuaian_lokasi",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Lokasi",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.kesesuaian_lokasi=='Tidak Sesuai'",
+   "fieldname": "keterangan_lokasi",
+   "fieldtype": "Small Text",
+   "label": "Keterangan",
+   "mandatory_depends_on": "eval:doc.kesesuaian_lokasi=='Tidak Sesuai'"
+  },
+  {
+   "fieldname": "section_break_qzfl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_iekr",
+   "fieldtype": "Table",
+   "options": "Call Activity"
+  },
+  {
+   "fieldname": "bukti_kunjungan_section",
+   "fieldtype": "Section Break",
+   "label": "Bukti Kunjungan"
+  },
+  {
+   "fieldname": "tanda_tangan",
+   "fieldtype": "Signature",
+   "label": "Tanda tangan member"
+  },
+  {
+   "fieldname": "column_break_wycy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.jenis_kunjungan===\"Offline\"&&doc.nama_merchantklinik",
+   "fieldname": "photo",
+   "fieldtype": "Button",
+   "label": "Photo"
+  },
+  {
+   "depends_on": "eval:doc.jenis_kunjungan===\"Online\"",
+   "fieldname": "lampiran_foto",
+   "fieldtype": "Attach Image",
+   "label": "Lampirkan foto"
+  },
+  {
+   "fieldname": "section_break_qfwg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "locationcall",
+   "fieldtype": "HTML",
+   "label": "Call"
+  },
+  {
+   "fieldname": "call_latitude",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "call_latitude"
+  },
+  {
+   "fieldname": "call_longitude",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "call_longitude"
+  },
+  {
+   "depends_on": "eval:doc.jenis_kunjungan===\"Offline\"",
+   "fieldname": "section_break_ejkz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "locationmerchant",
+   "fieldtype": "HTML",
+   "label": "Apotek"
+  },
+  {
+   "fetch_from": "nama_merchantklinik.longitude",
+   "fieldname": "merch_longitude",
+   "fieldtype": "Read Only",
+   "label": "merch_longitude"
+  },
+  {
+   "fetch_from": "nama_merchantklinik.latitude",
+   "fieldname": "merch_latitude",
+   "fieldtype": "Read Only",
+   "label": "merch_latitude"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Unplanned Call Realisasi",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-07-09 10:52:10.661987",
+ "modified_by": "Administrator",
+ "module": "Call Plan",
+ "name": "Unplanned Call Realisasi",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

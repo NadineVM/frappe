@@ -14,8 +14,9 @@
   "merchant_name",
   "merchant_date",
   "column_break_kqpe",
-  "branch",
-  "area",
+  "pic_pr",
+  "pic_spar",
+  "pic_asm",
   "lokasi_merchant_section",
   "province",
   "city",
@@ -23,8 +24,8 @@
   "kelurahan",
   "postal_code",
   "column_break_qhmx",
-  "pic_spar",
-  "pic_pr",
+  "area",
+  "branch",
   "longitude",
   "latitude"
  ],
@@ -66,14 +67,18 @@
    "label": "Postal code"
   },
   {
+   "fetch_from": "pic_pr.parent_klasifikasi_pic_merchant",
    "fieldname": "pic_spar",
-   "fieldtype": "Data",
-   "label": "SPAR"
+   "fieldtype": "Link",
+   "label": "SPAR",
+   "options": "Klasifikasi PIC Merchant"
   },
   {
    "fieldname": "pic_pr",
-   "fieldtype": "Data",
-   "label": "PR"
+   "fieldtype": "Link",
+   "label": "PR",
+   "link_filters": "[[\"Klasifikasi PIC Merchant\",\"is_group\",\"=\",0]]",
+   "options": "Klasifikasi PIC Merchant"
   },
   {
    "fieldname": "longitude",
@@ -97,16 +102,18 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Branch",
-   "options": "Branch"
+   "link_filters": "[[\"Klasifikasi Wilayah Merchant\",\"is_group\",\"=\",0]]",
+   "options": "Klasifikasi Wilayah Merchant"
   },
   {
-   "depends_on": "eval:doc.branch",
+   "depends_on": "eval:doc.pic_asm",
+   "fetch_from": "pic_asm.area_asm",
    "fieldname": "area",
    "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Area",
-   "options": "Area"
+   "label": "Area ASM",
+   "options": "Klasifikasi Wilayah Merchant"
   },
   {
    "fieldname": "detail_merchant_section",
@@ -140,11 +147,18 @@
    "in_standard_filter": 1,
    "label": "Status",
    "options": "Aktif\nTidak aktif"
+  },
+  {
+   "fetch_from": "pic_spar.parent_klasifikasi_pic_merchant",
+   "fieldname": "pic_asm",
+   "fieldtype": "Link",
+   "label": "ASM",
+   "options": "Klasifikasi PIC Merchant"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-02 16:15:03.245635",
+ "modified": "2024-07-10 13:13:31.561495",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Merchants",

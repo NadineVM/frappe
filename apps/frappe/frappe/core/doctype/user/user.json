@@ -97,7 +97,10 @@
   "column_break_65",
   "api_secret",
   "onboarding_status",
-  "connections_tab"
+  "connections_tab",
+  "call_management_tab",
+  "pic_role",
+  "pic_code"
  ],
  "fields": [
   {
@@ -734,6 +737,23 @@
    "fieldtype": "Select",
    "label": "Code Editor Type",
    "options": "vscode\nvim\nemacs"
+  },
+  {
+   "fieldname": "call_management_tab",
+   "fieldtype": "Tab Break",
+   "label": "Call Management"
+  },
+  {
+   "fieldname": "pic_role",
+   "fieldtype": "Select",
+   "label": "PIC Role",
+   "options": "ASM\nSPAR\nPR"
+  },
+  {
+   "fieldname": "pic_code",
+   "fieldtype": "Link",
+   "label": "PIC Code",
+   "options": "Klasifikasi PIC Merchant"
   }
  ],
  "icon": "fa fa-user",
@@ -796,7 +816,7 @@
    "link_fieldname": "user"
   }
  ],
- "modified": "2024-04-12 23:25:04.628007",
+ "modified": "2024-07-09 09:50:11.925445",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "User",

@@ -69,9 +69,9 @@
   },
   {
    "fieldname": "kegiatan_kunjungan",
-   "fieldtype": "Link",
+   "fieldtype": "Table MultiSelect",
    "label": "Kegiatan kunjungan",
-   "options": "Kegiatan kunjungan"
+   "options": "Kegiatan Kunjungan Options"
   },
   {
    "fieldname": "section_break_qzfl",
@@ -238,7 +238,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-05 15:04:01.933727",
+ "modified": "2024-07-09 17:14:50.156718",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Call Realisasi",

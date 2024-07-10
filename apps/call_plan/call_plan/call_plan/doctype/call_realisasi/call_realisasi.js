@@ -1,6 +1,6 @@
 // Copyright (c) 2024, Nadine Verelia and contributors
 // For license information, please see license.txt
-var toleransi_dalam_meter=1000
+var toleransi_dalam_meter=50
 
 frappe.ui.form.on("Call Realisasi", {
 	refresh(frm) {
@@ -62,23 +62,28 @@ frappe.ui.form.on("Call Realisasi", {
 		}
 	},
 	master_plan(frm) {
+		//ubah filter merchant sesuai perubahan master plan
 		frm.trigger('set_filter_merchant')
-		if (frm.doc.tanggal_target){
-			frm.fields_dict.mulai_realisasi.toggle(true);
-			frm.set_value('tanggal_kunjungan','')
+		//reset nama merchant dan tanggal kunjungan jika ada perubahan master plan
+		if(frm.doc.tanggal_kunjungan){
+		    frm.fields_dict.mulai_realisasi.toggle(true);
+		    frm.set_value('tanggal_kunjungan','')}
 			frm.set_value('kesesuaian_tanggal','');
-		}
-		frm.set_value('nama_merchantklinik','')
+		
+		if(frm.doc.nama_merchantklinik){
+			frm.set_value('nama_merchantklinik','')}
 	},
 
 	nama_merchantklinik(frm){
 		frm.trigger('get_opsi_tanggal')
 		frm.trigger('set_map')
-		if (frm.doc.tanggal_target){
-			frm.fields_dict.mulai_realisasi.toggle(true);
-			frm.set_value('tanggal_kunjungan','')
+		//reset tanggal kunjungan sebenarnya utk perubahan merchant
+		if(frm.doc.tanggal_kunjungan){
+		    frm.fields_dict.mulai_realisasi.toggle(true);
+		    frm.set_value('tanggal_kunjungan','')}
 			frm.set_value('kesesuaian_tanggal','');
-		}
+        if(frm.doc.kesesuaian_lokasi){
+            frm.set_value('kesesuaian_lokasi','')}
 	},
 
 	//lock tanggal dan waktu kunjungan
@@ -128,13 +133,6 @@ frappe.ui.form.on("Call Realisasi", {
 		let call_longitude=Number(frm.doc.call_longitude)
 		let toleransi_latitude=(toleransi_dalam_meter / 6378000) * (180 / Math.PI)
 		let toleransi_longitude=(toleransi_dalam_meter / 6378000) * (180 / Math.PI)/Math.cos(Number(merch_latitude)*Math.PI/180)
-		console.log(toleransi_latitude,toleransi_longitude)
-		console.log(call_latitude> merch_latitude+ toleransi_latitude)
-		console.log(call_latitude< merch_latitude-toleransi_latitude)
-		console.log(call_longitude> merch_longitude+ toleransi_longitude)
-		console.log(call_longitude<merch_longitude-toleransi_longitude)
-		console.log(call_longitude)
-		console.log(merch_longitude-toleransi_longitude)
 
 		if (call_latitude> merch_latitude+ toleransi_latitude || call_latitude< merch_latitude-toleransi_latitude||
 			call_longitude> merch_longitude+ toleransi_longitude || call_longitude<merch_longitude-toleransi_longitude
@@ -152,8 +150,7 @@ frappe.ui.form.on("Call Realisasi", {
 		frm.set_value('call_longitude','106.7126565')
 		frm.set_value('call_latitude','-6.2725422')
 		//delete saat transfer//
-		if(frm.doc.jenis_kunjungan=='Offline'){
-			frm.trigger('cek_lokasi')}
+		frm.trigger('cek_lokasi')
 	}
 
 	//toleransi longitude latitude
