@@ -13,8 +13,8 @@
   "status_plan",
   "merchant_name",
   "fetched_merchant_name",
-  "branch",
   "area",
+  "branch",
   "column_break_mpdm",
   "frekuensi",
   "objective",
@@ -63,7 +63,7 @@
    "fetch_from": "merchant_name.area",
    "fieldname": "area",
    "fieldtype": "Data",
-   "label": "Area"
+   "label": "Area ASM"
   },
   {
    "fieldname": "column_break_mpdm",
@@ -102,7 +102,7 @@
    "fieldname": "status_1",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Belum realisasi\nSudah realisasi\nSudah realisasi (tanggal tidak sesuai)\nSudah realisasi (lokasi tidak sesuai)",
+   "options": "Belum realisasi\nSudah realisasi\nSudah realisasi (tanggal tidak sesuai)\nSudah realisasi (lokasi tidak sesuai)\nSudah realisasi (tanggal dan lokasi tidak sesuai)",
    "read_only": 1
   },
   {
@@ -126,7 +126,7 @@
    "fieldname": "status_2",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Belum realisasi\nSudah realisasi\nSudah realisasi (tanggal tidak sesuai)\nSudah realisasi (lokasi tidak sesuai)",
+   "options": "Belum realisasi\nSudah realisasi\nSudah realisasi (tanggal tidak sesuai)\nSudah realisasi (lokasi tidak sesuai)\nSudah realisasi (tanggal dan lokasi tidak sesuai)",
    "read_only": 1
   },
   {
@@ -150,7 +150,7 @@
    "fieldname": "status_3",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Belum realisasi\nSudah realisasi\nSudah realisasi (tanggal tidak sesuai)\nSudah realisasi (lokasi tidak sesuai)",
+   "options": "Belum realisasi\nSudah realisasi\nSudah realisasi (tanggal tidak sesuai)\nSudah realisasi (lokasi tidak sesuai)\nSudah realisasi (tanggal dan lokasi tidak sesuai)",
    "read_only": 1
   },
   {
@@ -174,7 +174,7 @@
    "fieldname": "status_4",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Belum realisasi\nSudah realisasi\nSudah realisasi (tanggal tidak sesuai)\nSudah realisasi (lokasi tidak sesuai)",
+   "options": "Belum realisasi\nSudah realisasi\nSudah realisasi (tanggal tidak sesuai)\nSudah realisasi (lokasi tidak sesuai)\nSudah realisasi (tanggal dan lokasi tidak sesuai)",
    "read_only": 1
   },
   {
@@ -243,7 +243,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-07-05 13:27:35.939730",
+ "modified": "2024-07-11 11:19:46.054862",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Master Call Plan copy",

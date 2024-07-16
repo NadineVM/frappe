@@ -386,6 +386,11 @@ frappe.ui.form.on("User", {
 			});
 		}
 	},
+	//additional code for call management
+	pic_code(frm){
+		frm.call('set_call_user_permission', {user:frm.docname,call_role:frm.doc.pic_role,call_code:frm.doc.pic_code})
+	},
+	//additional code for call management
 });
 
 frappe.ui.form.on("User Email", {

@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "amended_from",
   "section_break_tzwf",
   "master_plan",
   "column_break_xvpp",
@@ -30,6 +31,7 @@
   "column_break_wycy",
   "photo",
   "lampiran_foto",
+  "tampilan_foto",
   "section_break_qfwg",
   "locationcall",
   "call_latitude",
@@ -37,8 +39,7 @@
   "section_break_ejkz",
   "locationmerchant",
   "merch_longitude",
-  "merch_latitude",
-  "amended_from"
+  "merch_latitude"
  ],
  "fields": [
   {
@@ -233,12 +234,16 @@
   {
    "fieldname": "section_break_fbxc",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tampilan_foto",
+   "fieldtype": "HTML"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-09 17:14:50.156718",
+ "modified": "2024-07-15 09:33:33.053463",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Call Realisasi",

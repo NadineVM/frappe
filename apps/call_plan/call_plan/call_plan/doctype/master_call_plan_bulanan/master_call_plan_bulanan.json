@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:MCP-{bulan}-{tahun}",
+ "autoname": "format:MCP-{pr}-{bulan}-{tahun}",
  "creation": "2024-07-01 13:42:32.023973",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -93,6 +93,7 @@
   {
    "fieldname": "user",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "label": "User",
    "options": "User",
    "read_only": 1,
@@ -113,12 +114,14 @@
    "fetch_from": "user.pic_role",
    "fieldname": "user_pic_role",
    "fieldtype": "Data",
+   "ignore_user_permissions": 1,
    "label": "User PIC Role"
   },
   {
    "fetch_from": "user.pic_code",
    "fieldname": "user_pic_code",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "label": "User PIC Code",
    "options": "Klasifikasi PIC Merchant"
   },
@@ -137,9 +140,8 @@
  ],
  "index_web_pages_for_search": 1,
  "is_calendar_and_gantt": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2024-07-10 14:46:23.955430",
+ "modified": "2024-07-15 13:59:43.728911",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Master Call Plan bulanan",

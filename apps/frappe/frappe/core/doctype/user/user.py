@@ -124,6 +124,26 @@ class User(Document):
 
 	__new_password = None
 
+	# additional code for call management
+	@frappe.whitelist()
+	def set_call_user_permission(self,user,call_role,call_code):
+		#if user is already in user permission, set new call pic code
+		if frappe.db.exists("User Permission", {"user": user, "allow": 'Klasifikasi PIC Merchant'}):
+			permission_name=frappe.db.get_value('User Permission', {'user': user, 'allow': 'Klasifikasi PIC Merchant'},['name'])
+			frappe.db.set_value("User Permission",permission_name,'for_value', call_code)
+		#if user is not yet in user permission, add new
+		else:
+			doc = frappe.get_doc({
+    		'doctype': 'User Permission',
+    		'title': 'New User Permission',
+			'user':user,
+			'allow':'Klasifikasi PIC Merchant',
+			'for_value':call_code,
+			'apply_to_all_doctypes':1
+			})
+			doc.insert()
+	# additional code for call management
+	
 	def __setup__(self):
 		# because it is handled separately
 		self.flags.ignore_save_passwords = ["new_password"]

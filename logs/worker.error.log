@@ -20522,3 +20522,1516 @@ redis.exceptions.ConnectionError: Connection closed by server.
   from crypt import crypt as _crypt
 /Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
   warnings.warn(
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+    raise err
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 770, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 476, in send_command
+    self.send_packed_command(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 446, in send_packed_command
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+    raise err
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 770, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 476, in send_command
+    self.send_packed_command(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 446, in send_packed_command
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 512, in read_response
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 124, in read_response
+    self.read_from_socket()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 84, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1048, in teardown
+    self.register_death()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 834, in register_death
+    p.execute()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1494, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 1109, in get_connection
+    connection.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 288, in connect
+    self.on_connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 391, in on_connect
+    self.read_response()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 520, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+    raise err
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 770, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 476, in send_command
+    self.send_packed_command(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 446, in send_packed_command
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+    raise err
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 770, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 476, in send_command
+    self.send_packed_command(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 446, in send_packed_command
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+    raise err
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 770, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 476, in send_command
+    self.send_packed_command(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 446, in send_packed_command
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+    raise err
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 770, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 476, in send_command
+    self.send_packed_command(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 446, in send_packed_command
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+    raise err
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 770, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 476, in send_command
+    self.send_packed_command(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 446, in send_packed_command
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 277, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 639, in _connect
+    raise err
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 770, in execute_command
+    self._execute(connection, connection.send_command, *args, **kwargs)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 476, in send_command
+    self.send_packed_command(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 446, in send_packed_command
+    self.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 282, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 124, in read_response
+    self.read_from_socket()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 84, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 837, in parse_response
+    response = self._execute(conn, try_read)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 813, in _execute
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 815, in <lambda>
+    lambda error: self._disconnect_raise_connect(conn, error),
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 802, in _disconnect_raise_connect
+    raise error
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 814, in <lambda>
+    lambda: command(*args, **kwargs),
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 831, in try_read
+    if not conn.can_read(timeout=timeout):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 490, in can_read
+    return self._parser.can_read(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 75, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 86, in read_from_socket
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1048, in teardown
+    self.register_death()    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 834, in register_death
+    p.execute()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1494, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 1109, in get_connection
+    connection.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 288, in connect
+    self.on_connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 391, in on_connect
+    self.read_response()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 520, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 124, in read_response
+    self.read_from_socket()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 84, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    self.run()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1164, in run
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+             pubsub.get_message(ignore_subscribe_messages=True, timeout=sleep_time)                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1026, in get_message
+    response = self.parse_response(block=(timeout is None), timeout=timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+^^^^^^^^^^^^^^^^^^^^^^^^^^    self.teardown()^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1048, in teardown
+^^    self.register_death()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 834, in register_death
+    p.execute()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 1494, in execute
+    conn = self.connection_pool.get_connection("MULTI", self.shard_hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 1109, in get_connection
+    connection.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 288, in connect
+    self.on_connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 391, in on_connect
+    self.read_response()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 520, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:58: DeprecationWarning: The `push_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+  from crypt import crypt as _crypt
+/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/connections.py:72: DeprecationWarning: The `pop_connection` function is deprecated. Pass the `connection` explicitly instead.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 512, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 124, in read_response
+    self.read_from_socket()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/_parsers/hiredis.py", line 84, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 128, in <module>
+    main()
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 34, in main
+    FrappeCommandGroup(commands=commands)(prog_name="bench")
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 205, in start_worker
+    start_worker(
+  File "/Users/nadineverelia/frappe/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 314, in start_worker
+    worker.work(
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 458, in work
+    self.teardown()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 1049, in teardown
+    self.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/rq/worker.py", line 626, in unsubscribe
+    self.pubsub.unsubscribe()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 954, in unsubscribe
+    return self.execute_command("UNSUBSCRIBE", *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/client.py", line 758, in execute_command
+    self.connection = self.connection_pool.get_connection(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 1109, in get_connection
+    connection.connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 288, in connect
+    self.on_connect()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 391, in on_connect
+    self.read_response()
+  File "/Users/nadineverelia/frappe/frappe-bench/env/lib/python3.11/site-packages/redis/connection.py", line 520, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')

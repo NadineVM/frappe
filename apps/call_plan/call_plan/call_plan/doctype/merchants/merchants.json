@@ -70,6 +70,7 @@
    "fetch_from": "pic_pr.parent_klasifikasi_pic_merchant",
    "fieldname": "pic_spar",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "label": "SPAR",
    "options": "Klasifikasi PIC Merchant"
   },
@@ -102,7 +103,6 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Branch",
-   "link_filters": "[[\"Klasifikasi Wilayah Merchant\",\"is_group\",\"=\",0]]",
    "options": "Klasifikasi Wilayah Merchant"
   },
   {
@@ -152,13 +152,14 @@
    "fetch_from": "pic_spar.parent_klasifikasi_pic_merchant",
    "fieldname": "pic_asm",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "label": "ASM",
    "options": "Klasifikasi PIC Merchant"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-10 13:13:31.561495",
+ "modified": "2024-07-15 13:44:02.332101",
  "modified_by": "Administrator",
  "module": "Call Plan",
  "name": "Merchants",

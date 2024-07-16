@@ -1020,3 +1020,33 @@ index creation(creation))
 			COLLATE=utf8mb4_unicode_ci
 2024-07-10 16:03:38,423 WARNING database DDL Query made to DB:
 ALTER TABLE `tabcustom tes` ADD COLUMN `halo` varchar(140)
+2024-07-10 16:11:25,685 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-10 16:11:25,687 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-10 16:11:25,688 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-10 16:12:37,521 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-10 16:12:37,522 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-10 16:12:37,522 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-10 16:48:43,890 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0
+2024-07-10 16:48:49,489 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0
+2024-07-10 16:52:57,930 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi Wilayah Merchant` MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `rgt` int NOT NULL DEFAULT 0
+2024-07-11 11:19:46,082 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parent varchar(140)
+2024-07-11 11:19:46,084 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parenttype varchar(140)
+2024-07-11 11:19:46,085 WARNING database DDL Query made to DB:
+alter table `tabMaster Call Plan copy` add column if not exists parentfield varchar(140)
+2024-07-15 08:51:02,263 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` MODIFY `kesesuaian_tanggal` varchar(140), MODIFY `kesesuaian_lokasi` varchar(140)
+2024-07-15 09:33:33,231 WARNING database DDL Query made to DB:
+ALTER TABLE `tabCall Realisasi` MODIFY `kesesuaian_tanggal` varchar(140), MODIFY `kesesuaian_lokasi` varchar(140)
+2024-07-15 13:41:08,631 WARNING database DDL Query made to DB:
+ALTER TABLE `tabKlasifikasi PIC Merchant` MODIFY `rgt` int NOT NULL DEFAULT 0, MODIFY `is_group` tinyint NOT NULL DEFAULT 0, MODIFY `lft` int NOT NULL DEFAULT 0, MODIFY `is_asm` tinyint NOT NULL DEFAULT 0

@@ -2,6 +2,19 @@
 // For license information, please see license.txt
 var toleransi_dalam_meter=50
 frappe.ui.form.on("Unplanned Call Realisasi", {
+	validate(frm){
+		if(!frm.doc.tanggal_kunjungan){
+			frappe.msgprint(__('Mulai realisasi belum diklik'));
+			frappe.validated=false; //gagalkan save
+		}
+        
+	},
+	before_submit(frm){
+        let attachments=frm.get_files();
+		if (attachments.length==0){
+		    frappe.throw(__('Harus menyertakan minimal 1 foto'))
+		}
+	},
     refresh(frm) {
         frm.trigger('set_map')
 		if (frm.doc.tanggal_kunjungan) {
@@ -14,8 +27,9 @@ frappe.ui.form.on("Unplanned Call Realisasi", {
         if(frm.doc.tanggal_kunjungan){
 		    frm.fields_dict.mulai_realisasi.toggle(true);
 		    frm.set_value('tanggal_kunjungan','')}
-        if(frm.doc.kesesuaian_lokasi){
-            frm.set_value('kesesuaian_lokasi','')}
+		//cek kembali kesesuaian lokasi jika ada merchant yang diganti
+		if(frm.doc.kesesuaian_lokasi){
+			frm.trigger("cek_lokasi")}
 	},
     //set map lokasi merchant
     set_map(frm) {

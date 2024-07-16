@@ -2,16 +2,28 @@
 // For license information, please see license.txt
 
  frappe.ui.form.on("Merchants", {
- 	//refresh(frm) {
- 	//},
-     branch(frm) {
-        frm.set_query("area", (doc) => {
+ 	refresh(frm) {
+        frm.set_query("pic_pr", () => {
             return {
                 filters: {
-                    "parent_branch": doc.branch // whatever branch is selected
+                    'is_group':0,
                 }
             }
         });
+        if (frm.doc.area){
+            frm.trigger('area')
+        }
+ 	},
+    area(frm) {
+        frm.set_query("branch", () => {
+            return {
+                filters: {
+                    'is_group':0,
+                    "parent_klasifikasi_wilayah_merchant": frm.doc.area // whatever area is selected
+                }
+            }
+        });
+        console.log(frm.doc.area)
     },
     
  });

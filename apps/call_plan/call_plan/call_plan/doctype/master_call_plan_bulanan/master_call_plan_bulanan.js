@@ -1,5 +1,7 @@
 // Copyright (c) 2024, Nadine Verelia and contributors
 // For license information, please see license.txt
+
+//declare semua variabel yang akan digunakan
 var maks_jumlah_kunjungan=4
 var months=['January','February','March','April','May','June','July','August','September','October','November','December']
 var month;
@@ -7,13 +9,16 @@ var year;
 var date;
 var child;
 var planned_merchant;
+var currentTime;
 
+//set opsi pr berdasarkan role user
+//dipanggil setiap user_pic_code diubah
 function set_opsi_pr(frm){
-    if (frm.doc.user_pic_role=='PR'){
+    if (frm.doc.user_pic_role=='PR'){ //PR hanya bisa select PRnya sendiri
         frm.set_value('pr',frm.doc.user_pic_code)
         frm.set_df_property('pr','read_only',1)
     }
-    else if (frm.doc.user_pic_role=='SPAR'){
+    else if (frm.doc.user_pic_role=='SPAR'){ //SPAR bisa select PR yang di bawahnya
         frm.set_query('pr',()=>{
             return{
                 'filters':{
@@ -22,7 +27,8 @@ function set_opsi_pr(frm){
             }
         })
     }
-    else if (frm.doc.user_pic_role=='ASM'){
+    else if (frm.doc.user_pic_role=='ASM'){ //ASM bisa select PR yang di bawah ASM di bawahnya
+        //call function utk mendapatkan semua PR di bawah asm tersebut
         frm.call('get_pr_of_asm',{asm:frm.doc.user_pic_code}).then((pr_list)=>{
             console.log(pr_list.message)
             frm.set_query('pr',()=>{
@@ -36,27 +42,31 @@ function set_opsi_pr(frm){
         })
     }
 }
+//opsi tahun diset tahun ini & tahun depan
+//dipanggil setiap refresh
 function set_opsi_tahun(frm){
-    var currentTime = new Date();
-    date= currentTime.getDate();
-    month=currentTime.getMonth();
-    year=currentTime.getFullYear();
-    frm.set_df_property('tahun','options',[String(year),String(year+1)])
-
+    currentTime = new Date();
+    year=currentTime.getFullYear();//tahun sekarang
+    frm.set_df_property('tahun','options',[String(year),String(year+1)]) 
 }
+
+//hanya bisa memilih bulan berikutnya maks tanggal 25, selebihnya tidak dibatasi
+//dipanggil setiap refresh dan setiap kali tahun diubah
 function set_opsi_bulan(frm){
+    date= currentTime.getDate();//tanggal hari ini
+    month=currentTime.getMonth();//bulan sekarang
     if (frm.doc.tahun){
     let avail_months;
-        if (frm.doc.tahun==year){
+        if (frm.doc.tahun==year){ //jika tahun ini
             if (date<26){  
-                avail_months=months.slice(month+1)
+                avail_months=months.slice(month+1) //jika belum lewat tanggal 25 
             }
             else{
-                avail_months=months.slice(month+2)
+                avail_months=months.slice(month+2) //jika sudah lewat tanggal 25
             }
         }
-        else{
-            if (month==11 && date>25){
+        else{ //jika tahun depan
+            if (month==11 && date>25){ //jika ini bulan desember dan sudah lewat tanggal 25, tidak bisa select januari tahun depan
                 avail_months=months.slice(1)
             }
             else{
@@ -67,6 +77,10 @@ function set_opsi_bulan(frm){
 }
 }
 
+//VALIDASI TANGGAL KUNJUNGAN
+
+//validasi tanggal(1) tidak boleh ada duplikat tanggal di satu merchant yang sama
+//dipanggil setiap kali tanggal diubah
 function cek_duplicate_tanggal(frm,cdt,cdn,field_tanggal,field_tanggal_lain){
     child=locals[cdt][cdn]
     if (child[field_tanggal]){
@@ -82,6 +96,8 @@ function cek_duplicate_tanggal(frm,cdt,cdn,field_tanggal,field_tanggal_lain){
     }
 }
 
+//validasi tanggal(2) tidak boleh ada select tanggal di hari minggu
+//dipanggil setiap kali tanggal diubah
 function validasi_tanggal_weekday(frm,cdt,cdn,field_tanggal){
     child=locals[cdt][cdn]
     if (child[field_tanggal]){
@@ -94,7 +110,8 @@ function validasi_tanggal_weekday(frm,cdt,cdn,field_tanggal){
         }}
 }
 
-//js jalan dulu sebelum python selesai & return value
+//validasi tanggal(3) tidak boleh select tanggal di luar tahun & bulan yang dipilih
+//dipanggil setiap kali save & muncul pop up jika ada yang tidak sesuai
 function cek_tanggal(frm){
     var selected_month_number=String(months.indexOf(frm.doc.bulan)+1).padStart(2,'0')
     let list_error=[]
@@ -103,22 +120,22 @@ function cek_tanggal(frm){
         for (let i = 0; i < frekuensi; i++){
             let field_kunjungan='kunjungan_'+String(i+1)
             if (row[field_kunjungan]<`${frm.doc.tahun}-${selected_month_number}-01`||row[field_kunjungan]>`${frm.doc.tahun}-${selected_month_number}-31`){
-                //list_error.push(`kunjungan ${String(i+1)} of ${row.fetched_merchant_name}`)
                 list_error.push(`${row.fetched_merchant_name}`)
-                break
+                break //jika salah satu tanggal salah, tidak perlu cek tanggal lainnya supaya nama merchant tidak dobel
             }
         }        
     })
-    if (list_error.length>0){
+    if (list_error.length>0){ //jika ada tanggal salah
         frappe.msgprint(__(`You can only select dates in ${frm.doc.bulan} ${frm.doc.tahun} in ${list_error.join(', ')}`));
-        frappe.validated=false}
+        frappe.validated=false} //batalkan save
     
 }
 
+//pastikan setiap merchant hanya diselect sekali (tidak ada 2 row dengan merchant yang sama)
+//dipanggil setiap refresh, pr berubah, merchant name berubah (harus tutup dan buka lagi form view row itu utk merefresh), row dihapus 
 function set_filter_merchant(frm){
     if(frm.doc.pr){
         planned_merchant=[]
-        //non avail merchant adalah semua merchant yang sudah diselect kecuali merchant di doctype yang sedang diedit
         frm.doc.call_plan.forEach((row)=>{
             if (row.merchant_name){
                 planned_merchant.push(row.merchant_name)
@@ -132,22 +149,20 @@ function set_filter_merchant(frm){
                 }
             }
         })
-    //trigger cek unplanned merchant
+    //trigger cek unplanned merchant untuk mengecek kelengkapan merchant & hitung merchant yang belum diplan
     cek_unplanned_merchant(frm)  
     }
 
 }
 
+//selalu dipanggil setiap set_filter_merchant dipanggil
 function cek_unplanned_merchant(frm){
     //dapatkan merchant yang belum diplan
     frm.call('get_merchant_list',{planned_merchant:planned_merchant,pr:frm.doc.pr}).then((unplanned_merchant)=>{
         //jika ada merchant yang belum diplan
         if(unplanned_merchant.message.length>0){      
             frm.set_value('kelengkapan','Belum lengkap')
-            frm.set_value('keterangan',
-                //`<p>${unplanned_merchant.message.length} unplanned merchants: ${unplanned_merchant.message.join(', ')}<p>`
-                 `${unplanned_merchant.message.length}`
-            )
+            frm.set_value('keterangan', `${unplanned_merchant.message.length}`)
         }
         //jika semua merchant sudah diplan
         else{
@@ -157,39 +172,38 @@ function cek_unplanned_merchant(frm){
     })
 }
 
-
+//set tombol realisasi di setiap row dan link ke call realisasi utk tanggal kunjungan yang sudah direalisasi
+//hanya dipanggil jika status form adalah approved
 function set_route_realisasi(frm,cdt,cdn){
     child=locals[cdt][cdn]
     let realisasi_baru=`<button class="btn btn-primary" onclick="window.location.href='/app/call-realisasi/new?master_plan=${frm.docname}&nama_merchantklinik=${child.merchant_name}'">Mulai Realisasi</button>`
     frm.set_df_property('call_plan', "options", realisasi_baru, frm.docname, `start_realisasi`, child.name)
     for (let i = 0; i < child.frekuensi; i++){
-        /* if (child[`status_${i+1}`]=='Belum realisasi'){
-            frm.set_df_property('call_plan', "options", realisasi_baru, frm.docname, `realisasi_route_${i+1}`, child.name);} */
         if (child[`status_${i+1}`]!='Belum realisasi'){
             let tanggal_kunjungan=frappe.format(child[`kunjungan_${i+1}`],{ fieldtype: 'Date' })
-            let realisasi_route=`<a href="/app/call-realisasi/CR-${child.merchant_name}(${tanggal_kunjungan})">Go to realisasi</a>`
-            frm.set_df_property('call_plan', "options", realisasi_route, frm.docname, `realisasi_route_${i+1}`, child.name);}
-    
+            //dapatkan nama call realisasi untuk tanggal kunjungan tersebut
+            frm.call('get_call_realisasi',{master_plan:frm.docname,merchant_name:child.merchant_name,tanggal_kunjungan:tanggal_kunjungan}).then((realisasi)=>{
+            console.log(realisasi.message)
+                let realisasi_route=`<a href="/app/call-realisasi/${realisasi.message}">Go to realisasi</a>`
+            frm.set_df_property('call_plan', "options", realisasi_route, frm.docname, `realisasi_route_${i+1}`, child.name);})
+        }
     }
 }
 
 frappe.ui.form.on("Master Call Plan bulanan", {
-//set informasi merchant yang sudah diplan sebelum save
+
     validate(frm){
-        //cek tanggal kunjungan untuk semua row
         cek_tanggal(frm)
     },
 
-//set filter, cek unplanned merchant, dan set opsi tahun (jika belum diset) saat form di load
     refresh(frm){
-        if(frm.doc.amended_from){
-            //jika hasil amend, field tahun, bulan, pr, ditransfer dan tidak bisa diubah
+        if(frm.doc.amended_from){ //jika form hasil amend dari cancelled form
+            //field tahun, bulan, pr ditransfer dari cancelled form dan tidak bisa diubah
             frm.set_df_property('tahun','options',frm.doc.tahun)
             frm.set_df_property('bulan','options',frm.doc.bulan)
             frm.set_df_property('tahun','read_only',1)
             frm.set_df_property('bulan','read_only',1)
             frm.set_df_property('pr','read_only',1)
-            //set filter merchant
             set_filter_merchant(frm)
         }
         //set opsi field jika form masih editable (draft)
@@ -232,14 +246,14 @@ frappe.ui.form.on("Master Call Plan copy", {
         
     },
 
-    
+    //pastikan jumlah tanggal kunjungan sesuai dengan frekuensi
     frekuensi(frm,cdt,cdn){
         child=locals[cdt][cdn]
         let frekuensi=child.frekuensi;
         for (let i = 0; i < maks_jumlah_kunjungan; i++){
             if (i+1>frekuensi){
                 if(child['kunjungan_'+String(i+1)]){
-                    frappe.model.set_value(cdt,cdn,'kunjungan_'+String(i+1), undefined)
+                    frappe.model.set_value(cdt,cdn,'kunjungan_'+String(i+1), undefined) //hapus tanggal kunjungan jika frekuensi dikurangi
                 }
             }
         }

@@ -7,10 +7,12 @@ import frappe
 
 
 class CallRealisasi(Document):
+	#return merchant yang ada di master plan & status overall belum/sedang realisasi
 	@frappe.whitelist()
 	def get_merchant(self,master_plan):
 		merchants = frappe.db.get_all("Master Call Plan copy", fields=['merchant_name'], filters={'parent': master_plan,'status_plan':['in',['Belum realisasi','Sedang realisasi']]},pluck='merchant_name',order_by='merchant_name')
 		return merchants
+	#return list tanggal kunjungan berdasarkan master plan dan merchant yang dipilih
 	@frappe.whitelist()
 	def get_tanggal(self,master_plan,merchant_name):
 		plan,frekuensi=frappe.db.get_value('Master Call Plan copy',{'parent':master_plan,'merchant_name':merchant_name},['name','frekuensi'])
@@ -31,7 +33,7 @@ class CallRealisasi(Document):
 				frappe.db.set_value('Master Call Plan copy', plan, f'status_{i+1}', status_completion)
 				frappe.db.commit()
 				break
-		self.cek_overall_status(plan,int(frekuensi))
+		self.cek_overall_status(plan,int(frekuensi)) #update overall status plan setiap ada perubahan pada status tanggal kunjungan
 
 	def cek_overall_status(self,plan,frekuensi):
 		current_status=frappe.db.get_value('Master Call Plan copy',plan,'status_plan')
